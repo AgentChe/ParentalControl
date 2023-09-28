@@ -29,6 +29,8 @@
 "Splash.Preloader1" = "Checking your account...";
 "Splash.Preloader2" = "Syncing the drug library";
 "Splash.Preloader3" = "Setting up your account...";
+"Splash.Title" = "Parental control";
+"Splash.SubTitle" = "Safeguard your child's online journey with our intuitive and powerful features.";
 
 // MARK: Paygate
 "Paygate.Title" = "Get unlimited access";

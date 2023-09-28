@@ -9,6 +9,8 @@ import UIKit
 
 final class SplashView: UIView {
     lazy var imageView = makeImageView()
+    lazy var titleLabel = makeTitleLabel()
+    lazy var subTitleLabel = makeSubTitleLabel()
     lazy var preloader = makePreloader()
     lazy var preloaderLabel = makeLabel()
     
@@ -27,7 +29,7 @@ final class SplashView: UIView {
 // MARK: Private
 private extension SplashView {
     func initialize() {
-        backgroundColor = Appearance.secondary4
+        backgroundColor = Appearance.background
     }
 }
 
@@ -35,10 +37,22 @@ private extension SplashView {
 private extension SplashView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 276.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 276.scale),
+            imageView.widthAnchor.constraint(equalToConstant: 188.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 188.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 179.scale : 80.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            subTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            subTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -60,6 +74,36 @@ private extension SplashView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.image = UIImage(named: "Splash.Image")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black)
+            .font(Fonts.Satoshi.bold(size: 32.scale))
+            .lineHeight(38.4.scale)
+            .textAlignment(.center)
+        
+        let view = UILabel()
+        view.attributedText = "Splash.Title".localized.attributed(with: attrs)
+        view.numberOfLines = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeSubTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black.withAlphaComponent(0.6))
+            .font(Fonts.Satoshi.regular(size: 16.scale))
+            .lineHeight(22.4.scale)
+            .textAlignment(.center)
+        
+        let view = UILabel()
+        view.attributedText = "Splash.SubTitle".localized.attributed(with: attrs)
+        view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
