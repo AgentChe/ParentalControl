@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>358794450955-qh6l5s6g8eut7kcnd5ecphaj8cj6kfdo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.358794450955-qh6l5s6g8eut7kcnd5ecphaj8cj6kfdo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDm8DQmRCac-FrH-L2zdzGVUcSl7pG1RTs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>358794450955</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>mobile.dermatology</string>
+	<key>PROJECT_ID</key>
+	<string>dermatology-25649</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dermatology-25649.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:358794450955:ios:38b4a3a07d79da9a0d4f0e</string>
+</dict>
+</plist>

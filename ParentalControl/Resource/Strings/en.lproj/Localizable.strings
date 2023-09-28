@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  Soccer
+
+  Created by Андрей Чернышев on 01.02.2023.
+  
+*/
+
+// MARK: General
+"Cancel" = "Cancel";
+"Continue" = "Continue";
+"Next" = "Next";
+"OK" = "OK";
+"Yes" = "Yes";
+"No" = "No";
+
+// MARK: ImagePicker
+"ImagePicker.TakePhoto" = "Take a photo";
+"ImagePicker.CameraRoll" = "Camera roll";
+"ImagePicker.PhotoLibrary" = "Photo library";
+
+// MARK: TryAgain
+"TryAgain.Title" = "The app failed to perform a request";
+"TryAgain.SubTitle" = "If there’s a connection issue on your side try one more time. If the connection is fine and the error keeps on repeating please get in touch with the support";
+"TryAgain.Button" = "Try again";
+"TryAgain.Contact" = "Contact the support";
+
+// MARK: Splash
+"Splash.Preloader1" = "Checking your account...";
+"Splash.Preloader2" = "Syncing the drug library";
+"Splash.Preloader3" = "Setting up your account...";
+
+// MARK: Paygate
+"Paygate.Title" = "Get unlimited access";
+"Paygate.Cell1" = "Comprehensive Diseases & Conditions\nDatabase";
+"Paygate.Cell2" = "Dermatologic Terms &\nProcedures Guides";
+"Paygate.Cell3" = "Photo-based Symptom Checker";
+"Paygate.Secured" = "Secured by the App Store. Cancel anytime.";
+"Paygate.TermsOfUse" = "Terms of use";
+"Paygate.And" = "and";
+"Paygate.PrivacyPolicy" = "Privacy Policy";
+"Paygate.RestorePurchases" = "Restore Purchase";
+"Paygate.Failed" = "Failed to make purchase";
+"Paygate.Monthly.Name1" = "7 days for free";
+"Paygate.Monthly.Name2" = "Quick prep";
+"Paygate.Monthly.Bottom1" = "After 7-day trial";
+"Paygate.Monthly.Bottom2" = "Trial is over";
+"Paygate.Lifetime.Name" = "Lifetime";
+"Paygate.Lifetime.PriceDescription" = "\nIn terms of  1  year";
+"Paygate.Lifetime.BottomDescription" = "once";
+"Paygate.Discount" = "SAVE %i%%";
+"Paygate.Price.Period" = "month";
