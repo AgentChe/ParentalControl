@@ -33,13 +33,12 @@
 "Splash.SubTitle" = "Safeguard your child's online journey with our intuitive and powerful features.";
 
 // MARK: Paygate
-"Paygate.Title" = "Get unlimited access";
-"Paygate.Cell1" = "Comprehensive Diseases & Conditions\nDatabase";
-"Paygate.Cell2" = "Dermatologic Terms &\nProcedures Guides";
-"Paygate.Cell3" = "Photo-based Symptom Checker";
+"Paygate.Title" = "Unlock Premium Status";
+"Paygate.Cell1" = "Set healthy screen time limits";
+"Paygate.Cell2" = "Monitor apps and websites";
+"Paygate.Cell3" = "Get insights into your child's digital\nbehavior";
 "Paygate.Secured" = "Secured by the App Store. Cancel anytime.";
 "Paygate.TermsOfUse" = "Terms of use";
-"Paygate.And" = "and";
 "Paygate.PrivacyPolicy" = "Privacy Policy";
 "Paygate.RestorePurchases" = "Restore Purchase";
 "Paygate.Failed" = "Failed to make purchase";

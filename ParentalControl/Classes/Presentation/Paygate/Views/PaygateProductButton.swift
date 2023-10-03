@@ -49,7 +49,7 @@ private extension PaygateProductButton {
     
     func changeSelection() {
         layer.borderWidth = 2.scale
-        layer.borderColor = isChecked ? Appearance.primary.cgColor : Appearance.black.cgColor
+        layer.borderColor = isChecked ? Appearance.secondary.cgColor : Appearance.black.withAlphaComponent(0.4).cgColor
         
         checkedView.isHidden = !isChecked
     }
@@ -142,7 +142,7 @@ private extension PaygateProductButton {
     
     func makeDiscountPlaceholderView() -> UIView {
         let view = UIView()
-        view.backgroundColor = Appearance.primary
+        view.backgroundColor = Appearance.fourth
         view.layer.cornerRadius = 4.scale
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
