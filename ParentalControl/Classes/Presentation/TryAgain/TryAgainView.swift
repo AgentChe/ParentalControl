@@ -54,10 +54,10 @@ private extension TryAgainView {
 private extension TryAgainView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 344.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 262.scale),
+            imageView.widthAnchor.constraint(equalToConstant: 260.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 181.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 16.scale)
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 32.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -73,17 +73,17 @@ private extension TryAgainView {
         ])
         
         NSLayoutConstraint.activate([
-            tryAgainButton.widthAnchor.constraint(equalToConstant: 343.scale),
-            tryAgainButton.heightAnchor.constraint(equalToConstant: 57.scale),
+            tryAgainButton.widthAnchor.constraint(equalToConstant: 210.scale),
+            tryAgainButton.heightAnchor.constraint(equalToConstant: 47.scale),
             tryAgainButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            tryAgainButton.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 80.scale : 40.scale)
+            tryAgainButton.bottomAnchor.constraint(equalTo: contactButton.topAnchor, constant: -16.scale)
         ])
         
         NSLayoutConstraint.activate([
-            contactButton.widthAnchor.constraint(equalToConstant: 343.scale),
-            contactButton.heightAnchor.constraint(equalToConstant: 57.scale),
+            contactButton.widthAnchor.constraint(equalToConstant: 210.scale),
+            contactButton.heightAnchor.constraint(equalToConstant: 47.scale),
             contactButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            contactButton.topAnchor.constraint(equalTo: tryAgainButton.bottomAnchor, constant: 16.scale)
+            contactButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -46.scale : -20.scale)
         ])
     }
 }
@@ -130,7 +130,7 @@ private extension TryAgainView {
     
     func makeButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.white)
+            .textColor(Appearance.black)
             .font(Fonts.Satoshi.regular(size: 15.scale))
         
         let view = UIButton()
@@ -144,15 +144,13 @@ private extension TryAgainView {
     
     func makeContactButton() -> UIButton {
         let attrs = TextAttributes()
-            .textColor(Appearance.primary.withAlphaComponent(0.5))
+            .textColor(Appearance.black)
             .font(Fonts.Satoshi.bold(size: 15.scale))
         
         let view = UIButton()
         view.setAttributedTitle("TryAgain.Contact".localized.attributed(with: attrs), for: .normal)
-        view.layer.cornerRadius = 8.scale
-        view.layer.borderWidth = 2.scale
-        view.layer.borderColor = Appearance.primary.withAlphaComponent(0.5).cgColor
-        view.backgroundColor = UIColor.clear
+        view.layer.cornerRadius = 10.scale
+        view.backgroundColor = Appearance.background2
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

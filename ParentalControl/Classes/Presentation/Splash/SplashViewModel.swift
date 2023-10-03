@@ -103,10 +103,14 @@ private extension SplashViewModel {
             let paygate = paygateManager
                 .obtainPaygate(forceUpdate: true)
                 .mapToVoid()
+            let profile = profileManager
+                .obtainProfile(forceUpdate: true)
+                .mapToVoid()
             
             return Single
                 .zip([
-                    paygate
+                    paygate,
+                    profile
                 ])
                 .mapToVoid()
         }

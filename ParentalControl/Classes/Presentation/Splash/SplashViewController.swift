@@ -79,17 +79,17 @@ private extension SplashViewController {
     }
     
     func openScreen(at step: SplashViewModel.Step) {
-//        switch step {
-//        case .onboarding:
-//            UIApplication.shared.keyWindow?.rootViewController = OnboardingViewController.make()
-//        case .main:
-////            UIApplication.shared.keyWindow?.rootViewController = NavigationController(rootViewController: HomeViewController.make())
-//            break // TODO
-//        case .paygate:
-//            let vc = PaygateViewController.make()
-//            vc.delegate = self
-//            present(vc, animated: true)
-//        }
+        switch step {
+        case .onboarding:
+            UIApplication.shared.keyWindow?.rootViewController = OnboardingViewController.make()
+        case .main:
+//            UIApplication.shared.keyWindow?.rootViewController = NavigationController(rootViewController: HomeViewController.make())
+            break // TODO
+        case .paygate:
+            let vc = PaygateViewController.make()
+            vc.delegate = self
+            present(vc, animated: true)
+        }
     }
     
     func activity(state: SplashActivity) {

@@ -21,7 +21,7 @@
 
 // MARK: TryAgain
 "TryAgain.Title" = "The app failed to perform a request";
-"TryAgain.SubTitle" = "If there’s a connection issue on your side try one more time. If the connection is fine and the error keeps on repeating please get in touch with the support";
+"TryAgain.SubTitle" = "If there’s a connection issue on your side try one more time. If the connection is fine and the error keeps on repeating please get in touch with the support.";
 "TryAgain.Button" = "Try again";
 "TryAgain.Contact" = "Contact the support";
 
@@ -52,3 +52,39 @@
 "Paygate.Lifetime.BottomDescription" = "once";
 "Paygate.Discount" = "SAVE %i%%";
 "Paygate.Price.Period" = "month";
+
+// MARK: Onboarding
+"Onboarding.Skip" = "Skip";
+"Onboarding.Welcome1.Title" = "Screen time\nmanagement";
+"Onboarding.Welcome1.SubTitle" = "Manage daily screen time limits tailored to your child's age and needs in just a few taps.";
+"Onboarding.Welcome2.Title" = "App block";
+"Onboarding.Welcome2.SubTitle" = "Block inappropriate or non-educational apps and manage permissions, ensuring your child stays focused on their tasks.";
+"Onboarding.Welcome3.Title" = "Activity report";
+"Onboarding.Welcome3.SubTitle" = "Stay informed with real-time insights into your child's online activities.";
+"Onboarding.ChildAge.Title" = "How old is your child?";
+"Onboarding.ChildAge.EarlierButton" = "%i or earlier";
+"Onboarding.ScreenTimeLimit.Title" = "Let's set a screen time limit for the child";
+"Onboarding.Schedule.Title" = "For which days of the week do you want to set a screen time limit?";
+"Onboarding.Schedule.ContinueButton" = "Set";
+"Onboarding.Weekday.Su" = "S";
+"Onboarding.Weekday.Mo" = "M";
+"Onboarding.Weekday.Tu" = "T";
+"Onboarding.Weekday.We" = "W";
+"Onboarding.Weekday.Th" = "T";
+"Onboarding.Weekday.Fr" = "F";
+"Onboarding.Weekday.Sa" = "S";
+"Onboarding.Pin.Title" = "Set up Parent PIN";
+"Onboarding.Pin.SubTitle" = "To prevent your child from accessing the app";
+"Onboarding.SignUp.Title" = "Sign up";
+"Onboarding.SignUp.SubTitle" = "Creating an account allows you to set up privacy, protect your child's data and log out easily.";
+"Onboarding.SignUp.Placeholder" = "Email address";
+"Onboarding.SignUp.ContinueButton" = "Save";
+"Onboarding.FaceId.Title" = "Want to use Face ID?";
+"Onboarding.FaceId.SubTitle" = "Activate Face ID so you don’t need to confirm your PIN every time you want to sign in";
+"Onboarding.FaceId.ContinueButton" = "Yes, use Face ID";
+"Onboarding.FaceId.Unavailable.Title" = "Biometry unavailable";
+"Onboarding.FaceId.Unavailable.Text" = "Your device is not configured for biometric authentication.";
+"Onboarding.FaceId.Failed.Title" = "Authentication failed";
+"Onboarding.FaceId.Failed.Text" = "You could not be verified; please try again.";
+"Onboarding.Preloader.Title" = "Thank you!";
+"Onboarding.Preloader.SubTitle" = "Your dashboard is almost ready...";

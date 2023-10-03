@@ -9,18 +9,33 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome
+        case welcome1, welcome2, welcome3, childAge, screenTimeLimit, schedule, pin, signUp, faceId, preloader
     }
     
     var didFinish: (() -> Void)?
     
+    private lazy var childAgeView = OChildAgeView(step: .childAge)
+    private lazy var screenTimeLimitView = OScreenTimeLimitView(step: .screenTimeLimit)
+    private lazy var scheduleView = OScheduleView(step: .schedule)
+    private lazy var pinView = OPinView(step: .pin)
+    private lazy var signUpView = OSignUpView(step: .signUp)
+    
     private lazy var contentViews: [OSlideView] = {
         [
-            OSlideView(step: .welcome)
+            OWelcomeView(number: 1, step: .welcome1),
+            OWelcomeView(number: 2, step: .welcome2),
+            OWelcomeView(number: 3, step: .welcome3),
+            childAgeView,
+            screenTimeLimitView,
+            scheduleView,
+            pinView,
+            signUpView,
+            OFaceIdView(step: .faceId, vc: vc),
+            OPreloaderView(step: .preloader, combineData: combineData, vc: vc)
         ]
     }()
     
-    private var step = Step.welcome
+    private var step = Step.welcome1
     
     private lazy var combineData = OnboardingCombineData()
     
@@ -81,6 +96,15 @@ private extension OnboardingView {
                     self?.addSubview(view)
                 }
             }
+        
+        pinView.didTapSkip = { [weak self] in
+            self?.scroll(to: .preloader)
+        }
+        
+        screenTimeLimitView.mainDelegate = combineData
+        scheduleView.mainDelegate = combineData
+        pinView.mainDelegate = combineData
+        signUpView.mainDelegate = combineData
     }
     
     func scroll(to newStep: Step) {

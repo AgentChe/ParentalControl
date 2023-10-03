@@ -1,0 +1,189 @@
+//
+//  OFaceIdView.swift
+//  ParentalControl
+//
+//  Created by Андрей Чернышев on 29.09.2023.
+//
+
+import UIKit
+import LocalAuthentication
+
+final class OFaceIdView: OSlideView {
+    lazy var skipButton = makeSkipButton()
+    lazy var imageView = makeImageView()
+    lazy var titleLabel = makeTitleLabel()
+    lazy var subTitleLabel = makeSubTitleLabel()
+    lazy var continueButton = makeContinueButton()
+    
+    private weak var vc: UIViewController?
+    
+    init(step: OnboardingView.Step, vc: UIViewController?) {
+        self.vc = vc
+        
+        super.init(step: step)
+        
+        makeConstraints()
+        initialize()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Private
+private extension OFaceIdView {
+    func initialize() {
+        backgroundColor = Appearance.background
+    }
+    
+    @objc
+    func didTapContinue() {
+        let context = LAContext()
+        var error: NSError?
+        
+        guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+            let alert = UIAlertController(
+                title: "Onboarding.FaceId.Unavailable.Title".localized,
+                message: "Onboarding.FaceId.Unavailable.Text".localized,
+                preferredStyle: .alert
+            )
+            
+            let okAction = UIAlertAction(title: "OK".localized, style: .cancel)
+            alert.addAction(okAction)
+            
+            vc?.present(alert, animated: true)
+            
+            return
+        }
+        
+        let reason = "Onboarding.FaceId.SubTitle".localized
+        
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
+            DispatchQueue.main.async { [weak self] in
+                if success {
+                    self?.onNext()
+                } else {
+                    let alert = UIAlertController(
+                        title: "Onboarding.FaceId.Failed.Title".localized,
+                        message: "Onboarding.FaceId.Failed.Text".localized,
+                        preferredStyle: .alert
+                    )
+                    
+                    let okAction = UIAlertAction(title: "OK".localized, style: .cancel)
+                    alert.addAction(okAction)
+                    
+                    self?.vc?.present(alert, animated: true)
+                }
+            }
+        }
+    }
+}
+
+// MARK: Make constraints
+private extension OFaceIdView {
+    func makeConstraints() {
+        NSLayoutConstraint.activate([
+            skipButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            skipButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 67.scale : 30.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 72.scale),
+            imageView.heightAnchor.constraint(equalToConstant: 72.scale),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 321.scale : 160.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            subTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            subTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            continueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            continueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            continueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -60.scale : -30.scale),
+            continueButton.heightAnchor.constraint(equalToConstant: 55.scale)
+        ])
+    }
+}
+
+// MARK: Lazy initialization
+private extension OFaceIdView {
+    func makeSkipButton() -> TapAreaButton {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black)
+            .font(Fonts.Satoshi.medium(size: 16.scale))
+        
+        let view = TapAreaButton()
+        view.backgroundColor = UIColor.clear
+        view.setAttributedTitle("Onboarding.Skip".localized.attributed(with: attrs), for: .normal)
+        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeImageView() -> UIImageView {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFit
+        view.clipsToBounds = true
+        view.image = UIImage(named: "Onboarding.FaceId")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black)
+            .font(Fonts.Satoshi.bold(size: 32.scale))
+            .lineHeight(38.4.scale)
+            .textAlignment(.center)
+        
+        let view = UILabel()
+        view.attributedText = "Onboarding.FaceId.Title".localized.attributed(with: attrs)
+        view.numberOfLines = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeSubTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black.withAlphaComponent(0.6))
+            .font(Fonts.Satoshi.regular(size: 16.scale))
+            .lineHeight(22.4.scale)
+            .textAlignment(.center)
+        
+        let view = UILabel()
+        view.attributedText = "Onboarding.FaceId.SubTitle".localized.attributed(with: attrs)
+        view.numberOfLines = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeContinueButton() -> UIButton {
+        let attrs = TextAttributes()
+            .textColor(Appearance.black)
+            .font(Fonts.Satoshi.medium(size: 16.scale))
+        
+        let view = UIButton()
+        view.setAttributedTitle("Onboarding.FaceId.ContinueButton".localized.attributed(with: attrs), for: .normal)
+        view.layer.cornerRadius = 27.5.scale
+        view.backgroundColor = Appearance.primary
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(didTapContinue), for: .touchUpInside)
+        addSubview(view)
+        return view
+    }
+}

@@ -102,6 +102,28 @@
 		DE66194C2AC5CAE1004CCD56 /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE66194A2AC5C588004CCD56 /* Satoshi-Regular.otf */; };
 		DE66194D2AC5CAE1004CCD56 /* Satoshi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE6619482AC5C581004CCD56 /* Satoshi-Bold.otf */; };
 		DE66194E2AC5CAE1004CCD56 /* Satoshi-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE6619492AC5C585004CCD56 /* Satoshi-Medium.otf */; };
+		DE6619502AC5D0F6004CCD56 /* OWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66194F2AC5D0F6004CCD56 /* OWelcomeView.swift */; };
+		DE6619522AC5D7CD004CCD56 /* OChildAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6619512AC5D7CD004CCD56 /* OChildAgeView.swift */; };
+		DE6619542AC5E34F004CCD56 /* YearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6619532AC5E34F004CCD56 /* YearButton.swift */; };
+		DE6619562AC5E73B004CCD56 /* OScreenTimeLimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6619552AC5E73B004CCD56 /* OScreenTimeLimitView.swift */; };
+		DE6619582AC5ED5A004CCD56 /* OScreenTimeLimitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6619572AC5ED5A004CCD56 /* OScreenTimeLimitPicker.swift */; };
+		DE66195B2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66195A2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift */; };
+		DE66195D2AC5FCD3004CCD56 /* OScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66195C2AC5FCD3004CCD56 /* OScheduleView.swift */; };
+		DE6619602AC5FD5F004CCD56 /* WeekSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */; };
+		DE8B512B2ACBFA7000F405B7 /* OPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B512A2ACBFA7000F405B7 /* OPreloaderView.swift */; };
+		DE8B512E2ACBFEEA00F405B7 /* SetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */; };
+		DE8B51312ACC00FD00F405B7 /* GetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51302ACC00FD00F405B7 /* GetProfileRequest.swift */; };
+		DE8B51332ACC010200F405B7 /* GetProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51322ACC010200F405B7 /* GetProfileResponse.swift */; };
+		DE8B51352ACC012700F405B7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51342ACC012700F405B7 /* Profile.swift */; };
+		DE8B51372ACC04BF00F405B7 /* ProfileMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51362ACC04BF00F405B7 /* ProfileMediator.swift */; };
+		DECBC4CB2AC70000003B9D70 /* WeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */; };
+		DECBC4CD2AC70966003B9D70 /* OPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CC2AC70966003B9D70 /* OPinView.swift */; };
+		DECBC4CF2AC70B46003B9D70 /* PinField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CE2AC70B46003B9D70 /* PinField.swift */; };
+		DECBC4D22AC70CA5003B9D70 /* DisableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D12AC70CA5003B9D70 /* DisableTextField.swift */; };
+		DECBC4D42AC71819003B9D70 /* OSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D32AC71819003B9D70 /* OSignUpView.swift */; };
+		DECBC4D62AC71B39003B9D70 /* OEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D52AC71B39003B9D70 /* OEmailView.swift */; };
+		DECBC4D82AC721B5003B9D70 /* OFaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D72AC721B5003B9D70 /* OFaceIdView.swift */; };
+		DECBC4DA2ACBEA54003B9D70 /* EarlierButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -204,6 +226,28 @@
 		DE6619482AC5C581004CCD56 /* Satoshi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Bold.otf"; sourceTree = "<group>"; };
 		DE6619492AC5C585004CCD56 /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.otf"; sourceTree = "<group>"; };
 		DE66194A2AC5C588004CCD56 /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.otf"; sourceTree = "<group>"; };
+		DE66194F2AC5D0F6004CCD56 /* OWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWelcomeView.swift; sourceTree = "<group>"; };
+		DE6619512AC5D7CD004CCD56 /* OChildAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OChildAgeView.swift; sourceTree = "<group>"; };
+		DE6619532AC5E34F004CCD56 /* YearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearButton.swift; sourceTree = "<group>"; };
+		DE6619552AC5E73B004CCD56 /* OScreenTimeLimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OScreenTimeLimitView.swift; sourceTree = "<group>"; };
+		DE6619572AC5ED5A004CCD56 /* OScreenTimeLimitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OScreenTimeLimitPicker.swift; sourceTree = "<group>"; };
+		DE66195A2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeLimitPickerCell.swift; sourceTree = "<group>"; };
+		DE66195C2AC5FCD3004CCD56 /* OScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OScheduleView.swift; sourceTree = "<group>"; };
+		DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSchedule.swift; sourceTree = "<group>"; };
+		DE8B512A2ACBFA7000F405B7 /* OPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPreloaderView.swift; sourceTree = "<group>"; };
+		DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRequest.swift; sourceTree = "<group>"; };
+		DE8B51302ACC00FD00F405B7 /* GetProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileRequest.swift; sourceTree = "<group>"; };
+		DE8B51322ACC010200F405B7 /* GetProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileResponse.swift; sourceTree = "<group>"; };
+		DE8B51342ACC012700F405B7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		DE8B51362ACC04BF00F405B7 /* ProfileMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediator.swift; sourceTree = "<group>"; };
+		DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayButton.swift; sourceTree = "<group>"; };
+		DECBC4CC2AC70966003B9D70 /* OPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPinView.swift; sourceTree = "<group>"; };
+		DECBC4CE2AC70B46003B9D70 /* PinField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinField.swift; sourceTree = "<group>"; };
+		DECBC4D12AC70CA5003B9D70 /* DisableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableTextField.swift; sourceTree = "<group>"; };
+		DECBC4D32AC71819003B9D70 /* OSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSignUpView.swift; sourceTree = "<group>"; };
+		DECBC4D52AC71B39003B9D70 /* OEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEmailView.swift; sourceTree = "<group>"; };
+		DECBC4D72AC721B5003B9D70 /* OFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFaceIdView.swift; sourceTree = "<group>"; };
+		DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlierButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,8 +514,10 @@
 		DE6618122AC5C4E5004CCD56 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DE66195E2AC5FD50004CCD56 /* Model */,
 				DE6618162AC5C4E5004CCD56 /* Request */,
 				DE6618132AC5C4E5004CCD56 /* ProfileManager.swift */,
+				DE8B51362ACC04BF00F405B7 /* ProfileMediator.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -479,8 +525,10 @@
 		DE6618162AC5C4E5004CCD56 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				DE8B512F2ACC00EA00F405B7 /* GetProfile */,
 				DE66181A2AC5C4E5004CCD56 /* LoginRequest.swift */,
 				DE66181B2AC5C4E5004CCD56 /* SyncTokensRequest.swift */,
+				DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -607,8 +655,8 @@
 		DE6618682AC5C4E5004CCD56 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				DE6618702AC5C4E5004CCD56 /* Views */,
 				DE66186D2AC5C4E5004CCD56 /* Utils */,
+				DE6618702AC5C4E5004CCD56 /* Views */,
 				DE66186F2AC5C4E5004CCD56 /* OnboardingViewController.swift */,
 				DE6618782AC5C4E5004CCD56 /* OnboardingViewModel.swift */,
 				DE6618772AC5C4E5004CCD56 /* OnboardingView.swift */,
@@ -629,6 +677,14 @@
 			children = (
 				DE6618722AC5C4E5004CCD56 /* Atoms */,
 				DE6618742AC5C4E5004CCD56 /* OSlideView.swift */,
+				DE66194F2AC5D0F6004CCD56 /* OWelcomeView.swift */,
+				DE6619512AC5D7CD004CCD56 /* OChildAgeView.swift */,
+				DE6619552AC5E73B004CCD56 /* OScreenTimeLimitView.swift */,
+				DE66195C2AC5FCD3004CCD56 /* OScheduleView.swift */,
+				DECBC4CC2AC70966003B9D70 /* OPinView.swift */,
+				DECBC4D32AC71819003B9D70 /* OSignUpView.swift */,
+				DECBC4D72AC721B5003B9D70 /* OFaceIdView.swift */,
+				DE8B512A2ACBFA7000F405B7 /* OPreloaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -636,6 +692,11 @@
 		DE6618722AC5C4E5004CCD56 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				DECBC4DB2ACBEF8D003B9D70 /* ChildAge */,
+				DECBC4D02AC70C93003B9D70 /* Pin */,
+				DE6619592AC5F29E004CCD56 /* ScreenTimeLimit */,
+				DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */,
+				DECBC4D52AC71B39003B9D70 /* OEmailView.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -665,6 +726,51 @@
 				DE6619492AC5C585004CCD56 /* Satoshi-Medium.otf */,
 			);
 			path = Satoshi;
+			sourceTree = "<group>";
+		};
+		DE6619592AC5F29E004CCD56 /* ScreenTimeLimit */ = {
+			isa = PBXGroup;
+			children = (
+				DE6619572AC5ED5A004CCD56 /* OScreenTimeLimitPicker.swift */,
+				DE66195A2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift */,
+			);
+			path = ScreenTimeLimit;
+			sourceTree = "<group>";
+		};
+		DE66195E2AC5FD50004CCD56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */,
+				DE8B51342ACC012700F405B7 /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE8B512F2ACC00EA00F405B7 /* GetProfile */ = {
+			isa = PBXGroup;
+			children = (
+				DE8B51302ACC00FD00F405B7 /* GetProfileRequest.swift */,
+				DE8B51322ACC010200F405B7 /* GetProfileResponse.swift */,
+			);
+			path = GetProfile;
+			sourceTree = "<group>";
+		};
+		DECBC4D02AC70C93003B9D70 /* Pin */ = {
+			isa = PBXGroup;
+			children = (
+				DECBC4CE2AC70B46003B9D70 /* PinField.swift */,
+				DECBC4D12AC70CA5003B9D70 /* DisableTextField.swift */,
+			);
+			path = Pin;
+			sourceTree = "<group>";
+		};
+		DECBC4DB2ACBEF8D003B9D70 /* ChildAge */ = {
+			isa = PBXGroup;
+			children = (
+				DE6619532AC5E34F004CCD56 /* YearButton.swift */,
+				DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */,
+			);
+			path = ChildAge;
 			sourceTree = "<group>";
 		};
 		E52580DC933F87454B866DD9 /* Frameworks */ = {
@@ -800,21 +906,31 @@
 				DE66187B2AC5C4E5004CCD56 /* UIColor+Extension.swift in Sources */,
 				DE6618902AC5C4E5004CCD56 /* RequestReview.swift in Sources */,
 				DE6618912AC5C4E5004CCD56 /* ImagePicker.swift in Sources */,
+				DE6619562AC5E73B004CCD56 /* OScreenTimeLimitView.swift in Sources */,
 				DE66192A2AC5C4E6004CCD56 /* TryAgainViewController.swift in Sources */,
 				DE66189E2AC5C4E5004CCD56 /* PushNotificationsManager.swift in Sources */,
 				DE6619272AC5C4E6004CCD56 /* PaygateProductButton.swift in Sources */,
+				DECBC4D82AC721B5003B9D70 /* OFaceIdView.swift in Sources */,
+				DECBC4D62AC71B39003B9D70 /* OEmailView.swift in Sources */,
 				DE6618C22AC5C4E5004CCD56 /* PaygateOptionConfig.swift in Sources */,
 				DE6619262AC5C4E6004CCD56 /* PaygateViewController.swift in Sources */,
 				DE66187F2AC5C4E5004CCD56 /* String+Extension.swift in Sources */,
 				DE6618922AC5C4E5004CCD56 /* RxActivityIndicator.swift in Sources */,
 				DE66191C2AC5C4E6004CCD56 /* SplashActivity.swift in Sources */,
 				DE6618C62AC5C4E5004CCD56 /* PaygateManager.swift in Sources */,
+				DECBC4CB2AC70000003B9D70 /* WeekdayButton.swift in Sources */,
 				DE6618802AC5C4E5004CCD56 /* UIViewRxExtension.swift in Sources */,
 				DE6618892AC5C4E5004CCD56 /* ObservableRetrySingle.swift in Sources */,
 				DE6619292AC5C4E6004CCD56 /* TryAgainView.swift in Sources */,
 				DE6619342AC5C4E6004CCD56 /* OnboardingView.swift in Sources */,
 				DE66192E2AC5C4E6004CCD56 /* OnboardingViewController.swift in Sources */,
 				DE6618FF2AC5C4E5004CCD56 /* IAPErrorHelper.swift in Sources */,
+				DE8B512E2ACBFEEA00F405B7 /* SetRequest.swift in Sources */,
+				DE8B51352ACC012700F405B7 /* Profile.swift in Sources */,
+				DECBC4DA2ACBEA54003B9D70 /* EarlierButton.swift in Sources */,
+				DE8B51372ACC04BF00F405B7 /* ProfileMediator.swift in Sources */,
+				DECBC4D42AC71819003B9D70 /* OSignUpView.swift in Sources */,
+				DE6619542AC5E34F004CCD56 /* YearButton.swift in Sources */,
 				DE6618822AC5C4E5004CCD56 /* DefaultRequestWrapper.swift in Sources */,
 				DE66188C2AC5C4E5004CCD56 /* SignError.swift in Sources */,
 				DE6618A42AC5C4E5004CCD56 /* BranchManager.swift in Sources */,
@@ -823,22 +939,29 @@
 				DE6619192AC5C4E6004CCD56 /* Session.swift in Sources */,
 				DE66187C2AC5C4E5004CCD56 /* Date+Extension.swift in Sources */,
 				DE66188F2AC5C4E5004CCD56 /* Weak.swift in Sources */,
+				DE66195B2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift in Sources */,
 				DE66189D2AC5C4E5004CCD56 /* AppDelegate.swift in Sources */,
 				DE6618F92AC5C4E5004CCD56 /* IAPManager.swift in Sources */,
+				DECBC4D22AC70CA5003B9D70 /* DisableTextField.swift in Sources */,
+				DE8B512B2ACBFA7000F405B7 /* OPreloaderView.swift in Sources */,
 				DE6618882AC5C4E5004CCD56 /* ScreenSize.swift in Sources */,
 				DE6618842AC5C4E5004CCD56 /* RestAPITransport.swift in Sources */,
 				DE6618942AC5C4E5004CCD56 /* NavigationControllerSettings.swift in Sources */,
 				DE6618C52AC5C4E5004CCD56 /* GetPaygateRequest.swift in Sources */,
 				DE6618A62AC5C4E5004CCD56 /* FirebaseManager.swift in Sources */,
 				DE6618A02AC5C4E5004CCD56 /* PushNotificationsModel.swift in Sources */,
+				DE6619582AC5ED5A004CCD56 /* OScreenTimeLimitPicker.swift in Sources */,
 				DE6618FD2AC5C4E5004CCD56 /* IAPProduct.swift in Sources */,
 				DE66187E2AC5C4E5004CCD56 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE6618982AC5C4E5004CCD56 /* PaddingTextField.swift in Sources */,
 				DE6618792AC5C4E5004CCD56 /* UIApplication+Extension.swift in Sources */,
 				DE6618932AC5C4E5004CCD56 /* Toast.swift in Sources */,
+				DE6619522AC5D7CD004CCD56 /* OChildAgeView.swift in Sources */,
 				DE66187A2AC5C4E5004CCD56 /* UIDevice+Extension.swift in Sources */,
+				DE6619502AC5D0F6004CCD56 /* OWelcomeView.swift in Sources */,
 				DE6619312AC5C4E6004CCD56 /* OSlideView.swift in Sources */,
 				DE66191B2AC5C4E6004CCD56 /* SplashViewController.swift in Sources */,
+				DE8B51312ACC00FD00F405B7 /* GetProfileRequest.swift in Sources */,
 				DE6618C12AC5C4E5004CCD56 /* PaygateOptionLineComponent.swift in Sources */,
 				DE6618FB2AC5C4E5004CCD56 /* ProductPrice.swift in Sources */,
 				DE6618992AC5C4E5004CCD56 /* PaddingLabel.swift in Sources */,
@@ -869,15 +992,20 @@
 				DE6618C32AC5C4E5004CCD56 /* Paygate.swift in Sources */,
 				DE6618C42AC5C4E5004CCD56 /* GetPaygateResponse.swift in Sources */,
 				DE6618A12AC5C4E5004CCD56 /* SceneDelegate.swift in Sources */,
+				DE8B51332ACC010200F405B7 /* GetProfileResponse.swift in Sources */,
 				DE66191E2AC5C4E6004CCD56 /* SplashViewModel.swift in Sources */,
+				DE6619602AC5FD5F004CCD56 /* WeekSchedule.swift in Sources */,
 				DE66192D2AC5C4E6004CCD56 /* OCombineData.swift in Sources */,
 				DE66189F2AC5C4E5004CCD56 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE6619242AC5C4E6004CCD56 /* PaygateInteractor.swift in Sources */,
+				DECBC4CF2AC70B46003B9D70 /* PinField.swift in Sources */,
 				DE6619352AC5C4E6004CCD56 /* OnboardingViewModel.swift in Sources */,
 				DE6618A72AC5C4E5004CCD56 /* FacebookManager.swift in Sources */,
 				DE66191A2AC5C4E6004CCD56 /* SessionManager.swift in Sources */,
 				DE6619202AC5C4E6004CCD56 /* PaygateViewModel.swift in Sources */,
+				DECBC4CD2AC70966003B9D70 /* OPinView.swift in Sources */,
 				DE66189B2AC5C4E5004CCD56 /* GradientView.swift in Sources */,
+				DE66195D2AC5FCD3004CCD56 /* OScheduleView.swift in Sources */,
 				DE6618F12AC5C4E5004CCD56 /* ProfileManager.swift in Sources */,
 				DE66188B2AC5C4E5004CCD56 /* Fonts.swift in Sources */,
 				DE66187D2AC5C4E5004CCD56 /* Collection+Extension.swift in Sources */,
@@ -1026,10 +1154,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ParentalControl/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Your device is not configured for biometric authentication.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1040,8 +1172,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.ParentalControl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.familycontrols.thinkabout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Demo Family Controls Development";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1057,10 +1191,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AY43JM5PH6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ParentalControl/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Your device is not configured for biometric authentication.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1071,8 +1209,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.ParentalControl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.familycontrols.thinkabout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Demo Family Controls Development";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
