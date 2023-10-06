@@ -87,3 +87,17 @@
 "Onboarding.FaceId.Failed.Text" = "You could not be verified; please try again.";
 "Onboarding.Preloader.Title" = "Thank you!";
 "Onboarding.Preloader.SubTitle" = "Your dashboard is almost ready...";
+
+// MARK: Main
+"Main.Home" = "Home";
+"Main.Statistics" = "Statistics";
+"Main.WebHistory" = "Web history";
+
+// MARK: Home
+"Home.SeeMore" = "See more";
+"Home.WebHistory" = "Web history";
+
+// MARK: WebHistory
+"WebHistory.Title" = "Web history";
+"WebHistory.Empty.Title" = "No records yet";
+"WebHistory.Empty.SubTitle" = "Visited websites will display here";

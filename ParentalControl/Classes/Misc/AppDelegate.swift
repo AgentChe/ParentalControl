@@ -22,6 +22,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PurchaseValidationObserver.shared.startObserve()
         
+        FamilyControlsManager.shared.requestAuthorization()
+        
         IAPManager.initialize()
         
         return true
