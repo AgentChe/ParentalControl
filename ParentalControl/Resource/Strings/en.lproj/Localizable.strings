@@ -101,3 +101,9 @@
 "WebHistory.Title" = "Web history";
 "WebHistory.Empty.Title" = "No records yet";
 "WebHistory.Empty.SubTitle" = "Visited websites will display here";
+"WebHistory.BlockSheet.Title.Block" = "Block this website";
+"WebHistory.BlockSheet.Title.Unblock" = "Unblock this website";
+"WebHistory.BlockSheet.SubTitle.Block" = "Are you sure? The website won’t be available for use";
+"WebHistory.BlockSheet.SubTitle.Unblock" = "Are you sure? The website will have to be blocked again";
+"WebHistory.BlockSheet.Block" = "Block";
+"WebHistory.BlockSheet.Unblock" = "Unblock";

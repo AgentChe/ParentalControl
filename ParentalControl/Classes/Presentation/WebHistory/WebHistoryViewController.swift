@@ -31,18 +31,6 @@ final class WebHistoryViewController: UIViewController {
         hostingVC.didMove(toParent: parent)
         hostingVC.view.layoutIfNeeded()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.navigationBar.isHidden = false
-    }
 }
 
 // MARK: Public

@@ -6,10 +6,11 @@
 //
 
 import Foundation
-import DeviceActivity
+import ManagedSettings
 
 struct WebHistoryItem: Identifiable {
     let id = UUID().uuidString
-    let domain: DeviceActivityData.WebDomainActivity
-    let blocked: Bool
+    let domain: WebDomain
+    let totalActivityDuration: TimeInterval
+    var blocked: Bool
 }

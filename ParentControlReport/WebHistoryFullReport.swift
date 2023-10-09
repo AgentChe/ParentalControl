@@ -33,11 +33,23 @@ struct WebHistoryFullReport: DeviceActivityReportScene {
                             return domains.contains(token)
                         }
                         
-                        let item = WebHistoryItem(
-                            domain: domain,
-                            blocked: blocked
-                        )
-                        result.append(item)
+                        if let index = result.firstIndex(where: {
+                            $0.domain.token == domain.webDomain.token
+                        }) {
+                            let item = WebHistoryItem(
+                                domain: domain.webDomain,
+                                totalActivityDuration: result[index].totalActivityDuration + domain.totalActivityDuration,
+                                blocked: blocked
+                            )
+                            result[index] = item
+                        } else {
+                            let item = WebHistoryItem(
+                                domain: domain.webDomain,
+                                totalActivityDuration: domain.totalActivityDuration,
+                                blocked: blocked
+                            )
+                            result.append(item)
+                        }
                     }
                 }
             }

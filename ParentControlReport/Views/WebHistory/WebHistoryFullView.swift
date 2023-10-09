@@ -30,8 +30,6 @@ private extension WebHistoryFullView {
             List {
                 ForEach(items) { item in
                     WebDomainView(item: item)
-                        .background(Color(Appearance.white))
-                        .cornerRadius(20.scale)
                         .listRowInsets(EdgeInsets(
                             top: 8.scale,
                             leading: 16.scale,
