@@ -32,8 +32,7 @@ private extension HomeViewModel {
     func makeElements() -> Driver<[HomeTableElement]> {
         .deferred {
             .just([
-                HomeTableElement.seeMore(.webHistory),
-                HomeTableElement.webHistory
+                HomeTableElement.seeMore(.webHistory)
             ])
         }
     }

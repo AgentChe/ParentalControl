@@ -7,7 +7,6 @@
 
 enum HomeTableElement {
     case seeMore(HomeSeeMore)
-    case webHistory
 }
 
 enum HomeSeeMore {

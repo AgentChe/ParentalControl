@@ -120,8 +120,6 @@
 		DE8B51352ACC012700F405B7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51342ACC012700F405B7 /* Profile.swift */; };
 		DE8B51372ACC04BF00F405B7 /* ProfileMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51362ACC04BF00F405B7 /* ProfileMediator.swift */; };
 		DE8B51402ACC253F00F405B7 /* ParentControlReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B513F2ACC253F00F405B7 /* ParentControlReport.swift */; };
-		DE8B51422ACC253F00F405B7 /* WebHistoryTruncatReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51412ACC253F00F405B7 /* WebHistoryTruncatReport.swift */; };
-		DE8B51442ACC253F00F405B7 /* WebHistoryTruncatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51432ACC253F00F405B7 /* WebHistoryTruncatView.swift */; };
 		DE8B51492ACC253F00F405B7 /* ParentControlReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = DE8B513D2ACC253F00F405B7 /* ParentControlReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE8B51502ACC6E6200F405B7 /* FamilyControlsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B514F2ACC6E6200F405B7 /* FamilyControlsManager.swift */; };
 		DE8B51532ACC74E300F405B7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51522ACC74E300F405B7 /* HomeViewController.swift */; };
@@ -137,7 +135,6 @@
 		DECBC4DA2ACBEA54003B9D70 /* EarlierButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */; };
 		DEE053862ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */; };
 		DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */; };
-		DEE053892ACEDF3B00101784 /* HostingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053882ACEDF3B00101784 /* HostingTableViewCell.swift */; };
 		DEE0538C2ACEEA6E00101784 /* WebHistoryFullReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0538B2ACEEA6E00101784 /* WebHistoryFullReport.swift */; };
 		DEE0538E2ACEEA8C00101784 /* WebHistoryFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0538D2ACEEA8C00101784 /* WebHistoryFullView.swift */; };
 		DEE053912ACEEE0100101784 /* WebHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053902ACEEE0100101784 /* WebHistoryItem.swift */; };
@@ -306,8 +303,6 @@
 		DE8B51382ACC250D00F405B7 /* ParentalControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParentalControl.entitlements; sourceTree = "<group>"; };
 		DE8B513D2ACC253F00F405B7 /* ParentControlReport.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = ParentControlReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8B513F2ACC253F00F405B7 /* ParentControlReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentControlReport.swift; sourceTree = "<group>"; };
-		DE8B51412ACC253F00F405B7 /* WebHistoryTruncatReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryTruncatReport.swift; sourceTree = "<group>"; };
-		DE8B51432ACC253F00F405B7 /* WebHistoryTruncatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryTruncatView.swift; sourceTree = "<group>"; };
 		DE8B51452ACC253F00F405B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8B51462ACC253F00F405B7 /* ParentControlReport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParentControlReport.entitlements; sourceTree = "<group>"; };
 		DE8B514F2ACC6E6200F405B7 /* FamilyControlsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyControlsManager.swift; sourceTree = "<group>"; };
@@ -323,7 +318,6 @@
 		DECBC4D72AC721B5003B9D70 /* OFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFaceIdView.swift; sourceTree = "<group>"; };
 		DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlierButton.swift; sourceTree = "<group>"; };
 		DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceActivityReport.Context+Extension.swift"; sourceTree = "<group>"; };
-		DEE053882ACEDF3B00101784 /* HostingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingTableViewCell.swift; sourceTree = "<group>"; };
 		DEE0538B2ACEEA6E00101784 /* WebHistoryFullReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryFullReport.swift; sourceTree = "<group>"; };
 		DEE0538D2ACEEA8C00101784 /* WebHistoryFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryFullView.swift; sourceTree = "<group>"; };
 		DEE053902ACEEE0100101784 /* WebHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryItem.swift; sourceTree = "<group>"; };
@@ -387,7 +381,6 @@
 			isa = PBXGroup;
 			children = (
 				DE380A042ACED0AF00F7E440 /* SeeMoreCell.swift */,
-				DEE053882ACEDF3B00101784 /* HostingTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -892,7 +885,6 @@
 				DE8B51452ACC253F00F405B7 /* Info.plist */,
 				DE8B51462ACC253F00F405B7 /* ParentControlReport.entitlements */,
 				DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */,
-				DE8B51412ACC253F00F405B7 /* WebHistoryTruncatReport.swift */,
 				DEE0538B2ACEEA6E00101784 /* WebHistoryFullReport.swift */,
 			);
 			path = ParentControlReport;
@@ -990,7 +982,6 @@
 		DEE053AD2AD03B7700101784 /* WebHistory */ = {
 			isa = PBXGroup;
 			children = (
-				DE8B51432ACC253F00F405B7 /* WebHistoryTruncatView.swift */,
 				DEE0538D2ACEEA8C00101784 /* WebHistoryFullView.swift */,
 				DEE053B02AD03B9B00101784 /* WebHistoryEmptyView.swift */,
 				DEE053C02AD046A400101784 /* WebDomainView.swift */,
@@ -1256,7 +1247,6 @@
 				DE6618862AC5C4E5004CCD56 /* NumberLaunches.swift in Sources */,
 				DE6618972AC5C4E5004CCD56 /* Spinner.swift in Sources */,
 				DE6618FC2AC5C4E5004CCD56 /* IAPActionResult.swift in Sources */,
-				DEE053892ACEDF3B00101784 /* HostingTableViewCell.swift in Sources */,
 				DE6619232AC5C4E6004CCD56 /* PaygateViewControllerDelegate.swift in Sources */,
 				DE6618F52AC5C4E5004CCD56 /* LoginRequest.swift in Sources */,
 				DE6618F62AC5C4E5004CCD56 /* SyncTokensRequest.swift in Sources */,
@@ -1293,7 +1283,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEE053912ACEEE0100101784 /* WebHistoryItem.swift in Sources */,
-				DE8B51442ACC253F00F405B7 /* WebHistoryTruncatView.swift in Sources */,
 				DEE053C12AD046A400101784 /* WebDomainView.swift in Sources */,
 				DEE053B72AD042BB00101784 /* Fonts.swift in Sources */,
 				DEE053B12AD03B9B00101784 /* WebHistoryEmptyView.swift in Sources */,
@@ -1301,7 +1290,6 @@
 				DEE053B62AD0428F00101784 /* String+Extension.swift in Sources */,
 				DEE053AB2AD03ABA00101784 /* UIColor+Extension.swift in Sources */,
 				DEE053AC2AD03AC000101784 /* Appearance.swift in Sources */,
-				DE8B51422ACC253F00F405B7 /* WebHistoryTruncatReport.swift in Sources */,
 				DEE0538C2ACEEA6E00101784 /* WebHistoryFullReport.swift in Sources */,
 				DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */,
 				DEE053B32AD03C2A00101784 /* Scalable.swift in Sources */,

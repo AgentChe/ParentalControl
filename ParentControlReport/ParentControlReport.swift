@@ -11,9 +11,6 @@ import SwiftUI
 @main
 struct ParentControlReport: DeviceActivityReportExtension {
     var body: some DeviceActivityReportScene {
-        WebHistoryTruncatReport { items in
-            WebHistoryTruncatView(items: items)
-        }
         WebHistoryFullReport { items in
             WebHistoryFullView(items: items)
         }

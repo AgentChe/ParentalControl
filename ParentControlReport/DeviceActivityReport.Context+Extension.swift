@@ -9,6 +9,5 @@ import SwiftUI
 import DeviceActivity
 
 extension DeviceActivityReport.Context {
-    static let webHistoryTruncat = Self("Web history truncat")
     static let webHistoryFull = Self("Web history full")
 }

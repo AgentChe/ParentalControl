@@ -46,10 +46,6 @@ extension HomeTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: SeeMoreCell.self)) as! SeeMoreCell
             cell.setup(element: element)
             return cell
-        case .webHistory:
-            let cell = dequeueReusableCell(withIdentifier: "WebHistoryCell") as! HostingTableViewCell<DeviceActivityReport>
-            cell.host(DeviceActivityReport(.webHistoryTruncat), parent: vc)
-            return cell
         }
     }
 }
@@ -65,7 +61,6 @@ extension HomeTableView: UITableViewDelegate {
 private extension HomeTableView {
     func initialize() {
         register(SeeMoreCell.self, forCellReuseIdentifier: String(describing: SeeMoreCell.self))
-        register(HostingTableViewCell<DeviceActivityReport>.self, forCellReuseIdentifier: "WebHistoryCell")
         
         dataSource = self
         delegate = self
