@@ -90,7 +90,7 @@ private extension OPreloaderView {
         func source() -> Single<Void> {
             profileManager
                 .set(
-                    screenTimeLimitMinutes: data.screenTimeLimitMinutes,
+                    screenTimeLimit: data.screenTimeLimit,
                     schedule: data.schedule,
                     pin: data.pin,
                     email: data.email

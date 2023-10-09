@@ -8,7 +8,7 @@
 import UIKit
 
 protocol OScreenTimeLimitViewDelegate: AnyObject {
-    func screenTimeLimitDidSelect(minutes: Int)
+    func screenTimeLimitDidSelect(timeLimit: TimeLimit)
 }
 
 final class OScreenTimeLimitView: OSlideView {
@@ -40,7 +40,21 @@ private extension OScreenTimeLimitView {
     @objc
     func didTapContinue() {
         let totalMinutes = timePicker.totalMinutes
-        mainDelegate?.screenTimeLimitDidSelect(minutes: totalMinutes)
+        let schedule = WeekSchedule(
+            su: false,
+            mo: true,
+            tu: true,
+            we: true,
+            th: true,
+            fr: true,
+            sa: false
+        )
+        let timeLimit = TimeLimit(
+            minutes: totalMinutes,
+            schedule: schedule
+        )
+        
+        mainDelegate?.screenTimeLimitDidSelect(timeLimit: timeLimit)
 
         onNext()
     }

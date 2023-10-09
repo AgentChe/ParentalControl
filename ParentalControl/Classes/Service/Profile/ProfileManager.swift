@@ -9,7 +9,7 @@ import RxSwift
 
 protocol ProfileManagerProtocol {
     func set(
-        screenTimeLimitMinutes: Int?,
+        screenTimeLimit: TimeLimit?,
         schedule: WeekSchedule?,
         pin: String?,
         email: String?
@@ -21,7 +21,7 @@ protocol ProfileManagerProtocol {
 
 final class ProfileManager {
     enum Constants {
-        static let screenTimeLimitMinutes = "profile_manager_screen_time_limit_minutes"
+        static let screenTimeLimit = "profile_manager_screen_time_limit_"
         static let schedule = "profile_manager_screen_schedule"
         static let pin = "profile_manager_screen_pin"
         static let email = "profile_manager_screen_email"
@@ -35,7 +35,7 @@ final class ProfileManager {
 // MARK: ProfileManagerProtocol
 extension ProfileManager: ProfileManagerProtocol {
     func set(
-        screenTimeLimitMinutes: Int?,
+        screenTimeLimit: TimeLimit?,
         schedule: WeekSchedule?,
         pin: String?,
         email: String?
@@ -46,7 +46,7 @@ extension ProfileManager: ProfileManagerProtocol {
         
         let request = SetRequest(
             userToken: userToken,
-            screenTimeLimitMinutes: screenTimeLimitMinutes,
+            screenTimeLimit: screenTimeLimit,
             schedule: schedule,
             pin: pin,
             email: email
@@ -56,7 +56,7 @@ extension ProfileManager: ProfileManagerProtocol {
             .callServerApi(requestBody: request)
             .mapToVoid()
             .do(onSuccess: { [weak self] in
-                self?.store(screenTimeLimitMinutes: screenTimeLimitMinutes)
+                self?.store(screenTimeLimit: screenTimeLimit)
                 self?.store(schedule: schedule)
                 self?.store(pin: pin)
                 self?.store(email: email)
@@ -66,18 +66,18 @@ extension ProfileManager: ProfileManagerProtocol {
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?> {
         Single
             .zip(
-                cachedScreenTimeLimitMinutes(),
+                cachedScreenTimeLimit(),
                 cachedSchedule(),
                 cachedPin(),
                 cachedEmail()
             )
-            .map { screenTimeLimitMinutes, schedule, pin, email -> Profile? in
+            .map { screenTimeLimit, schedule, pin, email -> Profile? in
                 guard let schedule else {
                     return nil
                 }
                 
                 return Profile(
-                    screenTimeLimitMinutes: screenTimeLimitMinutes,
+                    screenTimeLimit: screenTimeLimit,
                     schedule: schedule,
                     pin: pin,
                     email: email
@@ -105,21 +105,27 @@ extension ProfileManager: ProfileManagerProtocol {
 
 // MARK: Private
 private extension ProfileManager {
-    func store(screenTimeLimitMinutes: Int?) {
-        guard let screenTimeLimitMinutes else {
+    func store(screenTimeLimit: TimeLimit?) {
+        guard let screenTimeLimit else {
             return
         }
         
-        UserDefaults.standard.set(screenTimeLimitMinutes, forKey: Constants.screenTimeLimitMinutes)
+        if let data = try? JSONEncoder().encode(screenTimeLimit) {
+            UserDefaults.standard.set(data, forKey: Constants.screenTimeLimit)
+        }
         
-        ProfileMediator.shared.didChange(screenTimeLimitMinutes: screenTimeLimitMinutes)
+        ProfileMediator.shared.didChange(screenTimeLimit: screenTimeLimit)
     }
     
-    func cachedScreenTimeLimitMinutes() -> Single<Int?> {
-        Single<Int?>.create { single in
-            let screenTimeLimitMinutes = UserDefaults.standard.object(forKey: Constants.screenTimeLimitMinutes) as? Int
+    func cachedScreenTimeLimit() -> Single<TimeLimit?> {
+        Single<TimeLimit?>.create { single in
+            var screenTimeLimit: TimeLimit?
             
-            single(.success(screenTimeLimitMinutes))
+            if let data = UserDefaults.standard.data(forKey: Constants.screenTimeLimit) {
+                screenTimeLimit = try? JSONDecoder().decode(TimeLimit.self, from: data)
+            }
+            
+            single(.success(screenTimeLimit))
             
             return Disposables.create()
         }

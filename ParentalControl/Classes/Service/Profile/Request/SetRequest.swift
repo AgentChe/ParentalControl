@@ -9,7 +9,7 @@ import Alamofire
 
 struct SetRequest: APIRequestBody {
     let userToken: String
-    let screenTimeLimitMinutes: Int?
+    let screenTimeLimit: TimeLimit?
     let schedule: WeekSchedule?
     let pin: String?
     let email: String?
@@ -28,7 +28,8 @@ struct SetRequest: APIRequestBody {
             "_user_token": userToken
         ]
         
-        if let screenTimeLimitMinutes = screenTimeLimitMinutes {
+        // TODO: добавить расписание
+        if let screenTimeLimitMinutes = screenTimeLimit?.minutes {
             params["screen_time_limit_minutes"] = screenTimeLimitMinutes
         }
         

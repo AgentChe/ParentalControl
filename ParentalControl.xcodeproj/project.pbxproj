@@ -133,6 +133,7 @@
 		DECBC4D62AC71B39003B9D70 /* OEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D52AC71B39003B9D70 /* OEmailView.swift */; };
 		DECBC4D82AC721B5003B9D70 /* OFaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D72AC721B5003B9D70 /* OFaceIdView.swift */; };
 		DECBC4DA2ACBEA54003B9D70 /* EarlierButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */; };
+		DEDF8C812AD452AB00786C0F /* TimeLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C802AD452AB00786C0F /* TimeLimit.swift */; };
 		DEE053862ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */; };
 		DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */; };
 		DEE0538C2ACEEA6E00101784 /* WebHistoryFullReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0538B2ACEEA6E00101784 /* WebHistoryFullReport.swift */; };
@@ -317,6 +318,7 @@
 		DECBC4D52AC71B39003B9D70 /* OEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEmailView.swift; sourceTree = "<group>"; };
 		DECBC4D72AC721B5003B9D70 /* OFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFaceIdView.swift; sourceTree = "<group>"; };
 		DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlierButton.swift; sourceTree = "<group>"; };
+		DEDF8C802AD452AB00786C0F /* TimeLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimit.swift; sourceTree = "<group>"; };
 		DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceActivityReport.Context+Extension.swift"; sourceTree = "<group>"; };
 		DEE0538B2ACEEA6E00101784 /* WebHistoryFullReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryFullReport.swift; sourceTree = "<group>"; };
 		DEE0538D2ACEEA8C00101784 /* WebHistoryFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryFullView.swift; sourceTree = "<group>"; };
@@ -863,6 +865,7 @@
 			children = (
 				DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */,
 				DE8B51342ACC012700F405B7 /* Profile.swift */,
+				DEDF8C802AD452AB00786C0F /* TimeLimit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1246,6 +1249,7 @@
 				DE66189C2AC5C4E5004CCD56 /* CircleProgressView.swift in Sources */,
 				DE6618862AC5C4E5004CCD56 /* NumberLaunches.swift in Sources */,
 				DE6618972AC5C4E5004CCD56 /* Spinner.swift in Sources */,
+				DEDF8C812AD452AB00786C0F /* TimeLimit.swift in Sources */,
 				DE6618FC2AC5C4E5004CCD56 /* IAPActionResult.swift in Sources */,
 				DE6619232AC5C4E6004CCD56 /* PaygateViewControllerDelegate.swift in Sources */,
 				DE6618F52AC5C4E5004CCD56 /* LoginRequest.swift in Sources */,

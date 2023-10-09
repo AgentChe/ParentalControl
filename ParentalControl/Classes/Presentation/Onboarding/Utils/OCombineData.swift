@@ -8,14 +8,14 @@
 import Foundation
 
 struct OCombineData {
-    let screenTimeLimitMinutes: Int?
+    let screenTimeLimit: TimeLimit?
     let schedule: WeekSchedule
     let pin: String?
     let email: String?
 }
 
 final class OnboardingCombineData {
-    var screenTimeLimitMinutes: Int?
+    var screenTimeLimit: TimeLimit?
     var schedule: WeekSchedule?
     var pin: String?
     var email: String?
@@ -26,7 +26,7 @@ final class OnboardingCombineData {
         }
         
         return OCombineData(
-            screenTimeLimitMinutes: screenTimeLimitMinutes,
+            screenTimeLimit: screenTimeLimit,
             schedule: schedule,
             pin: pin,
             email: email
@@ -36,8 +36,8 @@ final class OnboardingCombineData {
 
 // MARK: OScreenTimeLimitViewDelegate
 extension OnboardingCombineData: OScreenTimeLimitViewDelegate {
-    func screenTimeLimitDidSelect(minutes: Int) {
-        self.screenTimeLimitMinutes = minutes
+    func screenTimeLimitDidSelect(timeLimit: TimeLimit) {
+        self.screenTimeLimit = timeLimit
     }
 }
 

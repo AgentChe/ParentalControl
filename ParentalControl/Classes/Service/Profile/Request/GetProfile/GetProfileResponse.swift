@@ -26,7 +26,7 @@ enum GetProfileResponse {
         )
         
         return Profile(
-            screenTimeLimitMinutes: data["screen_time_limit_minutes"] as? Int,
+            screenTimeLimit: nil, // TODO: добавить после релиза бэка
             schedule: schedule,
             pin: data["pin"] as? String,
             email: data["email"] as? String
