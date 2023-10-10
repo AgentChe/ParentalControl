@@ -20,13 +20,6 @@ protocol ProfileManagerProtocol {
 }
 
 final class ProfileManager {
-    enum Constants {
-        static let screenTimeLimit = "profile_manager_screen_time_limit_"
-        static let schedule = "profile_manager_screen_schedule"
-        static let pin = "profile_manager_screen_pin"
-        static let email = "profile_manager_screen_email"
-    }
-    
     private lazy var defaultRequestWrapper = DefaultRequestWrapper()
     
     private lazy var sessionManager = SessionManager()
@@ -106,25 +99,16 @@ extension ProfileManager: ProfileManagerProtocol {
 // MARK: Private
 private extension ProfileManager {
     func store(screenTimeLimit: TimeLimit?) {
-        guard let screenTimeLimit else {
-            return
-        }
+        ProfileCache.shared.store(screenTimeLimit: screenTimeLimit)
         
-        if let data = try? JSONEncoder().encode(screenTimeLimit) {
-            UserDefaults.standard.set(data, forKey: Constants.screenTimeLimit)
+        if let screenTimeLimit = screenTimeLimit {
+            ProfileMediator.shared.didChange(screenTimeLimit: screenTimeLimit)
         }
-        
-        ProfileMediator.shared.didChange(screenTimeLimit: screenTimeLimit)
     }
     
     func cachedScreenTimeLimit() -> Single<TimeLimit?> {
         Single<TimeLimit?>.create { single in
-            var screenTimeLimit: TimeLimit?
-            
-            if let data = UserDefaults.standard.data(forKey: Constants.screenTimeLimit) {
-                screenTimeLimit = try? JSONDecoder().decode(TimeLimit.self, from: data)
-            }
-            
+            let screenTimeLimit = ProfileCache.shared.screenTimeLimit()
             single(.success(screenTimeLimit))
             
             return Disposables.create()
@@ -132,25 +116,16 @@ private extension ProfileManager {
     }
     
     func store(schedule: WeekSchedule?) {
-        guard let schedule else {
-            return
-        }
+        ProfileCache.shared.store(schedule: schedule)
         
-        if let data = try? JSONEncoder().encode(schedule) {
-            UserDefaults.standard.set(data, forKey: Constants.schedule)
+        if let schedule = schedule {
+            ProfileMediator.shared.didChange(schedule: schedule)
         }
-        
-        ProfileMediator.shared.didChange(schedule: schedule)
     }
     
     func cachedSchedule() -> Single<WeekSchedule?> {
         Single<WeekSchedule?>.create { single in
-            var schedule: WeekSchedule?
-            
-            if let data = UserDefaults.standard.data(forKey: Constants.schedule) {
-                schedule = try? JSONDecoder().decode(WeekSchedule.self, from: data)
-            }
-            
+            let schedule = ProfileCache.shared.schedule()
             single(.success(schedule))
             
             return Disposables.create()
@@ -158,19 +133,16 @@ private extension ProfileManager {
     }
     
     func store(pin: String?) {
-        guard let pin else {
-            return
+        ProfileCache.shared.store(pin: pin)
+        
+        if let pin = pin {
+            ProfileMediator.shared.didChange(pin: pin)
         }
-        
-        UserDefaults.standard.set(pin, forKey: Constants.pin)
-        
-        ProfileMediator.shared.didChange(pin: pin)
     }
     
     func cachedPin() -> Single<String?> {
         Single<String?>.create { single in
-            let pin = UserDefaults.standard.object(forKey: Constants.pin) as? String
-            
+            let pin = ProfileCache.shared.pin()
             single(.success(pin))
             
             return Disposables.create()
@@ -178,19 +150,16 @@ private extension ProfileManager {
     }
     
     func store(email: String?) {
-        guard let email else {
-            return
+        ProfileCache.shared.store(email: email)
+        
+        if let email = email {
+            ProfileMediator.shared.didChange(email: email)
         }
-        
-        UserDefaults.standard.set(email, forKey: Constants.email)
-        
-        ProfileMediator.shared.didChange(email: email)
     }
     
     func cachedEmail() -> Single<String?> {
         Single<String?>.create { single in
-            let email = UserDefaults.standard.object(forKey: Constants.email) as? String
-            
+            let email = ProfileCache.shared.email()
             single(.success(email))
             
             return Disposables.create()

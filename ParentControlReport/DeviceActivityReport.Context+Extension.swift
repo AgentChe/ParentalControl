@@ -9,5 +9,6 @@ import SwiftUI
 import DeviceActivity
 
 extension DeviceActivityReport.Context {
-    static let webHistoryFull = Self("Web history full")
+    static let main = Self("Main")
+    static let webHistory = Self("Web history")
 }

@@ -94,8 +94,8 @@
 "Main.WebHistory" = "Web history";
 
 // MARK: Home
-"Home.SeeMore" = "See more";
-"Home.WebHistory" = "Web history";
+"Home.TimeLimit.ScreenTime" = "Screen time";
+"Home.TimeLimit.SetTimeLimit" = "Set screen time limit";
 
 // MARK: WebHistory
 "WebHistory.Title" = "Web history";

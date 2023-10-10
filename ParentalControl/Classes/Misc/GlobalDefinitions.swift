@@ -27,4 +27,6 @@ final class GlobalDefinitions {
         static let defaultLifetime = "mobile.dermatology.lifetime"
         static let defaultMonthly = "mobile.dermatology.monthly"
     }
+    
+    static let groupId = "group.com.demo.familycontrols.thinkabout"
 }

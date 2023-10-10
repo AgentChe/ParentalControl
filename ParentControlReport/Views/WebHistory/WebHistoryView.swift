@@ -1,5 +1,5 @@
 //
-//  WebHistoryFullView.swift
+//  WebHistoryView.swift
 //  ParentControlReport
 //
 //  Created by Андрей Чернышев on 05.10.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WebHistoryFullView: View {
+struct WebHistoryView: View {
     let items: [WebHistoryItem]
     
     var body: some View {
@@ -16,7 +16,7 @@ struct WebHistoryFullView: View {
 }
 
 // MARK: Private
-private extension WebHistoryFullView {
+private extension WebHistoryView {
     var empty: some View {
         ZStack {
             Color(Appearance.background)

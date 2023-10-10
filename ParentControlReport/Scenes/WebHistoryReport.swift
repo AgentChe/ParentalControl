@@ -1,5 +1,5 @@
 //
-//  WebHistoryFullReport.swift
+//  WebHistoryReport.swift
 //  ParentControlReport
 //
 //  Created by Андрей Чернышев on 05.10.2023.
@@ -9,10 +9,10 @@ import DeviceActivity
 import SwiftUI
 import ManagedSettings
 
-struct WebHistoryFullReport: DeviceActivityReportScene {
-    var context: DeviceActivityReport.Context = .webHistoryFull
+struct WebHistoryReport: DeviceActivityReportScene {
+    var context: DeviceActivityReport.Context = .webHistory
     
-    let content: ([WebHistoryItem]) -> WebHistoryFullView
+    let content: ([WebHistoryItem]) -> WebHistoryView
     
     private let store = ManagedSettingsStore()
     
