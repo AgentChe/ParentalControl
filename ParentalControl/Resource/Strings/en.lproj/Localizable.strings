@@ -96,6 +96,9 @@
 // MARK: Home
 "Home.TimeLimit.ScreenTime" = "Screen time";
 "Home.TimeLimit.SetTimeLimit" = "Set screen time limit";
+"Home.TimeLimit.Used" = "Used";
+"Home.TimeLimit.Limit" = "Limit";
+"Home.TimeLimit.AdjustTime" = "Adjust time";
 
 // MARK: WebHistory
 "WebHistory.Title" = "Web history";

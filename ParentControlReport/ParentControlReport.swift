@@ -14,8 +14,8 @@ struct ParentControlReport: DeviceActivityReportExtension {
         WebHistoryReport { items in
             WebHistoryView(items: items)
         }
-        MainReport { totalActivity in
-            MainView()
+        MainReport { bundle in
+            MainView(bundle: bundle)
         }
     }
 }

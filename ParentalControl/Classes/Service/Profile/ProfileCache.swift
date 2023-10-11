@@ -18,50 +18,31 @@ final class ProfileCache {
 // MARK: Public
 extension ProfileCache {
     enum Constants {
-        static let screenTimeLimit = "profile_manager_screen_time_limit_"
-        static let schedule = "profile_manager_screen_schedule"
+        static let timeLimit = "profile_manager_time_limit"
         static let pin = "profile_manager_screen_pin"
         static let email = "profile_manager_screen_email"
     }
     
-    func store(screenTimeLimit: TimeLimit?) {
-        guard let screenTimeLimit else {
+    func store(timeLimit: TimeLimit?) {
+        guard let timeLimit else {
             return
         }
         
-        if let data = try? JSONEncoder().encode(screenTimeLimit) {
-            userDefaults?.set(data, forKey: Constants.screenTimeLimit)
+        let cache = CacheData(date: Date(), object: timeLimit)
+        
+        if let data = try? JSONEncoder().encode(cache) {
+            userDefaults?.set(data, forKey: Constants.timeLimit)
         }
     }
     
-    func screenTimeLimit() -> TimeLimit? {
-        var screenTimeLimit: TimeLimit?
+    func timeLimit() -> CacheData<TimeLimit>? {
+        var cache: CacheData<TimeLimit>?
         
-        if let data = userDefaults?.data(forKey: Constants.screenTimeLimit) {
-            screenTimeLimit = try? JSONDecoder().decode(TimeLimit.self, from: data)
+        if let data = userDefaults?.data(forKey: Constants.timeLimit) {
+            cache = try? JSONDecoder().decode(CacheData<TimeLimit>.self, from: data)
         }
         
-        return screenTimeLimit
-    }
-    
-    func store(schedule: WeekSchedule?) {
-        guard let schedule else {
-            return
-        }
-        
-        if let data = try? JSONEncoder().encode(schedule) {
-            userDefaults?.set(data, forKey: Constants.schedule)
-        }
-    }
-    
-    func schedule() -> WeekSchedule? {
-        var schedule: WeekSchedule?
-        
-        if let data = userDefaults?.data(forKey: Constants.schedule) {
-            schedule = try? JSONDecoder().decode(WeekSchedule.self, from: data)
-        }
-        
-        return schedule
+        return cache
     }
     
     func store(pin: String?) {
@@ -69,11 +50,21 @@ extension ProfileCache {
             return
         }
         
-        userDefaults?.set(pin, forKey: Constants.pin)
+        let cache = CacheData(date: Date(), object: pin)
+        
+        if let data = try? JSONEncoder().encode(cache) {
+            userDefaults?.set(data, forKey: Constants.pin)
+        }
     }
     
-    func pin() -> String? {
-        userDefaults?.object(forKey: Constants.pin) as? String
+    func pin() -> CacheData<String>? {
+        var cache: CacheData<String>?
+        
+        if let data = userDefaults?.data(forKey: Constants.pin) {
+            cache = try? JSONDecoder().decode(CacheData<String>.self, from: data)
+        }
+        
+        return cache
     }
     
     func store(email: String?) {
@@ -81,10 +72,20 @@ extension ProfileCache {
             return
         }
         
-        userDefaults?.set(email, forKey: Constants.email)
+        let cache = CacheData(date: Date(), object: email)
+        
+        if let data = try? JSONEncoder().encode(cache) {
+            userDefaults?.set(data, forKey: Constants.email)
+        }
     }
     
-    func email() -> String? {
-        userDefaults?.object(forKey: Constants.email) as? String
+    func email() -> CacheData<String>? {
+        var cache: CacheData<String>?
+        
+        if let data = userDefaults?.data(forKey: Constants.email) {
+            cache = try? JSONDecoder().decode(CacheData<String>.self, from: data)
+        }
+        
+        return cache
     }
 }

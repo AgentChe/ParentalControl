@@ -7,15 +7,58 @@
 
 import SwiftUI
 
+private struct MainListElement: Identifiable {
+    let id = UUID().uuidString
+    let value: MainListValue
+}
+
+private enum MainListValue {
+    case setTimeLimit(TimeInterval)
+    case timeLimit(totalActivityDuration: TimeInterval, timeLimit: Int)
+}
+
 struct MainView: View {
-    @State var pin = ProfileCache.shared.pin() ?? "nil"
+    let bundle: MainBundle
+    
+    @State private var elements: [MainListElement] = []
+    
+    init(bundle: MainBundle) {
+        self.bundle = bundle
+    }
     
     var body: some View {
-        Text(pin)
-        
-        Button("Tap", action: {
-            ProfileCache.shared.store(pin: "asdasds")
-            pin = "asdasds"
-        })
+        ZStack {
+            Color(Appearance.background)
+            
+            List {
+                ForEach(elements) { element in
+                    switch element.value {
+                    case .setTimeLimit(let totalActivityDuration):
+                        SetTimeLimitCell(totalActivity: totalActivityDuration)
+                    case .timeLimit(let totalActivityDuration, let timeLimit):
+                        TimeLimitCell(totalActivity: totalActivityDuration, timeLimit: timeLimit)
+                    }
+                }
+            }
+            .listStyle(PlainListStyle())
+        }
+        .onAppear {
+            var result = [MainListElement]()
+            
+            if let timeLimit = ContentService.shared.timeLimit() {
+                let value = MainListValue.timeLimit(
+                    totalActivityDuration: bundle.totalActivityDuration,
+                    timeLimit: timeLimit.minutes
+                )
+                let element = MainListElement(value: value)
+                result.append(element)
+            } else {
+                let value = MainListValue.setTimeLimit(bundle.totalActivityDuration)
+                let element = MainListElement(value: value)
+                result.append(element)
+            }
+            
+            elements = result
+        }
     }
 }

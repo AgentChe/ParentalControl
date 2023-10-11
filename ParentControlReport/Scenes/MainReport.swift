@@ -11,17 +11,19 @@ import SwiftUI
 struct MainReport: DeviceActivityReportScene {
     var context: DeviceActivityReport.Context = .main
     
-    let content: (TimeInterval) -> MainView
+    let content: (MainBundle) -> MainView
     
-    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> TimeInterval {
-        var total: TimeInterval = 0
+    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> MainBundle {
+        var totalActivityDuration: TimeInterval = 0
         
         for await item in data {
             for await segment in item.activitySegments {
-                total += segment.totalActivityDuration
+                totalActivityDuration += segment.totalActivityDuration
             }
         }
         
-        return total
+        return MainBundle(
+            totalActivityDuration: totalActivityDuration
+        )
     }
 }

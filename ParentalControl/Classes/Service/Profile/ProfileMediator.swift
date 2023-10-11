@@ -12,8 +12,7 @@ final class ProfileMediator {
     static let shared = ProfileMediator()
     
     private lazy var didChangeChildYearOfBirthTrigger = PublishRelay<Int>()
-    private lazy var didChangeScreenTimeLimitTrigger = PublishRelay<TimeLimit>()
-    private lazy var didChangeScheduleTrigger = PublishRelay<WeekSchedule>()
+    private lazy var didChangeTimeLimitTrigger = PublishRelay<TimeLimit>()
     private lazy var didChangePinTrigger = PublishRelay<String>()
     private lazy var didChangeEmailTrigger = PublishRelay<String>()
     
@@ -26,12 +25,8 @@ extension ProfileMediator {
         didChangeChildYearOfBirthTrigger.asSignal()
     }
     
-    var didChangeScreenTimeLimit: Signal<TimeLimit> {
-        didChangeScreenTimeLimitTrigger.asSignal()
-    }
-    
-    var didChangeSchedule: Signal<WeekSchedule> {
-        didChangeScheduleTrigger.asSignal()
+    var didChangeTimeLimit: Signal<TimeLimit> {
+        didChangeTimeLimitTrigger.asSignal()
     }
     
     var didChangePin: Signal<String> {
@@ -46,12 +41,8 @@ extension ProfileMediator {
         didChangeChildYearOfBirthTrigger.accept(childYearOfBirth)
     }
     
-    func didChange(screenTimeLimit: TimeLimit) {
-        didChangeScreenTimeLimitTrigger.accept(screenTimeLimit)
-    }
-    
-    func didChange(schedule: WeekSchedule) {
-        didChangeScheduleTrigger.accept(schedule)
+    func didChange(timeLimit: TimeLimit) {
+        didChangeTimeLimitTrigger.accept(timeLimit)
     }
     
     func didChange(pin: String) {

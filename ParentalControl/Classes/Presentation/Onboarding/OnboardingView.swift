@@ -97,6 +97,10 @@ private extension OnboardingView {
                 }
             }
         
+        screenTimeLimitView.didTapSkip = { [weak self] in
+            self?.scroll(to: .pin)
+        }
+        
         pinView.didTapSkip = { [weak self] in
             self?.scroll(to: .preloader)
         }

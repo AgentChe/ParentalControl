@@ -9,8 +9,8 @@ import Alamofire
 
 struct SetRequest: APIRequestBody {
     let userToken: String
-    let screenTimeLimit: TimeLimit?
-    let schedule: WeekSchedule?
+    let timeLimitMinutes: Int?
+    let timeLimitSchedule: WeekSchedule?
     let pin: String?
     let email: String?
 
@@ -28,20 +28,19 @@ struct SetRequest: APIRequestBody {
             "_user_token": userToken
         ]
         
-        // TODO: добавить расписание
-        if let screenTimeLimitMinutes = screenTimeLimit?.minutes {
-            params["screen_time_limit_minutes"] = screenTimeLimitMinutes
+        if let timeLimitMinutes = timeLimitMinutes {
+            params["screen_time_limit_minutes"] = timeLimitMinutes
         }
         
-        if let schedule = schedule {
+        if let timeLimitSchedule = timeLimitSchedule {
             let scheduleJSON = [
-                "su": schedule.su,
-                "mo": schedule.mo,
-                "tu": schedule.tu,
-                "we": schedule.we,
-                "th": schedule.th,
-                "fr": schedule.fr,
-                "sa": schedule.sa
+                "su": timeLimitSchedule.su,
+                "mo": timeLimitSchedule.mo,
+                "tu": timeLimitSchedule.tu,
+                "we": timeLimitSchedule.we,
+                "th": timeLimitSchedule.th,
+                "fr": timeLimitSchedule.fr,
+                "sa": timeLimitSchedule.sa
             ]
             params["schedule"] = scheduleJSON
         }

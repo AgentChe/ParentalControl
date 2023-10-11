@@ -9,8 +9,7 @@ import RxSwift
 
 protocol ProfileManagerProtocol {
     func set(
-        screenTimeLimit: TimeLimit?,
-        schedule: WeekSchedule?,
+        timeLimit: TimeLimit?,
         pin: String?,
         email: String?
     ) -> Single<Void>
@@ -28,8 +27,7 @@ final class ProfileManager {
 // MARK: ProfileManagerProtocol
 extension ProfileManager: ProfileManagerProtocol {
     func set(
-        screenTimeLimit: TimeLimit?,
-        schedule: WeekSchedule?,
+        timeLimit: TimeLimit?,
         pin: String?,
         email: String?
     ) -> Single<Void> {
@@ -39,8 +37,8 @@ extension ProfileManager: ProfileManagerProtocol {
         
         let request = SetRequest(
             userToken: userToken,
-            screenTimeLimit: screenTimeLimit,
-            schedule: schedule,
+            timeLimitMinutes: timeLimit?.minutes,
+            timeLimitSchedule: timeLimit?.schedule,
             pin: pin,
             email: email
         )
@@ -49,8 +47,7 @@ extension ProfileManager: ProfileManagerProtocol {
             .callServerApi(requestBody: request)
             .mapToVoid()
             .do(onSuccess: { [weak self] in
-                self?.store(screenTimeLimit: screenTimeLimit)
-                self?.store(schedule: schedule)
+                self?.store(timeLimit: timeLimit)
                 self?.store(pin: pin)
                 self?.store(email: email)
             })
@@ -59,19 +56,13 @@ extension ProfileManager: ProfileManagerProtocol {
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?> {
         Single
             .zip(
-                cachedScreenTimeLimit(),
-                cachedSchedule(),
+                cachedTimeLimit(),
                 cachedPin(),
                 cachedEmail()
             )
-            .map { screenTimeLimit, schedule, pin, email -> Profile? in
-                guard let schedule else {
-                    return nil
-                }
-                
+            .map { timeLimit, pin, email -> Profile? in
                 return Profile(
-                    screenTimeLimit: screenTimeLimit,
-                    schedule: schedule,
+                    timeLimit: timeLimit,
                     pin: pin,
                     email: email
                 )
@@ -98,35 +89,18 @@ extension ProfileManager: ProfileManagerProtocol {
 
 // MARK: Private
 private extension ProfileManager {
-    func store(screenTimeLimit: TimeLimit?) {
-        ProfileCache.shared.store(screenTimeLimit: screenTimeLimit)
+    func store(timeLimit: TimeLimit?) {
+        ProfileCache.shared.store(timeLimit: timeLimit)
         
-        if let screenTimeLimit = screenTimeLimit {
-            ProfileMediator.shared.didChange(screenTimeLimit: screenTimeLimit)
+        if let timeLimit = timeLimit {
+            ProfileMediator.shared.didChange(timeLimit: timeLimit)
         }
     }
     
-    func cachedScreenTimeLimit() -> Single<TimeLimit?> {
+    func cachedTimeLimit() -> Single<TimeLimit?> {
         Single<TimeLimit?>.create { single in
-            let screenTimeLimit = ProfileCache.shared.screenTimeLimit()
-            single(.success(screenTimeLimit))
-            
-            return Disposables.create()
-        }
-    }
-    
-    func store(schedule: WeekSchedule?) {
-        ProfileCache.shared.store(schedule: schedule)
-        
-        if let schedule = schedule {
-            ProfileMediator.shared.didChange(schedule: schedule)
-        }
-    }
-    
-    func cachedSchedule() -> Single<WeekSchedule?> {
-        Single<WeekSchedule?>.create { single in
-            let schedule = ProfileCache.shared.schedule()
-            single(.success(schedule))
+            let timeLimit = ProfileCache.shared.timeLimit()?.object
+            single(.success(timeLimit))
             
             return Disposables.create()
         }
@@ -142,7 +116,7 @@ private extension ProfileManager {
     
     func cachedPin() -> Single<String?> {
         Single<String?>.create { single in
-            let pin = ProfileCache.shared.pin()
+            let pin = ProfileCache.shared.pin()?.object
             single(.success(pin))
             
             return Disposables.create()
@@ -159,7 +133,7 @@ private extension ProfileManager {
     
     func cachedEmail() -> Single<String?> {
         Single<String?>.create { single in
-            let email = ProfileCache.shared.email()
+            let email = ProfileCache.shared.email()?.object
             single(.success(email))
             
             return Disposables.create()

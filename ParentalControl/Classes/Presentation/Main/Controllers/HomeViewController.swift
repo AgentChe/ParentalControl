@@ -31,6 +31,18 @@ final class HomeViewController: UIViewController {
         hostingVC.didMove(toParent: parent)
         hostingVC.view.layoutIfNeeded()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 }
 
 // MARK: Public

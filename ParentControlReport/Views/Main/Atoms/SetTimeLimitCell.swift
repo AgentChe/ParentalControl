@@ -21,7 +21,7 @@ struct SetTimeLimitCell: View {
                 
                 VStack {
                     Text(time())
-                        .font(Font(Fonts.Satoshi.medium(size: 60.scale)))
+                        .font(Font(Fonts.Satoshi.medium(size: 50.scale)))
                         .foregroundColor(Color(Appearance.black))
                     
                     Text("Home.TimeLimit.ScreenTime".localized)
@@ -40,6 +40,12 @@ struct SetTimeLimitCell: View {
                         .foregroundColor(Color(Appearance.black))
                         .cornerRadius(20.scale)
                 }
+                .padding(EdgeInsets(
+                    top: 32.scale,
+                    leading: 0,
+                    bottom: 32.scale,
+                    trailing: 0
+                ))
             }
             .padding(EdgeInsets(
                 top: 3.scale,
@@ -55,6 +61,9 @@ struct SetTimeLimitCell: View {
             trailing: 8.scale
         ))
         .background(Color(Appearance.background))
+        .listRowSeparator(.hidden)
+        .listRowBackground(Color.clear)
+        .listRowInsets(EdgeInsets())
     }
 }
 
@@ -62,7 +71,7 @@ struct SetTimeLimitCell: View {
 private extension SetTimeLimitCell {
     func time() -> String {
         let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.hour, .minute, .second]
+        formatter.allowedUnits = [.hour, .minute]
         formatter.unitsStyle = .abbreviated
         return formatter.string(from: totalActivity) ?? ""
     }

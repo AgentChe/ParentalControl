@@ -8,11 +8,13 @@
 import UIKit
 
 protocol OScreenTimeLimitViewDelegate: AnyObject {
-    func screenTimeLimitDidSelect(timeLimit: TimeLimit)
+    func screenTimeLimitDidSelect(timeLimitMinutes: Int)
 }
 
 final class OScreenTimeLimitView: OSlideView {
     weak var mainDelegate: OScreenTimeLimitViewDelegate?
+    
+    var didTapSkip: (() -> Void)?
     
     lazy var skipButton = makeSkipButton()
     lazy var titleLabel = makeTitleLabel()
@@ -38,23 +40,15 @@ private extension OScreenTimeLimitView {
     }
     
     @objc
+    func skipTapped() {
+        didTapSkip?()
+    }
+    
+    @objc
     func didTapContinue() {
         let totalMinutes = timePicker.totalMinutes
-        let schedule = WeekSchedule(
-            su: false,
-            mo: true,
-            tu: true,
-            we: true,
-            th: true,
-            fr: true,
-            sa: false
-        )
-        let timeLimit = TimeLimit(
-            minutes: totalMinutes,
-            schedule: schedule
-        )
         
-        mainDelegate?.screenTimeLimitDidSelect(timeLimit: timeLimit)
+        mainDelegate?.screenTimeLimitDidSelect(timeLimitMinutes: totalMinutes)
 
         onNext()
     }
@@ -100,7 +94,7 @@ private extension OScreenTimeLimitView {
         let view = TapAreaButton()
         view.backgroundColor = UIColor.clear
         view.setAttributedTitle("Onboarding.Skip".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
+        view.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

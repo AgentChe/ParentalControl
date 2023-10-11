@@ -8,26 +8,31 @@
 import Foundation
 
 struct OCombineData {
-    let screenTimeLimit: TimeLimit?
-    let schedule: WeekSchedule
+    let timeLimit: TimeLimit?
     let pin: String?
     let email: String?
 }
 
 final class OnboardingCombineData {
-    var screenTimeLimit: TimeLimit?
-    var schedule: WeekSchedule?
+    var timeLimitMinutes: Int?
+    var timeLimitSchedule: WeekSchedule?
     var pin: String?
     var email: String?
     
     func combineData() -> OCombineData? {
-        guard let schedule = schedule else {
-            return nil
+        var timeLimit: TimeLimit? {
+            guard let timeLimitMinutes, let timeLimitSchedule else {
+                return nil
+            }
+            
+            return TimeLimit(
+                minutes: timeLimitMinutes,
+                schedule: timeLimitSchedule
+            )
         }
         
         return OCombineData(
-            screenTimeLimit: screenTimeLimit,
-            schedule: schedule,
+            timeLimit: timeLimit,
             pin: pin,
             email: email
         )
@@ -36,15 +41,15 @@ final class OnboardingCombineData {
 
 // MARK: OScreenTimeLimitViewDelegate
 extension OnboardingCombineData: OScreenTimeLimitViewDelegate {
-    func screenTimeLimitDidSelect(timeLimit: TimeLimit) {
-        self.screenTimeLimit = timeLimit
+    func screenTimeLimitDidSelect(timeLimitMinutes: Int) {
+        self.timeLimitMinutes = timeLimitMinutes
     }
 }
 
 // MARK: OScheduleViewDelegate
 extension OnboardingCombineData: OScheduleViewDelegate {
     func scheduleViewDidSet(schedule: WeekSchedule) {
-        self.schedule = schedule
+        self.timeLimitSchedule = schedule
     }
 }
 
