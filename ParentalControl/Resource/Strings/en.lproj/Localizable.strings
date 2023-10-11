@@ -110,3 +110,10 @@
 "WebHistory.BlockSheet.SubTitle.Unblock" = "Are you sure? The website will have to be blocked again";
 "WebHistory.BlockSheet.Block" = "Block";
 "WebHistory.BlockSheet.Unblock" = "Unblock";
+
+// MARK: TimeLimit
+"TimeLimit.Title" = "Screen time";
+"TimeLimit.Enable.Title" = "Screen time limit";
+"TimeLimit.Weekdays" = "Weekdays";
+"TimeLimit.TimeLimit" = "Time limit";
+"TimeLimit.Save" = "Save";

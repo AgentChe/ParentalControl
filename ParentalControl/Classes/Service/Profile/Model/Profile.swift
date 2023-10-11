@@ -6,7 +6,6 @@
 //
 
 struct Profile: Codable, Hashable {
-    let timeLimit: TimeLimit?
     let pin: String?
     let email: String?
 }

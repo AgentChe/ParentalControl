@@ -37,8 +37,6 @@ extension ProfileManager: ProfileManagerProtocol {
         
         let request = SetRequest(
             userToken: userToken,
-            timeLimitMinutes: timeLimit?.minutes,
-            timeLimitSchedule: timeLimit?.schedule,
             pin: pin,
             email: email
         )
@@ -56,13 +54,11 @@ extension ProfileManager: ProfileManagerProtocol {
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?> {
         Single
             .zip(
-                cachedTimeLimit(),
                 cachedPin(),
                 cachedEmail()
             )
-            .map { timeLimit, pin, email -> Profile? in
-                return Profile(
-                    timeLimit: timeLimit,
+            .map { pin, email -> Profile? in
+                Profile(
                     pin: pin,
                     email: email
                 )

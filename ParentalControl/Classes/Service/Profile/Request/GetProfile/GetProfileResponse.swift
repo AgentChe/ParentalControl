@@ -14,32 +14,7 @@ enum GetProfileResponse {
             return nil
         }
         
-        var timeLimit: TimeLimit? {
-            guard
-                let minutes = data["screen_time_limit_minutes"] as? Int,
-                let scheduleJSON = data["schedule"] as? [String: Any]
-            else {
-                return nil
-            }
-            
-            let schedule = WeekSchedule(
-                su: scheduleJSON["su"] as? Bool ?? false,
-                mo: scheduleJSON["mo"] as? Bool ?? false,
-                tu: scheduleJSON["tu"] as? Bool ?? false,
-                we: scheduleJSON["we"] as? Bool ?? false,
-                th: scheduleJSON["th"] as? Bool ?? false,
-                fr: scheduleJSON["fr"] as? Bool ?? false,
-                sa: scheduleJSON["sa"] as? Bool ?? false
-            )
-            
-            return TimeLimit(
-                minutes: minutes,
-                schedule: schedule
-            )
-        }
-        
         return Profile(
-            timeLimit: timeLimit,
             pin: data["pin"] as? String,
             email: data["email"] as? String
         )

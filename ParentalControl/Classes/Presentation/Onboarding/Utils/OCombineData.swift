@@ -27,7 +27,8 @@ final class OnboardingCombineData {
             
             return TimeLimit(
                 minutes: timeLimitMinutes,
-                schedule: timeLimitSchedule
+                schedule: timeLimitSchedule,
+                enable: true
             )
         }
         

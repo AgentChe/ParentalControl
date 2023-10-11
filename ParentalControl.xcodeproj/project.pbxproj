@@ -143,6 +143,12 @@
 		DEDF8C9D2AD6A35000786C0F /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C9C2AD6A35000786C0F /* ContentService.swift */; };
 		DEDF8C9F2AD6AB0D00786C0F /* CacheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C9E2AD6AB0D00786C0F /* CacheData.swift */; };
 		DEDF8CA02AD6AB1300786C0F /* CacheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C9E2AD6AB0D00786C0F /* CacheData.swift */; };
+		DEDF8CA32AD6D0F800786C0F /* TimeLimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA22AD6D0F800786C0F /* TimeLimitView.swift */; };
+		DEDF8CA62AD6D7E800786C0F /* TimeLimitEnableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA52AD6D7E800786C0F /* TimeLimitEnableCell.swift */; };
+		DEDF8CA82AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA72AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift */; };
+		DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA92AD6DD3000786C0F /* WeekdayButton.swift */; };
+		DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CAB2AD6E5D700786C0F /* SelectTimeCell.swift */; };
+		DEDF8CAE2AD6F36C00786C0F /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */; };
 		DEE053862ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */; };
 		DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */; };
 		DEE0538C2ACEEA6E00101784 /* WebHistoryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0538B2ACEEA6E00101784 /* WebHistoryReport.swift */; };
@@ -331,6 +337,12 @@
 		DEDF8C992AD5D00900786C0F /* TimeLimitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitCell.swift; sourceTree = "<group>"; };
 		DEDF8C9C2AD6A35000786C0F /* ContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
 		DEDF8C9E2AD6AB0D00786C0F /* CacheData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheData.swift; sourceTree = "<group>"; };
+		DEDF8CA22AD6D0F800786C0F /* TimeLimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitView.swift; sourceTree = "<group>"; };
+		DEDF8CA52AD6D7E800786C0F /* TimeLimitEnableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitEnableCell.swift; sourceTree = "<group>"; };
+		DEDF8CA72AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitWeekdaysCell.swift; sourceTree = "<group>"; };
+		DEDF8CA92AD6DD3000786C0F /* WeekdayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayButton.swift; sourceTree = "<group>"; };
+		DEDF8CAB2AD6E5D700786C0F /* SelectTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeCell.swift; sourceTree = "<group>"; };
+		DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceActivityReport.Context+Extension.swift"; sourceTree = "<group>"; };
 		DEE0538B2ACEEA6E00101784 /* WebHistoryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryReport.swift; sourceTree = "<group>"; };
 		DEE0538D2ACEEA8C00101784 /* WebHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryView.swift; sourceTree = "<group>"; };
@@ -959,9 +971,47 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		DEDF8CA12AD6D0E900786C0F /* TimeLimit */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF8CA42AD6D5D000786C0F /* Atoms */,
+				DEDF8CA22AD6D0F800786C0F /* TimeLimitView.swift */,
+			);
+			path = TimeLimit;
+			sourceTree = "<group>";
+		};
+		DEDF8CA42AD6D5D000786C0F /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF8CB12AD70F5000786C0F /* Time */,
+				DEDF8CAF2AD70F3F00786C0F /* Weekdays */,
+				DEDF8CA52AD6D7E800786C0F /* TimeLimitEnableCell.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DEDF8CAF2AD70F3F00786C0F /* Weekdays */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF8CA92AD6DD3000786C0F /* WeekdayButton.swift */,
+				DEDF8CA72AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift */,
+			);
+			path = Weekdays;
+			sourceTree = "<group>";
+		};
+		DEDF8CB12AD70F5000786C0F /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */,
+				DEDF8CAB2AD6E5D700786C0F /* SelectTimeCell.swift */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
 		DEE0538A2ACEEA1F00101784 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DEDF8CA12AD6D0E900786C0F /* TimeLimit */,
 				DEDF8C842AD45E9700786C0F /* Main */,
 				DEE053AD2AD03B7700101784 /* WebHistory */,
 			);
@@ -1314,19 +1364,25 @@
 				DEE053B72AD042BB00101784 /* Fonts.swift in Sources */,
 				DEDF8C862AD45EB200786C0F /* MainView.swift in Sources */,
 				DEE053B12AD03B9B00101784 /* WebHistoryEmptyView.swift in Sources */,
+				DEDF8CA32AD6D0F800786C0F /* TimeLimitView.swift in Sources */,
 				DEDF8C892AD4605E00786C0F /* MainReport.swift in Sources */,
 				DE8B51402ACC253F00F405B7 /* ParentControlReport.swift in Sources */,
 				DEDF8C8B2AD58C8000786C0F /* WeekSchedule.swift in Sources */,
 				DEE053B62AD0428F00101784 /* String+Extension.swift in Sources */,
+				DEDF8CAE2AD6F36C00786C0F /* TimePickerView.swift in Sources */,
+				DEDF8CA62AD6D7E800786C0F /* TimeLimitEnableCell.swift in Sources */,
+				DEDF8CA82AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift in Sources */,
 				DEDF8C8C2AD58C8300786C0F /* Profile.swift in Sources */,
 				DEE053AB2AD03ABA00101784 /* UIColor+Extension.swift in Sources */,
 				DEDF8C8D2AD58C8500786C0F /* TimeLimit.swift in Sources */,
 				DEE053AC2AD03AC000101784 /* Appearance.swift in Sources */,
 				DEE0538C2ACEEA6E00101784 /* WebHistoryReport.swift in Sources */,
+				DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */,
 				DEDF8C9D2AD6A35000786C0F /* ContentService.swift in Sources */,
 				DEDF8C9A2AD5D00900786C0F /* TimeLimitCell.swift in Sources */,
 				DEDF8C962AD593C800786C0F /* SetTimeLimitCell.swift in Sources */,
 				DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */,
+				DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */,
 				DEDF8C922AD592E000786C0F /* GlobalDefinitions.swift in Sources */,
 				DEE053B32AD03C2A00101784 /* Scalable.swift in Sources */,
 				DEE0538E2ACEEA8C00101784 /* WebHistoryView.swift in Sources */,

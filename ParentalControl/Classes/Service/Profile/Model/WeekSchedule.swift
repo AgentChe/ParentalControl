@@ -6,11 +6,11 @@
 //
 
 struct WeekSchedule: Codable, Hashable {
-    let su: Bool
-    let mo: Bool
-    let tu: Bool
-    let we: Bool
-    let th: Bool
-    let fr: Bool
-    let sa: Bool
+    var su: Bool
+    var mo: Bool
+    var tu: Bool
+    var we: Bool
+    var th: Bool
+    var fr: Bool
+    var sa: Bool
 }
