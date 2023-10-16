@@ -8,7 +8,6 @@
 import SwiftUI
 
 // TODO:
-// 2. В TimeLimitView ициализировать актуальными данными
 // 4. Устанавливать ограничения в соответствии с time limit
 struct MainView: View {
     @ObservedObject private var viewModel: MainViewModel
@@ -28,9 +27,12 @@ struct MainView: View {
                     case .setTimeLimit(let totalActivityDuration):
                         SetTimeLimitCell(totalActivity: totalActivityDuration)
                             .sheet(isPresented: $timeLimitViewPresenting) {
-                                TimeLimitView(isPresented: $timeLimitViewPresenting) { timeLimit in
-                                    viewModel.update(timeLimit: timeLimit)
-                                }
+                                TimeLimitView(
+                                    isPresented: $timeLimitViewPresenting,
+                                    enable: viewModel.$timeLimitEnable,
+                                    schedule: viewModel.$timeLimitSchedule,
+                                    time: viewModel.$timeLimitTime
+                                )
                             }
                             .onTapGesture {
                                 timeLimitViewPresenting.toggle()
@@ -38,9 +40,12 @@ struct MainView: View {
                     case .timeLimit(let totalActivityDuration, let timeLimit):
                         TimeLimitCell(totalActivity: totalActivityDuration, timeLimit: timeLimit)
                             .sheet(isPresented: $timeLimitViewPresenting) {
-                                TimeLimitView(isPresented: $timeLimitViewPresenting) { timeLimit in
-                                    viewModel.update(timeLimit: timeLimit)
-                                }
+                                TimeLimitView(
+                                    isPresented: $timeLimitViewPresenting,
+                                    enable: viewModel.$timeLimitEnable,
+                                    schedule: viewModel.$timeLimitSchedule,
+                                    time: viewModel.$timeLimitTime
+                                )
                             }
                             .onTapGesture {
                                 timeLimitViewPresenting.toggle()

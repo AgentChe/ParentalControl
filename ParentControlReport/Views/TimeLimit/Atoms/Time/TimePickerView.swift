@@ -14,7 +14,7 @@ struct TimePickerView: View {
     var body: some View {
         HStack {
             Picker(selection: $selectedHour, label: Text("")) {
-                ForEach(1..<24) { hour in
+                ForEach(1..<24, id: \.self) { hour in
                     Text(formatted(hour))
                         .foregroundColor(Color(Appearance.black))
                         .font(Font(Fonts.Satoshi.bold(size: 24.scale)))

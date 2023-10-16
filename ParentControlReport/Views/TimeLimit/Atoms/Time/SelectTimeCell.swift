@@ -17,7 +17,7 @@ final class TimeObject: ObservableObject {
     }
     
     var totalMinutes: Int {
-        ((hour + 1) * 60) + minute
+        (hour * 60) + minute
     }
 }
 

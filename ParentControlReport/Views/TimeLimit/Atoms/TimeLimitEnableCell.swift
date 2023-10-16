@@ -7,8 +7,16 @@
 
 import SwiftUI
 
+final class TimeLimitEnableObject: ObservableObject {
+    @Published var enable: Bool
+    
+    init(enable: Bool) {
+        self.enable = enable
+    }
+}
+
 struct TimeLimitEnableCell: View {
-    @Binding var enable: Bool
+    @ObservedObject var enable: TimeLimitEnableObject
     
     var body: some View {
         ZStack {
@@ -19,7 +27,7 @@ struct TimeLimitEnableCell: View {
                 Color(Appearance.white)
                     .cornerRadius(20.scale)
                 
-                Toggle(isOn: $enable) {
+                Toggle(isOn: $enable.enable) {
                     Text("TimeLimit.Enable.Title".localized)
                         .font(Font(Fonts.Satoshi.medium(size: 16.scale)))
                         .foregroundColor(Color(Appearance.black))

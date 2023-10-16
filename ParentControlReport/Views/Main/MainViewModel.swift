@@ -10,25 +10,33 @@ import SwiftUI
 final class MainViewModel: ObservableObject {
     @Published var elements = [MainListElement]()
     
+    @State var timeLimitEnable: TimeLimitEnableObject
+    @State var timeLimitTime: TimeObject
+    @State var timeLimitSchedule: ScheduleObject
+    
     private let bundle: MainBundle
     
     init(bundle: MainBundle) {
         self.bundle = bundle
         
+        let timeLimit = ContentService.shared.timeLimit()
+        timeLimitEnable = TimeLimitEnableObject(enable: timeLimit?.enable ?? false)
+        timeLimitTime = TimeObject(
+            hour: (timeLimit?.minutes ?? 0) / 60,
+            minute: (timeLimit?.minutes ?? 0) % 60
+        )
+        timeLimitSchedule = ScheduleObject(schedule: timeLimit?.schedule)
+        
         createElements()
     }
     
-    func update(timeLimit: TimeLimit) {
-        createElements(timeLimit: timeLimit)
-    }
-    
-    private func createElements(timeLimit: TimeLimit? = ContentService.shared.timeLimit()) {
+    private func createElements() {
         var result = [MainListElement]()
 
-        if let timeLimit, timeLimit.enable {
+        if timeLimitEnable.enable {
             let value = MainListValue.timeLimit(
                 totalActivityDuration: bundle.totalActivityDuration,
-                timeLimit: timeLimit.minutes
+                timeLimit: timeLimitTime.totalMinutes
             )
             let element = MainListElement(value: value)
             result.append(element)

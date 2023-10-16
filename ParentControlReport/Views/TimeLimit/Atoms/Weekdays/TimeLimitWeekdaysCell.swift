@@ -16,14 +16,14 @@ final class ScheduleObject: ObservableObject {
     @Published var fr: Bool
     @Published var sa: Bool
     
-    init(schedule: WeekSchedule) {
-        su = schedule.su
-        mo = schedule.mo
-        tu = schedule.tu
-        we = schedule.we
-        th = schedule.th
-        fr = schedule.fr
-        sa = schedule.sa
+    init(schedule: WeekSchedule?) {
+        su = schedule?.su ?? false
+        mo = schedule?.mo ?? false
+        tu = schedule?.tu ?? false
+        we = schedule?.we ?? false
+        th = schedule?.th ?? false
+        fr = schedule?.fr ?? false
+        sa = schedule?.sa ?? false
     }
     
     var schedule: WeekSchedule {

@@ -9,13 +9,11 @@ import SwiftUI
 
 struct TimeLimitView: View {
     @Binding var isPresented: Bool
-    var didUpdate: (TimeLimit) -> Void
+    @Binding var enable: TimeLimitEnableObject
+    @Binding var schedule: ScheduleObject
+    @Binding var time: TimeObject
     
     @State private var elements = [TimeLimitListElement]()
-    
-    @State private var enable = false
-    @State private var schedule = ScheduleObject(schedule: WeekSchedule(su: true, mo: true, tu: false, we: true, th: false, fr: false, sa: true))
-    @State private var time = TimeObject(hour: 2, minute: 0)
     
     var body: some View {
         ZStack {
@@ -31,7 +29,7 @@ struct TimeLimitView: View {
                     ForEach(elements) { element in
                         switch element.value {
                         case .enable:
-                            TimeLimitEnableCell(enable: $enable)
+                            TimeLimitEnableCell(enable: enable)
                         case .schedule:
                             TimeLimitWeekdaysCell(schedule: schedule)
                         case .selectTime:
@@ -48,12 +46,10 @@ struct TimeLimitView: View {
                     let updated = TimeLimit(
                         minutes: time.totalMinutes,
                         schedule: schedule.schedule,
-                        enable: enable
+                        enable: enable.enable
                     )
                     
                     ContentService.shared.store(timeLimit: updated)
-                    
-                    didUpdate(updated)
                     
                     isPresented = false
                 }, label: {
