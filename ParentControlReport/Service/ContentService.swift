@@ -31,6 +31,8 @@ extension ContentService {
         if let data = try? JSONEncoder().encode(cache) {
             userDefaults.set(data, forKey: Constants.timeLimit)
         }
+        
+        MonitoringService.shared.startMonitoring(timeLimit: timeLimit)
     }
     
     func timeLimit() -> TimeLimit? {

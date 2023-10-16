@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// TODO:
-// 4. Устанавливать ограничения в соответствии с time limit
 struct MainView: View {
     @ObservedObject private var viewModel: MainViewModel
     @State private var timeLimitViewPresenting = false

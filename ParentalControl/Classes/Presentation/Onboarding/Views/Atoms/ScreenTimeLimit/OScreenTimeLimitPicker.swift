@@ -10,7 +10,7 @@ import UIKit
 final class OScreenTimeLimitPicker: UIView {
     lazy var pickerView = makePickerView()
     
-    private lazy var hours = Array(1...24)
+    private lazy var hours = Array(0...24)
     private lazy var minutes = Array(0...59)
     
     override init(frame: CGRect) {
