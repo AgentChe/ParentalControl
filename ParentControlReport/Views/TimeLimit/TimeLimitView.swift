@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TimeLimitView: View {
     @Binding var isPresented: Bool
-    @Binding var timeLimit: TimeLimit?
+    var didUpdate: (TimeLimit) -> Void
     
     @State private var elements = [TimeLimitListElement]()
     
-    @State private var enable = true
+    @State private var enable = false
     @State private var schedule = ScheduleObject(schedule: WeekSchedule(su: true, mo: true, tu: false, we: true, th: false, fr: false, sa: true))
     @State private var time = TimeObject(hour: 2, minute: 0)
     
@@ -45,22 +45,15 @@ struct TimeLimitView: View {
                 Spacer()
                 
                 Button(action: {
-                    let timeLimit = TimeLimit(
-                        minutes: Int.random(in: 10...100),
-                        schedule: WeekSchedule(
-                            su: Bool.random(),
-                            mo: Bool.random(),
-                            tu: Bool.random(),
-                            we: Bool.random(),
-                            th: Bool.random(),
-                            fr: Bool.random(),
-                            sa: Bool.random()
-                        ),
-                        enable: Bool.random()
+                    let updated = TimeLimit(
+                        minutes: time.totalMinutes,
+                        schedule: schedule.schedule,
+                        enable: enable
                     )
-                    ContentService.shared.store(timeLimit: timeLimit)
                     
-                    self.timeLimit = timeLimit
+                    ContentService.shared.store(timeLimit: updated)
+                    
+                    didUpdate(updated)
                     
                     isPresented = false
                 }, label: {

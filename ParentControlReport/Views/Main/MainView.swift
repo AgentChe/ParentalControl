@@ -8,19 +8,14 @@
 import SwiftUI
 
 // TODO:
-// 1. Упаковать создание элементов в ObservableObject (как TimeObject)
 // 2. В TimeLimitView ициализировать актуальными данными
-// 3. В TimeLimitView сохранять обновления
+// 4. Устанавливать ограничения в соответствии с time limit
 struct MainView: View {
-    let bundle: MainBundle
-    
-    @State private var timeLimit = ContentService.shared.timeLimit()
-    @State private var elements: [MainListElement] = []
-    
+    @ObservedObject private var viewModel: MainViewModel
     @State private var timeLimitViewPresenting = false
     
     init(bundle: MainBundle) {
-        self.bundle = bundle
+        viewModel = MainViewModel(bundle: bundle)
     }
     
     var body: some View {
@@ -28,15 +23,14 @@ struct MainView: View {
             Color(Appearance.background)
             
             List {
-                ForEach(elements) { element in
+                ForEach(viewModel.elements) { element in
                     switch element.value {
                     case .setTimeLimit(let totalActivityDuration):
                         SetTimeLimitCell(totalActivity: totalActivityDuration)
                             .sheet(isPresented: $timeLimitViewPresenting) {
-                                TimeLimitView(
-                                    isPresented: $timeLimitViewPresenting,
-                                    timeLimit: $timeLimit
-                                )
+                                TimeLimitView(isPresented: $timeLimitViewPresenting) { timeLimit in
+                                    viewModel.update(timeLimit: timeLimit)
+                                }
                             }
                             .onTapGesture {
                                 timeLimitViewPresenting.toggle()
@@ -44,10 +38,9 @@ struct MainView: View {
                     case .timeLimit(let totalActivityDuration, let timeLimit):
                         TimeLimitCell(totalActivity: totalActivityDuration, timeLimit: timeLimit)
                             .sheet(isPresented: $timeLimitViewPresenting) {
-                                TimeLimitView(
-                                    isPresented: $timeLimitViewPresenting,
-                                    timeLimit: $timeLimit
-                                )
+                                TimeLimitView(isPresented: $timeLimitViewPresenting) { timeLimit in
+                                    viewModel.update(timeLimit: timeLimit)
+                                }
                             }
                             .onTapGesture {
                                 timeLimitViewPresenting.toggle()
@@ -57,33 +50,5 @@ struct MainView: View {
             }
             .listStyle(PlainListStyle())
         }
-        .onAppear {
-            var result = [MainListElement]()
-            
-            if let timeLimit = ContentService.shared.timeLimit() {
-                let value = MainListValue.timeLimit(
-                    totalActivityDuration: bundle.totalActivityDuration,
-                    timeLimit: timeLimit.minutes
-                )
-                let element = MainListElement(value: value)
-                result.append(element)
-            } else {
-                let value = MainListValue.setTimeLimit(bundle.totalActivityDuration)
-                let element = MainListElement(value: value)
-                result.append(element)
-            }
-            
-            elements = result
-        }
     }
-}
-
-private struct MainListElement: Identifiable {
-    let id = UUID().uuidString
-    let value: MainListValue
-}
-
-private enum MainListValue {
-    case setTimeLimit(TimeInterval)
-    case timeLimit(totalActivityDuration: TimeInterval, timeLimit: Int)
 }

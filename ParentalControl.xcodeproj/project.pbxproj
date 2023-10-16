@@ -149,6 +149,7 @@
 		DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA92AD6DD3000786C0F /* WeekdayButton.swift */; };
 		DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CAB2AD6E5D700786C0F /* SelectTimeCell.swift */; };
 		DEDF8CAE2AD6F36C00786C0F /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */; };
+		DEDF8CB32AD995CD00786C0F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CB22AD995CD00786C0F /* MainViewModel.swift */; };
 		DEE053862ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */; };
 		DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */; };
 		DEE0538C2ACEEA6E00101784 /* WebHistoryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0538B2ACEEA6E00101784 /* WebHistoryReport.swift */; };
@@ -343,6 +344,7 @@
 		DEDF8CA92AD6DD3000786C0F /* WeekdayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayButton.swift; sourceTree = "<group>"; };
 		DEDF8CAB2AD6E5D700786C0F /* SelectTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeCell.swift; sourceTree = "<group>"; };
 		DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
+		DEDF8CB22AD995CD00786C0F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceActivityReport.Context+Extension.swift"; sourceTree = "<group>"; };
 		DEE0538B2ACEEA6E00101784 /* WebHistoryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryReport.swift; sourceTree = "<group>"; };
 		DEE0538D2ACEEA8C00101784 /* WebHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryView.swift; sourceTree = "<group>"; };
@@ -923,6 +925,7 @@
 			children = (
 				DEDF8C942AD593AC00786C0F /* Atoms */,
 				DEDF8C852AD45EB200786C0F /* MainView.swift */,
+				DEDF8CB22AD995CD00786C0F /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1386,6 +1389,7 @@
 				DEDF8C922AD592E000786C0F /* GlobalDefinitions.swift in Sources */,
 				DEE053B32AD03C2A00101784 /* Scalable.swift in Sources */,
 				DEE0538E2ACEEA8C00101784 /* WebHistoryView.swift in Sources */,
+				DEDF8CB32AD995CD00786C0F /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

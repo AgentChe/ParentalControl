@@ -57,7 +57,7 @@ struct TimeLimitCell: View {
                         
                         Spacer()
                         
-                        Text(formatted(time: TimeInterval(timeLimit), style: .positional))
+                        Text(formatted(time: TimeInterval(timeLimit * 60), style: .positional))
                             .font(Font(Fonts.Satoshi.bold(size: 24.scale)))
                             .foregroundColor(Color(Appearance.black))
                             .frame(alignment: .trailing)
@@ -69,7 +69,7 @@ struct TimeLimitCell: View {
                         trailing: 16.scale
                     ))
                     
-                    ProgressView(value: totalActivity, total: TimeInterval(timeLimit))
+                    ProgressView(value: totalActivity, total: TimeInterval(timeLimit * 60))
                         .cornerRadius(4.5.scale)
                         .progressViewStyle(LinearProgressViewStyle())
                         .tint(Color(Appearance.secondary))

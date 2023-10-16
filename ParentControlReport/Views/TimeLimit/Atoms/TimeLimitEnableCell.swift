@@ -19,9 +19,13 @@ struct TimeLimitEnableCell: View {
                 Color(Appearance.white)
                     .cornerRadius(20.scale)
                 
-                Toggle("TimeLimit.Enable.Title".localized, isOn: $enable)
-                    .tint(Color(Appearance.secondary))
-                    .padding(16.scale)
+                Toggle(isOn: $enable) {
+                    Text("TimeLimit.Enable.Title".localized)
+                        .font(Font(Fonts.Satoshi.medium(size: 16.scale)))
+                        .foregroundColor(Color(Appearance.black))
+                }
+                .tint(Color(Appearance.secondary))
+                .padding(16.scale)
             }
             .padding(EdgeInsets(
                 top: 3.scale,

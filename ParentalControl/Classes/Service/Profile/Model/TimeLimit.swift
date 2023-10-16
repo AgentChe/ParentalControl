@@ -6,7 +6,7 @@
 //
 
 struct TimeLimit: Codable, Hashable {
-    let minutes: Int
-    let schedule: WeekSchedule
-    let enable: Bool
+    var minutes: Int
+    var schedule: WeekSchedule
+    var enable: Bool
 }
