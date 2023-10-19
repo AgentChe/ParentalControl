@@ -11,17 +11,13 @@ import SwiftUI
 struct StatisticsReport: DeviceActivityReportScene {
     var context: DeviceActivityReport.Context = .statistics
     
-    let content: (Statistics) -> StatisticsView
+    let content: ([DayActivity]) -> StatisticsView
     
-    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> Statistics {
-        var totalActivityDuration: TimeInterval = 0
-        
+    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> [DayActivity] {
         var days = [DayActivity]()
         
         for await item in data {
             for await segment in item.activitySegments {
-                totalActivityDuration += segment.totalActivityDuration
-                
                 var categories = [ActivityCategory]()
                 
                 for await category in segment.categories {
@@ -67,9 +63,6 @@ struct StatisticsReport: DeviceActivityReportScene {
             }
         }
         
-        return Statistics(
-            totalActivityDuration: totalActivityDuration,
-            days: days
-        )
+        return days
     }
 }

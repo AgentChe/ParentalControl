@@ -12,10 +12,10 @@ import ManagedSettings
 final class StatisticsViewModel: ObservableObject {
     @Published var period = PeriodSegmentView.Period.week
     
-    private let statistics: Statistics
+    private let daysActivities: [DayActivity]
     
-    init(statistics: Statistics) {
-        self.statistics = statistics
+    init(daysActivities: [DayActivity]) {
+        self.daysActivities = daysActivities
     }
 }
 
@@ -24,8 +24,27 @@ extension StatisticsViewModel {
     var elements: [StatisticsListElement] {
         var elements = [StatisticsListElement]()
         
+        let calendar = Calendar.current
+        let currentDay = calendar.startOfDay(for: Date())
+        let days = daysActivities.filter { day -> Bool in
+            switch period {
+            case .today:
+                return calendar.startOfDay(for: day.day) == currentDay
+            case .week:
+                guard let startDate = calendar.date(byAdding: .day, value: -7, to: currentDay) else {
+                    return false
+                }
+
+                return calendar.startOfDay(for: day.day) >= startDate
+            case .month:
+                return true
+            }
+        }
+        
+        var totalActivityDuration: TimeInterval = 0
+        
         var appsActivities = [ApplicationToken: (ActivityCategory, ActivityApplication, TimeInterval)]()
-        statistics.days.forEach { day in
+        days.forEach { day in
             day.categories.forEach { category in
                 category.applications.forEach { application in
                     let appsActivity = appsActivities[application.token]
@@ -35,6 +54,8 @@ extension StatisticsViewModel {
                         appsActivity?.1 ?? application,
                         (appsActivity?.2 ?? 0) + application.totalActivityDuration
                     )
+                    
+                    totalActivityDuration += application.totalActivityDuration
                 }
             }
         }
@@ -45,11 +66,11 @@ extension StatisticsViewModel {
             })
             .forEach { key, value in
                 var score: Float {
-                    guard statistics.totalActivityDuration != 0 else {
+                    guard totalActivityDuration != 0 else {
                         return 0
                     }
                     
-                    return Float(value.2 / statistics.totalActivityDuration)
+                    return Float(value.2 / totalActivityDuration)
                 }
                 
                 let element = ApplicationElement(

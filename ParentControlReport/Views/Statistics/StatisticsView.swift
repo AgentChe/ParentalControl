@@ -10,8 +10,8 @@ import SwiftUI
 struct StatisticsView: View {
     @ObservedObject var viewModel: StatisticsViewModel
     
-    init(statistics: Statistics) {
-        viewModel = StatisticsViewModel(statistics: statistics)
+    init(daysActivities: [DayActivity]) {
+        viewModel = StatisticsViewModel(daysActivities: daysActivities)
     }
     
     var body: some View {
