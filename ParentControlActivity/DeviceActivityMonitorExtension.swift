@@ -10,8 +10,6 @@ import DeviceActivity
 import ManagedSettings
 
 final class DeviceActivityMonitorExtension: DeviceActivityMonitor {
-    private let store = ManagedSettingsStore()
-    
     override func intervalDidStart(for activity: DeviceActivityName) {
         super.intervalDidStart(for: activity)
         

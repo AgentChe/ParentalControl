@@ -117,3 +117,8 @@
 "TimeLimit.Weekdays" = "Weekdays";
 "TimeLimit.TimeLimit" = "Time limit";
 "TimeLimit.Save" = "Save";
+
+// MARK: Statistics
+"Statistics.Filter.Today" = "Today";
+"Statistics.Filter.Week" = "Week";
+"Statistics.Filter.1M" = "1M";

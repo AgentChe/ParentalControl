@@ -120,6 +120,13 @@
 		DE8B51492ACC253F00F405B7 /* ParentControlReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = DE8B513D2ACC253F00F405B7 /* ParentControlReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE8B51502ACC6E6200F405B7 /* FamilyControlsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B514F2ACC6E6200F405B7 /* FamilyControlsManager.swift */; };
 		DE8B51532ACC74E300F405B7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51522ACC74E300F405B7 /* HomeViewController.swift */; };
+		DEB7B9462AE1739C00A46B29 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9452AE1739C00A46B29 /* StatisticsViewModel.swift */; };
+		DEB7B9482AE1756C00A46B29 /* StatisticsListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9472AE1756C00A46B29 /* StatisticsListElement.swift */; };
+		DEB7B94A2AE178B800A46B29 /* StatisticsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9492AE178B800A46B29 /* StatisticsList.swift */; };
+		DEB7B94E2AE1791100A46B29 /* ApplicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B94D2AE1791100A46B29 /* ApplicationCell.swift */; };
+		DEB7B9502AE1853400A46B29 /* DayActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B94F2AE1853400A46B29 /* DayActivity.swift */; };
+		DEB7B9522AE18CF100A46B29 /* ActivityCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9512AE18CF100A46B29 /* ActivityCategory.swift */; };
+		DEB7B9542AE1925600A46B29 /* ActivityApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */; };
 		DECBC4CB2AC70000003B9D70 /* WeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */; };
 		DECBC4CD2AC70966003B9D70 /* OPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CC2AC70966003B9D70 /* OPinView.swift */; };
 		DECBC4CF2AC70B46003B9D70 /* PinField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CE2AC70B46003B9D70 /* PinField.swift */; };
@@ -128,6 +135,11 @@
 		DECBC4D62AC71B39003B9D70 /* OEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D52AC71B39003B9D70 /* OEmailView.swift */; };
 		DECBC4D82AC721B5003B9D70 /* OFaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D72AC721B5003B9D70 /* OFaceIdView.swift */; };
 		DECBC4DA2ACBEA54003B9D70 /* EarlierButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */; };
+		DED881DF2AE0224900E56B4D /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED881DE2AE0224900E56B4D /* StatisticsViewController.swift */; };
+		DED881E12AE022B500E56B4D /* StatisticsReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED881E02AE022B500E56B4D /* StatisticsReport.swift */; };
+		DED881E32AE022D000E56B4D /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED881E22AE022D000E56B4D /* Statistics.swift */; };
+		DED881E62AE0230700E56B4D /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED881E52AE0230700E56B4D /* StatisticsView.swift */; };
+		DED881F72AE1660B00E56B4D /* PeriodSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED881F62AE1660B00E56B4D /* PeriodSegmentView.swift */; };
 		DEDF8C812AD452AB00786C0F /* TimeLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C802AD452AB00786C0F /* TimeLimit.swift */; };
 		DEDF8C862AD45EB200786C0F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C852AD45EB200786C0F /* MainView.swift */; };
 		DEDF8C892AD4605E00786C0F /* MainReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C882AD4605E00786C0F /* MainReport.swift */; };
@@ -347,6 +359,13 @@
 		DE8B51462ACC253F00F405B7 /* ParentControlReport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParentControlReport.entitlements; sourceTree = "<group>"; };
 		DE8B514F2ACC6E6200F405B7 /* FamilyControlsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyControlsManager.swift; sourceTree = "<group>"; };
 		DE8B51522ACC74E300F405B7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DEB7B9452AE1739C00A46B29 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
+		DEB7B9472AE1756C00A46B29 /* StatisticsListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsListElement.swift; sourceTree = "<group>"; };
+		DEB7B9492AE178B800A46B29 /* StatisticsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsList.swift; sourceTree = "<group>"; };
+		DEB7B94D2AE1791100A46B29 /* ApplicationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCell.swift; sourceTree = "<group>"; };
+		DEB7B94F2AE1853400A46B29 /* DayActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayActivity.swift; sourceTree = "<group>"; };
+		DEB7B9512AE18CF100A46B29 /* ActivityCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCategory.swift; sourceTree = "<group>"; };
+		DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityApplication.swift; sourceTree = "<group>"; };
 		DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayButton.swift; sourceTree = "<group>"; };
 		DECBC4CC2AC70966003B9D70 /* OPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPinView.swift; sourceTree = "<group>"; };
 		DECBC4CE2AC70B46003B9D70 /* PinField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinField.swift; sourceTree = "<group>"; };
@@ -355,6 +374,11 @@
 		DECBC4D52AC71B39003B9D70 /* OEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEmailView.swift; sourceTree = "<group>"; };
 		DECBC4D72AC721B5003B9D70 /* OFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFaceIdView.swift; sourceTree = "<group>"; };
 		DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlierButton.swift; sourceTree = "<group>"; };
+		DED881DE2AE0224900E56B4D /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		DED881E02AE022B500E56B4D /* StatisticsReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsReport.swift; sourceTree = "<group>"; };
+		DED881E22AE022D000E56B4D /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		DED881E52AE0230700E56B4D /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		DED881F62AE1660B00E56B4D /* PeriodSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodSegmentView.swift; sourceTree = "<group>"; };
 		DEDF8C802AD452AB00786C0F /* TimeLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimit.swift; sourceTree = "<group>"; };
 		DEDF8C852AD45EB200786C0F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEDF8C882AD4605E00786C0F /* MainReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReport.swift; sourceTree = "<group>"; };
@@ -944,6 +968,23 @@
 			path = FamilyControls;
 			sourceTree = "<group>";
 		};
+		DEB7B94B2AE178F400A46B29 /* StatisticsList */ = {
+			isa = PBXGroup;
+			children = (
+				DEB7B94C2AE1790300A46B29 /* Cells */,
+				DEB7B9492AE178B800A46B29 /* StatisticsList.swift */,
+			);
+			path = StatisticsList;
+			sourceTree = "<group>";
+		};
+		DEB7B94C2AE1790300A46B29 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEB7B94D2AE1791100A46B29 /* ApplicationCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DECBC4D02AC70C93003B9D70 /* Pin */ = {
 			isa = PBXGroup;
 			children = (
@@ -962,6 +1003,26 @@
 			path = ChildAge;
 			sourceTree = "<group>";
 		};
+		DED881E42AE022F900E56B4D /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				DED881E72AE0279600E56B4D /* Atoms */,
+				DED881E52AE0230700E56B4D /* StatisticsView.swift */,
+				DEB7B9452AE1739C00A46B29 /* StatisticsViewModel.swift */,
+				DEB7B9472AE1756C00A46B29 /* StatisticsListElement.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		DED881E72AE0279600E56B4D /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEB7B94B2AE178F400A46B29 /* StatisticsList */,
+				DED881F62AE1660B00E56B4D /* PeriodSegmentView.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
 		DEDF8C842AD45E9700786C0F /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -977,6 +1038,7 @@
 			children = (
 				DEE0538B2ACEEA6E00101784 /* WebHistoryReport.swift */,
 				DEDF8C882AD4605E00786C0F /* MainReport.swift */,
+				DED881E02AE022B500E56B4D /* StatisticsReport.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -986,6 +1048,7 @@
 			children = (
 				DE8B51522ACC74E300F405B7 /* HomeViewController.swift */,
 				DEE053A12AD034BE00101784 /* WebHistoryViewController.swift */,
+				DED881DE2AE0224900E56B4D /* StatisticsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1067,6 +1130,7 @@
 		DEE0538A2ACEEA1F00101784 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DED881E42AE022F900E56B4D /* Statistics */,
 				DEDF8CA12AD6D0E900786C0F /* TimeLimit */,
 				DEDF8C842AD45E9700786C0F /* Main */,
 				DEE053AD2AD03B7700101784 /* WebHistory */,
@@ -1079,6 +1143,10 @@
 			children = (
 				DEE053902ACEEE0100101784 /* WebHistoryItem.swift */,
 				DEDF8C972AD595D400786C0F /* MainBundle.swift */,
+				DED881E22AE022D000E56B4D /* Statistics.swift */,
+				DEB7B94F2AE1853400A46B29 /* DayActivity.swift */,
+				DEB7B9512AE18CF100A46B29 /* ActivityCategory.swift */,
+				DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1387,6 +1455,7 @@
 				DE6618A22AC5C4E5004CCD56 /* Appearance.swift in Sources */,
 				DE66188A2AC5C4E5004CCD56 /* XOREncryption.swift in Sources */,
 				DE66188E2AC5C4E5004CCD56 /* ContentError.swift in Sources */,
+				DED881DF2AE0224900E56B4D /* StatisticsViewController.swift in Sources */,
 				DE6619212AC5C4E6004CCD56 /* DefaultPaygate.swift in Sources */,
 				DEE053952AD02CE000101784 /* MainViewController.swift in Sources */,
 				DEE053992AD02CEB00101784 /* MainView.swift in Sources */,
@@ -1448,17 +1517,23 @@
 				DEDF8C912AD590F900786C0F /* ProfileCache.swift in Sources */,
 				DEE053912ACEEE0100101784 /* WebHistoryItem.swift in Sources */,
 				DEE053C12AD046A400101784 /* WebDomainView.swift in Sources */,
+				DEB7B9502AE1853400A46B29 /* DayActivity.swift in Sources */,
 				DEDF8C982AD595D400786C0F /* MainBundle.swift in Sources */,
 				DEE053B72AD042BB00101784 /* Fonts.swift in Sources */,
 				DEDF8C862AD45EB200786C0F /* MainView.swift in Sources */,
+				DEB7B9522AE18CF100A46B29 /* ActivityCategory.swift in Sources */,
 				DEE053B12AD03B9B00101784 /* WebHistoryEmptyView.swift in Sources */,
+				DEB7B9462AE1739C00A46B29 /* StatisticsViewModel.swift in Sources */,
 				DEDF8CA32AD6D0F800786C0F /* TimeLimitView.swift in Sources */,
 				DEDF8CB52ADD835600786C0F /* MonitoringService.swift in Sources */,
 				DEDF8C892AD4605E00786C0F /* MainReport.swift in Sources */,
+				DEB7B94E2AE1791100A46B29 /* ApplicationCell.swift in Sources */,
 				DE8B51402ACC253F00F405B7 /* ParentControlReport.swift in Sources */,
 				DEDF8C8B2AD58C8000786C0F /* WeekSchedule.swift in Sources */,
 				DEE053B62AD0428F00101784 /* String+Extension.swift in Sources */,
+				DED881E12AE022B500E56B4D /* StatisticsReport.swift in Sources */,
 				DEDF8CAE2AD6F36C00786C0F /* TimePickerView.swift in Sources */,
+				DED881F72AE1660B00E56B4D /* PeriodSegmentView.swift in Sources */,
 				DEDF8CA62AD6D7E800786C0F /* TimeLimitEnableCell.swift in Sources */,
 				DEDF8CA82AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift in Sources */,
 				DEDF8C8C2AD58C8300786C0F /* Profile.swift in Sources */,
@@ -1467,12 +1542,17 @@
 				DEE053AC2AD03AC000101784 /* Appearance.swift in Sources */,
 				DEE0538C2ACEEA6E00101784 /* WebHistoryReport.swift in Sources */,
 				DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */,
+				DEB7B94A2AE178B800A46B29 /* StatisticsList.swift in Sources */,
 				DEDF8C9D2AD6A35000786C0F /* ContentService.swift in Sources */,
 				DEDF8C9A2AD5D00900786C0F /* TimeLimitCell.swift in Sources */,
 				DEDF8C962AD593C800786C0F /* SetTimeLimitCell.swift in Sources */,
 				DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */,
 				DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */,
 				DEDF8C922AD592E000786C0F /* GlobalDefinitions.swift in Sources */,
+				DED881E32AE022D000E56B4D /* Statistics.swift in Sources */,
+				DEB7B9482AE1756C00A46B29 /* StatisticsListElement.swift in Sources */,
+				DED881E62AE0230700E56B4D /* StatisticsView.swift in Sources */,
+				DEB7B9542AE1925600A46B29 /* ActivityApplication.swift in Sources */,
 				DEE053B32AD03C2A00101784 /* Scalable.swift in Sources */,
 				DEE0538E2ACEEA8C00101784 /* WebHistoryView.swift in Sources */,
 				DEDF8CB32AD995CD00786C0F /* MainViewModel.swift in Sources */,

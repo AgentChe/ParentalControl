@@ -11,7 +11,7 @@ final class MainCoordinator {
     weak var parentVC: MainViewController?
     
     lazy var homeVC = NavigationController(rootViewController: HomeViewController.make())
-    lazy var statisticsVC = NavigationController(rootViewController: UIViewController())
+    lazy var statisticsVC = NavigationController(rootViewController: StatisticsViewController.make())
     lazy var webHistory = NavigationController(rootViewController: WebHistoryViewController.make())
     
     private var previousVC: UIViewController?

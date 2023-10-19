@@ -10,5 +10,6 @@ import DeviceActivity
 
 extension DeviceActivityReport.Context {
     static let main = Self("Main")
+    static let statistics = Self("Statistics")
     static let webHistory = Self("Web history")
 }
