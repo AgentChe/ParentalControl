@@ -15,7 +15,16 @@ final class WebHistoryViewController: UIViewController {
         
         view.backgroundColor = Appearance.background
         
-        let hostingVC = UIHostingController(rootView: DeviceActivityReport(.webHistory))
+        let filter = DeviceActivityFilter(
+            segment: .daily(during: DateInterval(
+                start: Calendar.current.date(byAdding: .month, value: -1, to: Date())!,
+                end: Date()
+            )),
+            users: .all,
+            devices: .init([.iPhone])
+        )
+        
+        let hostingVC = UIHostingController(rootView: DeviceActivityReport(.webHistory, filter: filter))
         hostingVC.view.backgroundColor = Appearance.background
         hostingVC.view.translatesAutoresizingMaskIntoConstraints = false
         addChild(hostingVC)

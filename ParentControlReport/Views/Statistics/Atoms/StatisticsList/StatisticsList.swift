@@ -14,16 +14,10 @@ struct StatisticsList: View {
         List {
             ForEach(elements, id: \.self) { element in
                 switch element {
+                case .chart(let element):
+                    ChartActivityCell(element: element)
                 case .application(let element):
                     ApplicationCell(element: element)
-                        .listRowInsets(EdgeInsets(
-                            top: 8.scale,
-                            leading: 8.scale,
-                            bottom: 8.scale,
-                            trailing: 8.scale
-                        ))
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.clear)
                 }
             }
         }

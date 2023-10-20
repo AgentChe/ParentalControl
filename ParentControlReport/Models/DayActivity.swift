@@ -9,7 +9,7 @@ import DeviceActivity
 import Foundation
 import ManagedSettings
 
-struct DayActivity {
+struct DayActivity: Hashable {
     let day: Date
     let categories: [ActivityCategory]
 }

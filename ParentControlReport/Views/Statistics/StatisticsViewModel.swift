@@ -24,9 +24,27 @@ extension StatisticsViewModel {
     var elements: [StatisticsListElement] {
         var elements = [StatisticsListElement]()
         
+        let days = filteredDays()
+        
+        let chartElement = ChartActivityElement(
+            period: period,
+            daysActivities: days
+        )
+        elements.append(.chart(chartElement))
+        
+        applicationsElements(from: days).forEach { elements.append(.application($0)) }
+        
+        return elements
+    }
+}
+
+// MARK: Private
+private extension StatisticsViewModel {
+    func filteredDays() -> [DayActivity] {
         let calendar = Calendar.current
         let currentDay = calendar.startOfDay(for: Date())
-        let days = daysActivities.filter { day -> Bool in
+        
+        return daysActivities.filter { day -> Bool in
             switch period {
             case .today:
                 return calendar.startOfDay(for: day.day) == currentDay
@@ -40,11 +58,15 @@ extension StatisticsViewModel {
                 return true
             }
         }
+    }
+    
+    func applicationsElements(from daysActivites: [DayActivity]) -> [ApplicationElement] {
+        var result = [ApplicationElement]()
         
         var totalActivityDuration: TimeInterval = 0
         
         var appsActivities = [ApplicationToken: (ActivityCategory, ActivityApplication, TimeInterval)]()
-        days.forEach { day in
+        daysActivites.forEach { day in
             day.categories.forEach { category in
                 category.applications.forEach { application in
                     let appsActivity = appsActivities[application.token]
@@ -79,9 +101,9 @@ extension StatisticsViewModel {
                     activityDuration: value.2,
                     activityScore: score
                 )
-                elements.append(.application(element))
+                result.append(element)
             }
         
-        return elements
+        return result
     }
 }

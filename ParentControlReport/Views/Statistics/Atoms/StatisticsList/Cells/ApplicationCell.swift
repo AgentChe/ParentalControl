@@ -76,6 +76,14 @@ struct ApplicationCell: View {
             }
             .padding(16.scale)
         }
+        .listRowInsets(EdgeInsets(
+            top: 8.scale,
+            leading: 8.scale,
+            bottom: 8.scale,
+            trailing: 8.scale
+        ))
+        .listRowSeparator(.hidden)
+        .listRowBackground(Color.clear)
     }
 }
 

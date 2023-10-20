@@ -8,7 +8,13 @@
 import Foundation
 
 enum StatisticsListElement: Hashable {
+    case chart(ChartActivityElement)
     case application(ApplicationElement)
+}
+
+struct ChartActivityElement: Hashable {
+    let period: PeriodSegmentView.Period
+    let daysActivities: [DayActivity]
 }
 
 struct ApplicationElement: Hashable {

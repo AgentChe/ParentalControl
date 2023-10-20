@@ -122,3 +122,4 @@
 "Statistics.Filter.Today" = "Today";
 "Statistics.Filter.Week" = "Week";
 "Statistics.Filter.1M" = "1M";
+"Statistics.Filter.1M.Long" = "1 month";

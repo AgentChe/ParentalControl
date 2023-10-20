@@ -127,6 +127,7 @@
 		DEB7B9502AE1853400A46B29 /* DayActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B94F2AE1853400A46B29 /* DayActivity.swift */; };
 		DEB7B9522AE18CF100A46B29 /* ActivityCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9512AE18CF100A46B29 /* ActivityCategory.swift */; };
 		DEB7B9542AE1925600A46B29 /* ActivityApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */; };
+		DEB7B9562AE1BBC900A46B29 /* ChartActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9552AE1BBC900A46B29 /* ChartActivityCell.swift */; };
 		DECBC4CB2AC70000003B9D70 /* WeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */; };
 		DECBC4CD2AC70966003B9D70 /* OPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CC2AC70966003B9D70 /* OPinView.swift */; };
 		DECBC4CF2AC70B46003B9D70 /* PinField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CE2AC70B46003B9D70 /* PinField.swift */; };
@@ -365,6 +366,7 @@
 		DEB7B94F2AE1853400A46B29 /* DayActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayActivity.swift; sourceTree = "<group>"; };
 		DEB7B9512AE18CF100A46B29 /* ActivityCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCategory.swift; sourceTree = "<group>"; };
 		DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityApplication.swift; sourceTree = "<group>"; };
+		DEB7B9552AE1BBC900A46B29 /* ChartActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartActivityCell.swift; sourceTree = "<group>"; };
 		DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayButton.swift; sourceTree = "<group>"; };
 		DECBC4CC2AC70966003B9D70 /* OPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPinView.swift; sourceTree = "<group>"; };
 		DECBC4CE2AC70B46003B9D70 /* PinField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinField.swift; sourceTree = "<group>"; };
@@ -978,6 +980,7 @@
 		DEB7B94C2AE1790300A46B29 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DEB7B9552AE1BBC900A46B29 /* ChartActivityCell.swift */,
 				DEB7B94D2AE1791100A46B29 /* ApplicationCell.swift */,
 			);
 			path = Cells;
@@ -1533,6 +1536,7 @@
 				DED881F72AE1660B00E56B4D /* PeriodSegmentView.swift in Sources */,
 				DEDF8CA62AD6D7E800786C0F /* TimeLimitEnableCell.swift in Sources */,
 				DEDF8CA82AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift in Sources */,
+				DEB7B9562AE1BBC900A46B29 /* ChartActivityCell.swift in Sources */,
 				DEDF8C8C2AD58C8300786C0F /* Profile.swift in Sources */,
 				DEE053AB2AD03ABA00101784 /* UIColor+Extension.swift in Sources */,
 				DEDF8C8D2AD58C8500786C0F /* TimeLimit.swift in Sources */,

@@ -9,7 +9,7 @@ import ManagedSettings
 import DeviceActivity
 import Foundation
 
-struct ActivityCategory {
+struct ActivityCategory:Hashable {
     let token: ActivityCategoryToken
     let totalActivityDuration: TimeInterval
     let name: String
