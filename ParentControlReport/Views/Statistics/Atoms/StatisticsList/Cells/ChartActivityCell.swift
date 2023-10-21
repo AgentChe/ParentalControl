@@ -32,6 +32,18 @@ struct ChartActivityCell: View {
                 Text(element.period.long)
                     .font(Font(Fonts.Satoshi.regular(size: 16.scale)))
                     .foregroundColor(Color(Appearance.black.withAlphaComponent(0.4)))
+                
+                ActivityCategoriesChart(element: element)
+                    .frame(height: 155.scale)
+                    .background(Color.clear)
+                
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(element.categories, id: \.self) {
+                            ActivityCategoryCell(element: $0)
+                        }
+                    }
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(16.scale)
@@ -83,3 +95,4 @@ private extension PeriodSegmentView.Period {
         }
     }
 }
+

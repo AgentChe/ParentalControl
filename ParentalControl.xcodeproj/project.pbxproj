@@ -128,6 +128,8 @@
 		DEB7B9522AE18CF100A46B29 /* ActivityCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9512AE18CF100A46B29 /* ActivityCategory.swift */; };
 		DEB7B9542AE1925600A46B29 /* ActivityApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */; };
 		DEB7B9562AE1BBC900A46B29 /* ChartActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9552AE1BBC900A46B29 /* ChartActivityCell.swift */; };
+		DEB7B9582AE2CADB00A46B29 /* ActivityCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9572AE2CADB00A46B29 /* ActivityCategoryCell.swift */; };
+		DEB7B95A2AE42F2200A46B29 /* ActivityCategoriesChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9592AE42F2200A46B29 /* ActivityCategoriesChart.swift */; };
 		DECBC4CB2AC70000003B9D70 /* WeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */; };
 		DECBC4CD2AC70966003B9D70 /* OPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CC2AC70966003B9D70 /* OPinView.swift */; };
 		DECBC4CF2AC70B46003B9D70 /* PinField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CE2AC70B46003B9D70 /* PinField.swift */; };
@@ -367,6 +369,8 @@
 		DEB7B9512AE18CF100A46B29 /* ActivityCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCategory.swift; sourceTree = "<group>"; };
 		DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityApplication.swift; sourceTree = "<group>"; };
 		DEB7B9552AE1BBC900A46B29 /* ChartActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartActivityCell.swift; sourceTree = "<group>"; };
+		DEB7B9572AE2CADB00A46B29 /* ActivityCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCategoryCell.swift; sourceTree = "<group>"; };
+		DEB7B9592AE42F2200A46B29 /* ActivityCategoriesChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCategoriesChart.swift; sourceTree = "<group>"; };
 		DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayButton.swift; sourceTree = "<group>"; };
 		DECBC4CC2AC70966003B9D70 /* OPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPinView.swift; sourceTree = "<group>"; };
 		DECBC4CE2AC70B46003B9D70 /* PinField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinField.swift; sourceTree = "<group>"; };
@@ -982,6 +986,8 @@
 			children = (
 				DEB7B9552AE1BBC900A46B29 /* ChartActivityCell.swift */,
 				DEB7B94D2AE1791100A46B29 /* ApplicationCell.swift */,
+				DEB7B9572AE2CADB00A46B29 /* ActivityCategoryCell.swift */,
+				DEB7B9592AE42F2200A46B29 /* ActivityCategoriesChart.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1538,6 +1544,7 @@
 				DEDF8CA82AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift in Sources */,
 				DEB7B9562AE1BBC900A46B29 /* ChartActivityCell.swift in Sources */,
 				DEDF8C8C2AD58C8300786C0F /* Profile.swift in Sources */,
+				DEB7B95A2AE42F2200A46B29 /* ActivityCategoriesChart.swift in Sources */,
 				DEE053AB2AD03ABA00101784 /* UIColor+Extension.swift in Sources */,
 				DEDF8C8D2AD58C8500786C0F /* TimeLimit.swift in Sources */,
 				DEE053AC2AD03AC000101784 /* Appearance.swift in Sources */,
@@ -1556,6 +1563,7 @@
 				DEE053B32AD03C2A00101784 /* Scalable.swift in Sources */,
 				DEE0538E2ACEEA8C00101784 /* WebHistoryView.swift in Sources */,
 				DEDF8CB32AD995CD00786C0F /* MainViewModel.swift in Sources */,
+				DEB7B9582AE2CADB00A46B29 /* ActivityCategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

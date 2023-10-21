@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+import ManagedSettings
 
 enum StatisticsListElement: Hashable {
     case chart(ChartActivityElement)
@@ -15,6 +17,14 @@ enum StatisticsListElement: Hashable {
 struct ChartActivityElement: Hashable {
     let period: PeriodSegmentView.Period
     let daysActivities: [DayActivity]
+    let categories: [CategoryElement]
+}
+
+struct CategoryElement: Hashable {
+    let token: ActivityCategoryToken
+    let color: Color
+    let name: String
+    let activityDuration: TimeInterval
 }
 
 struct ApplicationElement: Hashable {

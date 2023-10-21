@@ -17,7 +17,7 @@ struct StatisticsView: View {
     var body: some View {
         ZStack {
             Color(Appearance.background)
-            
+
             VStack {
                 PeriodSegmentView(period: $viewModel.period)
                     .frame(height: 38.scale)
@@ -27,7 +27,7 @@ struct StatisticsView: View {
                         bottom: 16.scale,
                         trailing: 20.scale
                     ))
-                
+
                 StatisticsList(elements: viewModel.elements)
             }
         }

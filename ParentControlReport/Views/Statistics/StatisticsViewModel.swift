@@ -28,7 +28,8 @@ extension StatisticsViewModel {
         
         let chartElement = ChartActivityElement(
             period: period,
-            daysActivities: days
+            daysActivities: days,
+            categories: categoriesElements(from: days)
         )
         elements.append(.chart(chartElement))
         
@@ -58,6 +59,43 @@ private extension StatisticsViewModel {
                 return true
             }
         }
+    }
+    
+    func categoriesElements(from daysActivites: [DayActivity]) -> [CategoryElement] {
+        var categoriesActivities = [ActivityCategoryToken: (String, TimeInterval, Color)]()
+        daysActivites.forEach { day in
+            day.categories.forEach { category in
+                let categoryActivity = categoriesActivities[category.token]
+                
+                var color: Color {
+                    if let color = categoryActivity?.2 {
+                        return color
+                    }
+                    
+                    return Color(
+                        red: Double.random(in: 0...255) / 255,
+                        green: Double.random(in: 0...255) / 255,
+                        blue: Double.random(in: 0...255) / 255
+                    )
+                }
+                
+                categoriesActivities[category.token] = (
+                    categoryActivity?.0 ?? category.name,
+                    (categoryActivity?.1 ?? 0) + category.totalActivityDuration,
+                    color
+                )
+            }
+        }
+        
+        return categoriesActivities
+            .map { key, value -> CategoryElement in
+                CategoryElement(
+                    token: key,
+                    color: value.2,
+                    name: value.0,
+                    activityDuration: value.1
+                )
+            }
     }
     
     func applicationsElements(from daysActivites: [DayActivity]) -> [ApplicationElement] {
