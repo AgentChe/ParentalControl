@@ -34,3 +34,10 @@ struct Downtime: Codable, Hashable {
         self.isDefault = isDefault
     }
 }
+
+// MARK: Public
+extension Downtime {
+    var isEmpty: Bool {
+        (from == nil) || (to == nil) || (schedule == nil)
+    }
+}

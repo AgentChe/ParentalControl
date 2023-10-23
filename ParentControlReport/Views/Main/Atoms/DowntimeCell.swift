@@ -9,7 +9,17 @@ import SwiftUI
 
 struct DowntimeCell: View {
     let downtime: Downtime
-    @State var enable: Bool
+    let didSelect: () -> Void
+    let didChange: (Bool) -> Void
+    
+    @State private var enable: Bool
+    
+    init(downtime: Downtime, didSelect: @escaping () -> Void, didChange: @escaping (Bool) -> Void) {
+        self.downtime = downtime
+        self._enable = State<Bool>(initialValue: downtime.enable)
+        self.didSelect = didSelect
+        self.didChange = didChange
+    }
     
     var body: some View {
         ZStack {
@@ -24,6 +34,9 @@ struct DowntimeCell: View {
                     bottom: 6.scale,
                     trailing: 3.scale
                 ))
+                .onTapGesture {
+                    didSelect()
+                }
             
             if enable {
                 enableView
@@ -61,8 +74,7 @@ private extension DowntimeCell {
             
             Spacer()
             
-            Toggle(isOn: $enable) {}
-                .tint(Color(Appearance.secondary))
+            toggleView
         }
         .padding(16.scale)
     }
@@ -86,8 +98,7 @@ private extension DowntimeCell {
                 
                 Spacer()
                 
-                Toggle(isOn: $enable) {}
-                    .tint(Color(Appearance.secondary))
+                toggleView
             }
             
             if let schedule = downtime.schedule {
@@ -124,6 +135,33 @@ private extension DowntimeCell {
             }
         }
         .padding(16.scale)
+    }
+}
+
+// MARK: Private
+private extension DowntimeCell {
+    var toggleView: some View {
+        Toggle(isOn: $enable.onUpdate {
+            if enable && downtime.isEmpty {
+                didSelect()
+                enable = false
+            } else {
+                didChange(enable)
+            }
+        }) {}
+        .tint(Color(Appearance.secondary))
+    }
+}
+
+// MARK: Additional
+private extension Binding {
+    func onUpdate(_ action: @escaping () -> Void) -> Binding<Value> {
+        Binding(get: {
+            wrappedValue
+        }, set: { newValue in
+            wrappedValue = newValue
+            action()
+        })
     }
 }
 

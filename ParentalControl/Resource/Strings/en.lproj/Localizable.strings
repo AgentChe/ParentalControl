@@ -133,3 +133,5 @@
 "Downtime.NotSet" = "Not set";
 "Downtime.FromTo" = "%@ to %@";
 "Downtime.Add" = "Add Downtime";
+"Downtime.Remove" = "Remove this downtime";
+"Downtime.Save" = "Save";

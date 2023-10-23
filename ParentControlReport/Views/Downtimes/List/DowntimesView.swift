@@ -17,21 +17,30 @@ import SwiftUI
 struct DowntimesView: View {
     @ObservedObject var viewModel = DowntimesViewModel()
     
+    @State private var editDowntimePresenting = false
+    
     var body: some View {
         ZStack {
             Color(Appearance.background)
             
             VStack {
                 List(viewModel.downtimes, id: \.id) { downtime in
-                    DowntimeCell(
-                        downtime: downtime,
-                        enable: downtime.enable
-                    )
+                    DowntimeCell(downtime: downtime, didSelect: {
+                        editDowntimePresenting.toggle()
+                    }, didChange: { enable in
+                        // TODO
+                    })
+                    .sheet(isPresented: $editDowntimePresenting) {
+                        EditDowntimeView(
+                            isPresented: $editDowntimePresenting,
+                            downtime: downtime
+                        )
+                    }
                 }
                 .listStyle(PlainListStyle())
                 
                 Button(action: {
-                    
+                    // TODO
                 }, label: {
                     Text("Downtime.Add")
                         .padding(EdgeInsets(
