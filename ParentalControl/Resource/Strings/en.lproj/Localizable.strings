@@ -123,3 +123,13 @@
 "Statistics.Filter.Week" = "Week";
 "Statistics.Filter.1M" = "1M";
 "Statistics.Filter.1M.Long" = "1 month";
+
+// MARK: Downtime
+"Downtime" = "Downtime";
+"Downtime.SetAvailable" = "Set available time range";
+"Downtime.Bedtime" = "Bedtime";
+"Downtime.School" = "School";
+"Downtime.Homework" = "Homework";
+"Downtime.NotSet" = "Not set";
+"Downtime.FromTo" = "%@ to %@";
+"Downtime.Add" = "Add Downtime";

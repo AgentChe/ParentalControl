@@ -10,10 +10,14 @@ import ManagedSettings
 import Foundation
 
 final class MonitoringService {
+    enum Constants {
+        static let store_timeLimit = "store_timeLimit"
+    }
+    
     static let shared = MonitoringService()
     
     private lazy var center = DeviceActivityCenter()
-    private lazy var store = ManagedSettingsStore()
+    private lazy var timeLimitStore = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: Constants.store_timeLimit))
     
     private lazy var timeLimitActivities: [DeviceActivityName] = [
         .timeLimitSu,
@@ -34,7 +38,7 @@ extension MonitoringService {
         center.stopMonitoring(timeLimitActivities)
 
         guard timeLimit.enable else {
-            unblockAll()
+            timeLimitStore.clearAllSettings()
             return
         }
 
@@ -88,28 +92,21 @@ extension MonitoringService {
 extension MonitoringService {
     func intervalDidStart(for activity: DeviceActivityName) {
         if timeLimitActivities.contains(activity) {
-            unblockAll()
+            timeLimitStore.clearAllSettings()
         }
     }
     
     func intervalDidEnd(for activity: DeviceActivityName) {
         if timeLimitActivities.contains(activity) {
-            unblockAll()
+            timeLimitStore.clearAllSettings()
         }
     }
     
     func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
         if timeLimitActivities.contains(activity) {
-            store.shield.applicationCategories = .all()
-            store.shield.webDomainCategories = .all()
+            timeLimitStore.shield.applicationCategories = .all()
+            timeLimitStore.shield.webDomainCategories = .all()
         }
-    }
-}
-
-// MARK: Private
-private extension MonitoringService {
-    func unblockAll() {
-        store.clearAllSettings()
     }
 }
 

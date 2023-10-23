@@ -8,13 +8,14 @@
 import SwiftUI
 
 final class MainViewModel: ObservableObject {
-    @Published var elements = [MainListElement]()
+    @Published var elements: [MainElement] = []
     
     @State var timeLimitEnable: TimeLimitEnableObject
     @State var timeLimitTime: TimeObject
     @State var timeLimitSchedule: ScheduleObject
     
     private let bundle: MainBundle
+    private let downtimes: [Downtime]
     
     init(bundle: MainBundle) {
         self.bundle = bundle
@@ -27,39 +28,62 @@ final class MainViewModel: ObservableObject {
         )
         timeLimitSchedule = ScheduleObject(schedule: timeLimit?.schedule)
         
-        createElements()
+        downtimes = ContentService.shared.downtimes()
+        
+        makeElements()
     }
     
-    private func createElements() {
-        var result = [MainListElement]()
+    func makeElements() {
+        var result = [MainElement]()
 
         if timeLimitEnable.enable {
-            let value = MainListValue.timeLimit(
+            let element = TimeLimitElement(
                 totalActivityDuration: bundle.totalActivityDuration,
                 timeLimit: timeLimitTime.totalMinutes
             )
-            let element = MainListElement(value: value)
-            result.append(element)
+            result.append(.timeLimit(element))
         } else {
-            let value = MainListValue.setTimeLimit(bundle.totalActivityDuration)
-            let element = MainListElement(value: value)
-            result.append(element)
+            let element = SetTimeLimitElement(totalActivityDuration: bundle.totalActivityDuration)
+            result.append(.setTimeLimit(element))
+        }
+        
+        result.append(.downtimes)
+        
+        downtimes.forEach { downtime in
+            result.append(.downtime(downtime))
         }
 
         elements = result
     }
 }
 
-final class MainListElement: Identifiable, ObservableObject {
-    let id = UUID().uuidString
-    @Published var value: MainListValue
+enum MainElement: Identifiable {
+    case setTimeLimit(SetTimeLimitElement)
+    case timeLimit(TimeLimitElement)
+    case downtimes
+    case downtime(Downtime)
     
-    init(value: MainListValue) {
-        self.value = value
+    var id: String {
+        switch self {
+        case .setTimeLimit(let element):
+            return element.id
+        case .timeLimit(let element):
+            return element.id
+        case .downtimes:
+            return "downtimes"
+        case .downtime(let downtime):
+            return downtime.id
+        }
     }
 }
 
-enum MainListValue {
-    case setTimeLimit(TimeInterval)
-    case timeLimit(totalActivityDuration: TimeInterval, timeLimit: Int)
+struct SetTimeLimitElement: Identifiable {
+    let id: String = UUID().uuidString
+    let totalActivityDuration: TimeInterval
+}
+
+struct TimeLimitElement: Identifiable {
+    let id: String = UUID().uuidString
+    let totalActivityDuration: TimeInterval
+    let timeLimit: Int
 }

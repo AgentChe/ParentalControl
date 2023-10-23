@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject private var viewModel: MainViewModel
+    
     @State private var timeLimitViewPresenting = false
+    @State private var downtimesPresenting = false
     
     init(bundle: MainBundle) {
         viewModel = MainViewModel(bundle: bundle)
@@ -21,9 +23,9 @@ struct MainView: View {
             
             List {
                 ForEach(viewModel.elements) { element in
-                    switch element.value {
-                    case .setTimeLimit(let totalActivityDuration):
-                        SetTimeLimitCell(totalActivity: totalActivityDuration)
+                    switch element {
+                    case .setTimeLimit(let object):
+                        SetTimeLimitCell(totalActivity: object.totalActivityDuration)
                             .sheet(isPresented: $timeLimitViewPresenting) {
                                 TimeLimitView(
                                     isPresented: $timeLimitViewPresenting,
@@ -35,18 +37,34 @@ struct MainView: View {
                             .onTapGesture {
                                 timeLimitViewPresenting.toggle()
                             }
-                    case .timeLimit(let totalActivityDuration, let timeLimit):
-                        TimeLimitCell(totalActivity: totalActivityDuration, timeLimit: timeLimit)
-                            .sheet(isPresented: $timeLimitViewPresenting) {
-                                TimeLimitView(
-                                    isPresented: $timeLimitViewPresenting,
-                                    enable: viewModel.$timeLimitEnable,
-                                    schedule: viewModel.$timeLimitSchedule,
-                                    time: viewModel.$timeLimitTime
-                                )
+                    case .timeLimit(let object):
+                        TimeLimitCell(
+                            totalActivity: object.totalActivityDuration,
+                            timeLimit: object.timeLimit
+                        )
+                        .sheet(isPresented: $timeLimitViewPresenting) {
+                            TimeLimitView(
+                                isPresented: $timeLimitViewPresenting,
+                                enable: viewModel.$timeLimitEnable,
+                                schedule: viewModel.$timeLimitSchedule,
+                                time: viewModel.$timeLimitTime
+                            ) 
+                        }
+                        .onTapGesture {
+                            timeLimitViewPresenting.toggle()
+                        }
+                    case .downtimes:
+                        DowntimesMainCell()
+                            .sheet(isPresented: $downtimesPresenting) {
+                                DowntimesView()
                             }
                             .onTapGesture {
-                                timeLimitViewPresenting.toggle()
+                                downtimesPresenting.toggle()
+                            }
+                    case .downtime(let downtime):
+                        DowntimeCell(downtime: downtime, enable: downtime.enable)
+                            .onTapGesture {
+                                // TODO
                             }
                     }
                 }

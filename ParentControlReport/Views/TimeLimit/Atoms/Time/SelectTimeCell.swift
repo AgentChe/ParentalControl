@@ -8,8 +8,8 @@
 import SwiftUI
 
 final class TimeObject: ObservableObject {
-    @Published fileprivate var hour: Int
-    @Published fileprivate var minute: Int
+    @Published var hour: Int
+    @Published var minute: Int
     
     init(hour: Int, minute: Int) {
         self.hour = hour
