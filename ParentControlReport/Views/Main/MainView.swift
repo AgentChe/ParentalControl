@@ -7,15 +7,60 @@
 
 import SwiftUI
 
-struct MainView: View {
-    @ObservedObject private var viewModel: MainViewModel
+enum MainElement: Identifiable {
+    case setTimeLimit(SetTimeLimitElement)
+    case timeLimit(TimeLimitElement)
+    case downtimes
+    case downtime(Downtime)
     
+    var id: String {
+        switch self {
+        case .setTimeLimit(let element):
+            return element.id
+        case .timeLimit(let element):
+            return element.id
+        case .downtimes:
+            return "downtimes"
+        case .downtime(let downtime):
+            return downtime.id
+        }
+    }
+}
+
+struct SetTimeLimitElement: Identifiable {
+    let id: String = UUID().uuidString
+    let totalActivityDuration: TimeInterval
+}
+
+struct TimeLimitElement: Identifiable {
+    let id: String = UUID().uuidString
+    let totalActivityDuration: TimeInterval
+    let timeLimit: Int
+}
+
+struct MainView: View {
     @State private var timeLimitViewPresenting = false
     @State private var downtimesPresenting = false
     @State private var editDowntime: Downtime?
     
+    @State private var timeLimitEnable: TimeLimitEnableObject
+    @State private var timeLimitTime: TimeObject
+    @State private var timeLimitSchedule: WeekSchedule
+    
+    @StateObject private var downtimes = Downtimes()
+    
+    private let bundle: MainBundle
+    
     init(bundle: MainBundle) {
-        viewModel = MainViewModel(bundle: bundle)
+        self.bundle = bundle
+        
+        let timeLimit = ContentService.shared.timeLimit()
+        timeLimitEnable = TimeLimitEnableObject(enable: timeLimit?.enable ?? false)
+        timeLimitTime = TimeObject(
+            hour: (timeLimit?.minutes ?? 0) / 60,
+            minute: (timeLimit?.minutes ?? 0) % 60
+        )
+        timeLimitSchedule = timeLimit?.schedule ?? WeekSchedule()
     }
     
     var body: some View {
@@ -23,16 +68,16 @@ struct MainView: View {
             Color(Appearance.background)
             
             List {
-                ForEach(viewModel.elements) { element in
+                ForEach(elements) { element in
                     switch element {
                     case .setTimeLimit(let object):
                         SetTimeLimitCell(totalActivity: object.totalActivityDuration)
                             .sheet(isPresented: $timeLimitViewPresenting) {
                                 TimeLimitView(
                                     isPresented: $timeLimitViewPresenting,
-                                    enable: viewModel.$timeLimitEnable,
-                                    schedule: viewModel.$timeLimitSchedule,
-                                    time: viewModel.$timeLimitTime
+                                    enable: $timeLimitEnable,
+                                    schedule: $timeLimitSchedule,
+                                    time: $timeLimitTime
                                 )
                             }
                             .onTapGesture {
@@ -46,10 +91,10 @@ struct MainView: View {
                         .sheet(isPresented: $timeLimitViewPresenting) {
                             TimeLimitView(
                                 isPresented: $timeLimitViewPresenting,
-                                enable: viewModel.$timeLimitEnable,
-                                schedule: viewModel.$timeLimitSchedule,
-                                time: viewModel.$timeLimitTime
-                            ) 
+                                enable: $timeLimitEnable,
+                                schedule: $timeLimitSchedule,
+                                time: $timeLimitTime
+                            )
                         }
                         .onTapGesture {
                             timeLimitViewPresenting.toggle()
@@ -62,21 +107,47 @@ struct MainView: View {
                             .onTapGesture {
                                 downtimesPresenting.toggle()
                             }
-                            .environmentObject(viewModel.downtimes)
+                            .environmentObject(downtimes)
                     case .downtime(let downtime):
                         DowntimeCell(downtime: downtime, didSelect: { selected in
                             editDowntime = selected
                         }, didChange: { changed in
-                            viewModel.downtimes.set(downtime: changed)
+                            downtimes.set(downtime: changed)
                         })
                         .sheet(item: $editDowntime) { downtime in
                             EditDowntimeView(downtime: downtime)
                         }
-                        .environmentObject(viewModel.downtimes)
+                        .environmentObject(downtimes)
                     }
                 }
             }
             .listStyle(PlainListStyle())
         }
+    }
+}
+
+// MARK: Private
+private extension MainView {
+    var elements: [MainElement] {
+        var result = [MainElement]()
+
+        if timeLimitEnable.enable {
+            let element = TimeLimitElement(
+                totalActivityDuration: bundle.totalActivityDuration,
+                timeLimit: timeLimitTime.totalMinutes
+            )
+            result.append(.timeLimit(element))
+        } else {
+            let element = SetTimeLimitElement(totalActivityDuration: bundle.totalActivityDuration)
+            result.append(.setTimeLimit(element))
+        }
+        
+        result.append(.downtimes)
+        
+        downtimes.downtimes.forEach { downtime in
+            result.append(.downtime(downtime))
+        }
+
+        return result
     }
 }

@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// TODO:
-// 4. Обновление главного экрана после изменений
 struct DowntimesView: View {
     @EnvironmentObject private var downtimes: Downtimes
     

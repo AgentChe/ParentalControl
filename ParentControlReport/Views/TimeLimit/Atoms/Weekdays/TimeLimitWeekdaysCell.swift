@@ -7,40 +7,8 @@
 
 import SwiftUI
 
-final class ScheduleObject: ObservableObject {
-    @Published var su: Bool
-    @Published var mo: Bool
-    @Published var tu: Bool
-    @Published var we: Bool
-    @Published var th: Bool
-    @Published var fr: Bool
-    @Published var sa: Bool
-    
-    init(schedule: WeekSchedule?) {
-        su = schedule?.su ?? false
-        mo = schedule?.mo ?? false
-        tu = schedule?.tu ?? false
-        we = schedule?.we ?? false
-        th = schedule?.th ?? false
-        fr = schedule?.fr ?? false
-        sa = schedule?.sa ?? false
-    }
-    
-    var schedule: WeekSchedule {
-        WeekSchedule(
-            su: su,
-            mo: mo,
-            tu: tu,
-            we: we,
-            th: th,
-            fr: fr,
-            sa: sa
-        )
-    }
-}
-
 struct TimeLimitWeekdaysCell: View {
-    @ObservedObject var schedule: ScheduleObject
+    @ObservedObject var schedule: WeekSchedule
     
     var body: some View {
         ZStack {

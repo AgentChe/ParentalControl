@@ -10,7 +10,7 @@ import SwiftUI
 struct TimeLimitView: View {
     @Binding var isPresented: Bool
     @Binding var enable: TimeLimitEnableObject
-    @Binding var schedule: ScheduleObject
+    @Binding var schedule: WeekSchedule
     @Binding var time: TimeObject
     
     @State private var elements = [TimeLimitListElement]()
@@ -45,7 +45,7 @@ struct TimeLimitView: View {
                 Button(action: {
                     let updated = TimeLimit(
                         minutes: time.totalMinutes,
-                        schedule: schedule.schedule,
+                        schedule: schedule,
                         enable: enable.enable
                     )
                     

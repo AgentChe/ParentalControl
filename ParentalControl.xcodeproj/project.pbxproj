@@ -181,7 +181,6 @@
 		DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA92AD6DD3000786C0F /* WeekdayButton.swift */; };
 		DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CAB2AD6E5D700786C0F /* SelectTimeCell.swift */; };
 		DEDF8CAE2AD6F36C00786C0F /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */; };
-		DEDF8CB32AD995CD00786C0F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CB22AD995CD00786C0F /* MainViewModel.swift */; };
 		DEDF8CB52ADD835600786C0F /* MonitoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CB42ADD835600786C0F /* MonitoringService.swift */; };
 		DEDF8CB62ADD835900786C0F /* MonitoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CB42ADD835600786C0F /* MonitoringService.swift */; };
 		DEDF8CBD2ADD848400786C0F /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDF8CBC2ADD848300786C0F /* DeviceActivity.framework */; };
@@ -432,7 +431,6 @@
 		DEDF8CA92AD6DD3000786C0F /* WeekdayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayButton.swift; sourceTree = "<group>"; };
 		DEDF8CAB2AD6E5D700786C0F /* SelectTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeCell.swift; sourceTree = "<group>"; };
 		DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
-		DEDF8CB22AD995CD00786C0F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		DEDF8CB42ADD835600786C0F /* MonitoringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringService.swift; sourceTree = "<group>"; };
 		DEDF8CBB2ADD848300786C0F /* ParentControlActivity.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ParentControlActivity.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDF8CBC2ADD848300786C0F /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
@@ -1143,7 +1141,6 @@
 			children = (
 				DEDF8C942AD593AC00786C0F /* Atoms */,
 				DEDF8C852AD45EB200786C0F /* MainView.swift */,
-				DEDF8CB22AD995CD00786C0F /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1693,7 +1690,6 @@
 				DEB7B9542AE1925600A46B29 /* ActivityApplication.swift in Sources */,
 				DEE053B32AD03C2A00101784 /* Scalable.swift in Sources */,
 				DEE0538E2ACEEA8C00101784 /* WebHistoryView.swift in Sources */,
-				DEDF8CB32AD995CD00786C0F /* MainViewModel.swift in Sources */,
 				DEB7B9582AE2CADB00A46B29 /* ActivityCategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
