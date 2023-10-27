@@ -9,12 +9,12 @@ import SwiftUI
 
 struct DowntimeCell: View {
     let downtime: Downtime
-    let didSelect: () -> Void
-    let didChange: (Bool) -> Void
+    let didSelect: (Downtime) -> Void
+    let didChange: (Downtime) -> Void
     
     @State private var enable: Bool
     
-    init(downtime: Downtime, didSelect: @escaping () -> Void, didChange: @escaping (Bool) -> Void) {
+    init(downtime: Downtime, didSelect: @escaping (Downtime) -> Void, didChange: @escaping (Downtime) -> Void) {
         self.downtime = downtime
         self._enable = State<Bool>(initialValue: downtime.enable)
         self.didSelect = didSelect
@@ -35,7 +35,7 @@ struct DowntimeCell: View {
                     trailing: 3.scale
                 ))
                 .onTapGesture {
-                    didSelect()
+                    didSelect(downtime)
                 }
             
             if enable {
@@ -143,10 +143,11 @@ private extension DowntimeCell {
     var toggleView: some View {
         Toggle(isOn: $enable.onUpdate {
             if enable && downtime.isEmpty {
-                didSelect()
+                didSelect(downtime)
                 enable = false
             } else {
-                didChange(enable)
+                downtime.enable = enable
+                didChange(downtime)
             }
         }) {}
         .tint(Color(Appearance.secondary))
@@ -169,7 +170,7 @@ private extension Binding {
 private extension Date {
     var time: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:MM"
+        formatter.dateFormat = "HH:mm"
         return formatter.string(from: self)
     }
 }

@@ -52,6 +52,10 @@ final class StatisticsViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
 }
 
 // MARK: Public

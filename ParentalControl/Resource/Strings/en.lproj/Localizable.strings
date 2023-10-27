@@ -135,3 +135,16 @@
 "Downtime.Add" = "Add Downtime";
 "Downtime.Remove" = "Remove this downtime";
 "Downtime.Save" = "Save";
+"Downtime.SpecificTime" = "Specific time";
+"Downtime.From" = "From";
+"Downtime.To" = "To";
+"Downtime.Weekdays" = "Weekdays";
+"Downtime.Remove.Confirm.Title" = "Remove this downtime";
+"Downtime.Remove.Confirm.SubTitle" = "Are you sure? The downtime will have to be added again";
+"Downtime.Remove.Confirm.Remove" = "Remove";
+"Downtime.Remove.Confirm.Cancel" = "Cancel";
+"Downtime.DateSheet.Start.Title" = "Start time";
+"Downtime.DateSheet.Start.SubTitle" = "Select a start time for downtime";
+"Downtime.DateSheet.End.Title" = "End time";
+"Downtime.DateSheet.End.SubTitle" = "Select an end time for downtime";
+"Downtime.EnterName" = "Enter name";

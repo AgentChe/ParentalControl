@@ -110,6 +110,11 @@
 		DE66195B2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66195A2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift */; };
 		DE66195D2AC5FCD3004CCD56 /* OScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66195C2AC5FCD3004CCD56 /* OScheduleView.swift */; };
 		DE6619602AC5FD5F004CCD56 /* WeekSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */; };
+		DE78C8142AEAAE8700E944F4 /* ConfirmAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */; };
+		DE78C8162AEAE8D100E944F4 /* DateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8152AEAE8D100E944F4 /* DateSheet.swift */; };
+		DE78C8192AEBE10600E944F4 /* AddDowntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8182AEBE10600E944F4 /* AddDowntime.swift */; };
+		DE78C81C2AEBE4A500E944F4 /* DowntimeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C81B2AEBE4A500E944F4 /* DowntimeName.swift */; };
+		DE78C81F2AEBE67000E944F4 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C81E2AEBE67000E944F4 /* View+Extension.swift */; };
 		DE8B512B2ACBFA7000F405B7 /* OPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B512A2ACBFA7000F405B7 /* OPreloaderView.swift */; };
 		DE8B512E2ACBFEEA00F405B7 /* SetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */; };
 		DE8B51312ACC00FD00F405B7 /* GetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51302ACC00FD00F405B7 /* GetProfileRequest.swift */; };
@@ -135,9 +140,12 @@
 		DEB7B9822AE6A24E00A46B29 /* DowntimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9812AE6A24E00A46B29 /* DowntimeCell.swift */; };
 		DEB7B9842AE6CEE100A46B29 /* WeekdayReadOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9832AE6CEE100A46B29 /* WeekdayReadOnlyView.swift */; };
 		DEB7B9872AE6D30200A46B29 /* DowntimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9862AE6D30200A46B29 /* DowntimesView.swift */; };
-		DEB7B9892AE6D30700A46B29 /* DowntimesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9882AE6D30700A46B29 /* DowntimesViewModel.swift */; };
 		DEB7B98D2AE6D7A200A46B29 /* EditDowntimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B98C2AE6D7A200A46B29 /* EditDowntimeView.swift */; };
-		DEB7B98F2AE6D86800A46B29 /* EditDowntimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B98E2AE6D86800A46B29 /* EditDowntimeViewModel.swift */; };
+		DEB7B9912AE6ED7F00A46B29 /* Downtimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9902AE6ED7F00A46B29 /* Downtimes.swift */; };
+		DEB7B9952AE6FD3500A46B29 /* DowntimeEnableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9942AE6FD3500A46B29 /* DowntimeEnableView.swift */; };
+		DEB7B9972AE705DE00A46B29 /* DowntimeTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9962AE705DE00A46B29 /* DowntimeTimeView.swift */; };
+		DEB7B9992AE7067700A46B29 /* DowntimeTimeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9982AE7067700A46B29 /* DowntimeTimeButton.swift */; };
+		DEB7B99B2AE9398E00A46B29 /* DowntimeScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B99A2AE9398E00A46B29 /* DowntimeScheduleView.swift */; };
 		DECBC4CB2AC70000003B9D70 /* WeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */; };
 		DECBC4CD2AC70966003B9D70 /* OPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CC2AC70966003B9D70 /* OPinView.swift */; };
 		DECBC4CF2AC70B46003B9D70 /* PinField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CE2AC70B46003B9D70 /* PinField.swift */; };
@@ -356,6 +364,11 @@
 		DE66195A2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeLimitPickerCell.swift; sourceTree = "<group>"; };
 		DE66195C2AC5FCD3004CCD56 /* OScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OScheduleView.swift; sourceTree = "<group>"; };
 		DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSchedule.swift; sourceTree = "<group>"; };
+		DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAlert.swift; sourceTree = "<group>"; };
+		DE78C8152AEAE8D100E944F4 /* DateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSheet.swift; sourceTree = "<group>"; };
+		DE78C8182AEBE10600E944F4 /* AddDowntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDowntime.swift; sourceTree = "<group>"; };
+		DE78C81B2AEBE4A500E944F4 /* DowntimeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowntimeName.swift; sourceTree = "<group>"; };
+		DE78C81E2AEBE67000E944F4 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		DE8B512A2ACBFA7000F405B7 /* OPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPreloaderView.swift; sourceTree = "<group>"; };
 		DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRequest.swift; sourceTree = "<group>"; };
 		DE8B51302ACC00FD00F405B7 /* GetProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileRequest.swift; sourceTree = "<group>"; };
@@ -384,9 +397,12 @@
 		DEB7B9812AE6A24E00A46B29 /* DowntimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowntimeCell.swift; sourceTree = "<group>"; };
 		DEB7B9832AE6CEE100A46B29 /* WeekdayReadOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayReadOnlyView.swift; sourceTree = "<group>"; };
 		DEB7B9862AE6D30200A46B29 /* DowntimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowntimesView.swift; sourceTree = "<group>"; };
-		DEB7B9882AE6D30700A46B29 /* DowntimesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowntimesViewModel.swift; sourceTree = "<group>"; };
 		DEB7B98C2AE6D7A200A46B29 /* EditDowntimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDowntimeView.swift; sourceTree = "<group>"; };
-		DEB7B98E2AE6D86800A46B29 /* EditDowntimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDowntimeViewModel.swift; sourceTree = "<group>"; };
+		DEB7B9902AE6ED7F00A46B29 /* Downtimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downtimes.swift; sourceTree = "<group>"; };
+		DEB7B9942AE6FD3500A46B29 /* DowntimeEnableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowntimeEnableView.swift; sourceTree = "<group>"; };
+		DEB7B9962AE705DE00A46B29 /* DowntimeTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowntimeTimeView.swift; sourceTree = "<group>"; };
+		DEB7B9982AE7067700A46B29 /* DowntimeTimeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowntimeTimeButton.swift; sourceTree = "<group>"; };
+		DEB7B99A2AE9398E00A46B29 /* DowntimeScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowntimeScheduleView.swift; sourceTree = "<group>"; };
 		DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayButton.swift; sourceTree = "<group>"; };
 		DECBC4CC2AC70966003B9D70 /* OPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPinView.swift; sourceTree = "<group>"; };
 		DECBC4CE2AC70B46003B9D70 /* PinField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinField.swift; sourceTree = "<group>"; };
@@ -956,6 +972,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DE78C8172AEBE0FC00E944F4 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				DE78C81A2AEBE49B00E944F4 /* Atoms */,
+				DE78C8182AEBE10600E944F4 /* AddDowntime.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		DE78C81A2AEBE49B00E944F4 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DE78C81B2AEBE4A500E944F4 /* DowntimeName.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DE78C81D2AEBE65700E944F4 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				DE78C81E2AEBE67000E944F4 /* View+Extension.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		DE8B512F2ACC00EA00F405B7 /* GetProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -968,6 +1009,7 @@
 		DE8B513E2ACC253F00F405B7 /* ParentControlReport */ = {
 			isa = PBXGroup;
 			children = (
+				DE78C81D2AEBE65700E944F4 /* Misc */,
 				DEDF8C9B2AD6A34300786C0F /* Service */,
 				DEDF8C872AD45F1900786C0F /* Scenes */,
 				DEE0538F2ACEEB6000101784 /* Models */,
@@ -1011,6 +1053,7 @@
 		DEB7B9852AE6D2E400A46B29 /* Downtimes */ = {
 			isa = PBXGroup;
 			children = (
+				DE78C8172AEBE0FC00E944F4 /* Add */,
 				DEB7B98B2AE6D75E00A46B29 /* Edit */,
 				DEB7B98A2AE6D75400A46B29 /* List */,
 			);
@@ -1021,7 +1064,6 @@
 			isa = PBXGroup;
 			children = (
 				DEB7B9862AE6D30200A46B29 /* DowntimesView.swift */,
-				DEB7B9882AE6D30700A46B29 /* DowntimesViewModel.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -1029,10 +1071,31 @@
 		DEB7B98B2AE6D75E00A46B29 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
+				DEB7B9932AE6FD1300A46B29 /* Atoms */,
 				DEB7B98C2AE6D7A200A46B29 /* EditDowntimeView.swift */,
-				DEB7B98E2AE6D86800A46B29 /* EditDowntimeViewModel.swift */,
 			);
 			path = Edit;
+			sourceTree = "<group>";
+		};
+		DEB7B9922AE6EFB200A46B29 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				DEB7B9902AE6ED7F00A46B29 /* Downtimes.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		DEB7B9932AE6FD1300A46B29 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEB7B9942AE6FD3500A46B29 /* DowntimeEnableView.swift */,
+				DEB7B9962AE705DE00A46B29 /* DowntimeTimeView.swift */,
+				DEB7B9982AE7067700A46B29 /* DowntimeTimeButton.swift */,
+				DEB7B99A2AE9398E00A46B29 /* DowntimeScheduleView.swift */,
+				DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */,
+				DE78C8152AEAE8D100E944F4 /* DateSheet.swift */,
+			);
+			path = Atoms;
 			sourceTree = "<group>";
 		};
 		DECBC4D02AC70C93003B9D70 /* Pin */ = {
@@ -1195,6 +1258,7 @@
 		DEE0538F2ACEEB6000101784 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DEB7B9922AE6EFB200A46B29 /* Observable */,
 				DEE053902ACEEE0100101784 /* WebHistoryItem.swift */,
 				DEDF8C972AD595D400786C0F /* MainBundle.swift */,
 				DEB7B94F2AE1853400A46B29 /* DayActivity.swift */,
@@ -1571,6 +1635,7 @@
 				DEDF8C912AD590F900786C0F /* ProfileCache.swift in Sources */,
 				DEE053912ACEEE0100101784 /* WebHistoryItem.swift in Sources */,
 				DEB7B9872AE6D30200A46B29 /* DowntimesView.swift in Sources */,
+				DE78C8142AEAAE8700E944F4 /* ConfirmAlert.swift in Sources */,
 				DEE053C12AD046A400101784 /* WebDomainView.swift in Sources */,
 				DEB7B9502AE1853400A46B29 /* DayActivity.swift in Sources */,
 				DEDF8C982AD595D400786C0F /* MainBundle.swift in Sources */,
@@ -1579,28 +1644,33 @@
 				DEB7B9522AE18CF100A46B29 /* ActivityCategory.swift in Sources */,
 				DEE053B12AD03B9B00101784 /* WebHistoryEmptyView.swift in Sources */,
 				DEB7B9462AE1739C00A46B29 /* StatisticsViewModel.swift in Sources */,
-				DEB7B98F2AE6D86800A46B29 /* EditDowntimeViewModel.swift in Sources */,
+				DEB7B99B2AE9398E00A46B29 /* DowntimeScheduleView.swift in Sources */,
 				DEDF8CA32AD6D0F800786C0F /* TimeLimitView.swift in Sources */,
 				DEDF8CB52ADD835600786C0F /* MonitoringService.swift in Sources */,
 				DEDF8C892AD4605E00786C0F /* MainReport.swift in Sources */,
 				DEB7B94E2AE1791100A46B29 /* ApplicationCell.swift in Sources */,
+				DEB7B9952AE6FD3500A46B29 /* DowntimeEnableView.swift in Sources */,
 				DE8B51402ACC253F00F405B7 /* ParentControlReport.swift in Sources */,
 				DEB7B98D2AE6D7A200A46B29 /* EditDowntimeView.swift in Sources */,
-				DEB7B9892AE6D30700A46B29 /* DowntimesViewModel.swift in Sources */,
 				DEDF8C8B2AD58C8000786C0F /* WeekSchedule.swift in Sources */,
+				DE78C81F2AEBE67000E944F4 /* View+Extension.swift in Sources */,
 				DEE053B62AD0428F00101784 /* String+Extension.swift in Sources */,
 				DED881E12AE022B500E56B4D /* StatisticsReport.swift in Sources */,
 				DEDF8CAE2AD6F36C00786C0F /* TimePickerView.swift in Sources */,
 				DED881F72AE1660B00E56B4D /* PeriodSegmentView.swift in Sources */,
 				DEDF8CA62AD6D7E800786C0F /* TimeLimitEnableCell.swift in Sources */,
+				DE78C8192AEBE10600E944F4 /* AddDowntime.swift in Sources */,
 				DEDF8CA82AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift in Sources */,
 				DEB7B9562AE1BBC900A46B29 /* ChartActivityCell.swift in Sources */,
 				DEDF8C8C2AD58C8300786C0F /* Profile.swift in Sources */,
 				DEB7B95A2AE42F2200A46B29 /* ActivityCategoriesChart.swift in Sources */,
 				DEE053AB2AD03ABA00101784 /* UIColor+Extension.swift in Sources */,
+				DEB7B9972AE705DE00A46B29 /* DowntimeTimeView.swift in Sources */,
 				DEDF8C8D2AD58C8500786C0F /* TimeLimit.swift in Sources */,
 				DEE053AC2AD03AC000101784 /* Appearance.swift in Sources */,
 				DEE0538C2ACEEA6E00101784 /* WebHistoryReport.swift in Sources */,
+				DEB7B9992AE7067700A46B29 /* DowntimeTimeButton.swift in Sources */,
+				DEB7B9912AE6ED7F00A46B29 /* Downtimes.swift in Sources */,
 				DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */,
 				DEB7B94A2AE178B800A46B29 /* StatisticsList.swift in Sources */,
 				DEDF8C9D2AD6A35000786C0F /* ContentService.swift in Sources */,
@@ -1611,7 +1681,9 @@
 				DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */,
 				DEDF8C922AD592E000786C0F /* GlobalDefinitions.swift in Sources */,
 				DEB7B97E2AE67CD900A46B29 /* Downtime.swift in Sources */,
+				DE78C81C2AEBE4A500E944F4 /* DowntimeName.swift in Sources */,
 				DEB7B9842AE6CEE100A46B29 /* WeekdayReadOnlyView.swift in Sources */,
+				DE78C8162AEAE8D100E944F4 /* DateSheet.swift in Sources */,
 				DEB7B9482AE1756C00A46B29 /* StatisticsListElement.swift in Sources */,
 				DEB7B9802AE69E0300A46B29 /* DowntimesMainCell.swift in Sources */,
 				DED881E62AE0230700E56B4D /* StatisticsView.swift in Sources */,

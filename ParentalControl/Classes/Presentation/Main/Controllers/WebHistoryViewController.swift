@@ -40,6 +40,10 @@ final class WebHistoryViewController: UIViewController {
         hostingVC.didMove(toParent: parent)
         hostingVC.view.layoutIfNeeded()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
 }
 
 // MARK: Public

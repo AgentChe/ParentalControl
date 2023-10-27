@@ -14,8 +14,9 @@ final class MainViewModel: ObservableObject {
     @State var timeLimitTime: TimeObject
     @State var timeLimitSchedule: ScheduleObject
     
+    @StateObject var downtimes = Downtimes()
+    
     private let bundle: MainBundle
-    private let downtimes: [Downtime]
     
     init(bundle: MainBundle) {
         self.bundle = bundle
@@ -27,8 +28,6 @@ final class MainViewModel: ObservableObject {
             minute: (timeLimit?.minutes ?? 0) % 60
         )
         timeLimitSchedule = ScheduleObject(schedule: timeLimit?.schedule)
-        
-        downtimes = ContentService.shared.downtimes()
         
         makeElements()
     }
@@ -49,7 +48,7 @@ final class MainViewModel: ObservableObject {
         
         result.append(.downtimes)
         
-        downtimes.forEach { downtime in
+        downtimes.downtimes.forEach { downtime in
             result.append(.downtime(downtime))
         }
 

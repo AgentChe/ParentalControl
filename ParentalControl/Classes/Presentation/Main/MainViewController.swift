@@ -31,6 +31,10 @@ final class MainViewController: UIViewController {
         
         addActionsToTabs()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
 }
 
 // MARK: Make

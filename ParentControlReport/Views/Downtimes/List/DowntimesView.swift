@@ -8,39 +8,33 @@
 import SwiftUI
 
 // TODO:
-// 1. Создание
-// 2. Редактирование
-// 3. Удаление
 // 4. Обновление главного экрана после изменений
-// 5. Если downtime пустышка, при включении тумблера открывать редактирование
 // 6. Реализация мониторинга и блокирования в соответствии с установками
 struct DowntimesView: View {
-    @ObservedObject var viewModel = DowntimesViewModel()
+    @EnvironmentObject private var downtimes: Downtimes
     
-    @State private var editDowntimePresenting = false
+    @State private var editDowntime: Downtime?
+    @State private var isAddPresented = false
     
     var body: some View {
         ZStack {
             Color(Appearance.background)
             
             VStack {
-                List(viewModel.downtimes, id: \.id) { downtime in
-                    DowntimeCell(downtime: downtime, didSelect: {
-                        editDowntimePresenting.toggle()
-                    }, didChange: { enable in
-                        // TODO
+                List(downtimes.downtimes, id: \.id) { downtime in
+                    DowntimeCell(downtime: downtime, didSelect: { selected in
+                        editDowntime = selected
+                    }, didChange: { changed in
+                        downtimes.set(downtime: changed)
                     })
-                    .sheet(isPresented: $editDowntimePresenting) {
-                        EditDowntimeView(
-                            isPresented: $editDowntimePresenting,
-                            downtime: downtime
-                        )
+                    .sheet(item: $editDowntime) { downtime in
+                        EditDowntimeView(downtime: downtime)
                     }
                 }
                 .listStyle(PlainListStyle())
                 
                 Button(action: {
-                    // TODO
+                    isAddPresented.toggle()
                 }, label: {
                     Text("Downtime.Add")
                         .padding(EdgeInsets(
@@ -54,6 +48,9 @@ struct DowntimesView: View {
                         .foregroundColor(Color(Appearance.black))
                         .cornerRadius(20.scale)
                 })
+                .sheet(isPresented: $isAddPresented) {
+                    AddDowntime()
+                }
             }
         }
     }

@@ -12,7 +12,7 @@ struct MainView: View {
     
     @State private var timeLimitViewPresenting = false
     @State private var downtimesPresenting = false
-    @State private var editDowntimePresenting = false
+    @State private var editDowntime: Downtime?
     
     init(bundle: MainBundle) {
         viewModel = MainViewModel(bundle: bundle)
@@ -62,18 +62,17 @@ struct MainView: View {
                             .onTapGesture {
                                 downtimesPresenting.toggle()
                             }
+                            .environmentObject(viewModel.downtimes)
                     case .downtime(let downtime):
-                        DowntimeCell(downtime: downtime, didSelect: {
-                            editDowntimePresenting.toggle()
-                        }, didChange: { enable in
-                            // TODO
+                        DowntimeCell(downtime: downtime, didSelect: { selected in
+                            editDowntime = selected
+                        }, didChange: { changed in
+                            viewModel.downtimes.set(downtime: changed)
                         })
-                        .sheet(isPresented: $editDowntimePresenting) {
-                            EditDowntimeView(
-                                isPresented: $editDowntimePresenting,
-                                downtime: downtime
-                            )
+                        .sheet(item: $editDowntime) { downtime in
+                            EditDowntimeView(downtime: downtime)
                         }
+                        .environmentObject(viewModel.downtimes)
                     }
                 }
             }
