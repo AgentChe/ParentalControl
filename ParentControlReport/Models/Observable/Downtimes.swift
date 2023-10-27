@@ -36,6 +36,8 @@ extension Downtimes {
         if let data = try? JSONEncoder().encode(downtimes) {
             userDefaults.set(data, forKey: Constants.downtimes)
         }
+        
+        MonitoringService.shared.startMonitoring(downtime: downtime)
     }
     
     func remove(downtimeId: String) {
@@ -44,6 +46,8 @@ extension Downtimes {
         if let data = try? JSONEncoder().encode(downtimes) {
             userDefaults.set(data, forKey: Constants.downtimes)
         }
+        
+        MonitoringService.shared.stopMonitoring(downtimeId: downtimeId)
     }
 }
 

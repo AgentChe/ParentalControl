@@ -21,7 +21,7 @@ struct EditDowntimeView: View {
     private let downtime: Downtime
     
     init(downtime: Downtime) {
-        self._enable = State(wrappedValue: downtime.enable)
+        self._enable = State(initialValue: downtime.enable)
         self._time = StateObject(wrappedValue: DowntimeTimeView.Time(
             from: downtime.from,
             to: downtime.to)

@@ -8,18 +8,9 @@
 import SwiftUI
 
 struct DowntimeCell: View {
-    let downtime: Downtime
+    @State var downtime: Downtime
     let didSelect: (Downtime) -> Void
     let didChange: (Downtime) -> Void
-    
-    @State private var enable: Bool
-    
-    init(downtime: Downtime, didSelect: @escaping (Downtime) -> Void, didChange: @escaping (Downtime) -> Void) {
-        self.downtime = downtime
-        self._enable = State<Bool>(initialValue: downtime.enable)
-        self.didSelect = didSelect
-        self.didChange = didChange
-    }
     
     var body: some View {
         ZStack {
@@ -38,7 +29,7 @@ struct DowntimeCell: View {
                     didSelect(downtime)
                 }
             
-            if enable {
+            if downtime.enable {
                 enableView
             } else {
                 disableView
@@ -141,12 +132,11 @@ private extension DowntimeCell {
 // MARK: Private
 private extension DowntimeCell {
     var toggleView: some View {
-        Toggle(isOn: $enable.onUpdate {
-            if enable && downtime.isEmpty {
+        Toggle(isOn: $downtime.enable.onUpdate {
+            if downtime.enable && downtime.isEmpty {
                 didSelect(downtime)
-                enable = false
+                downtime.enable = false
             } else {
-                downtime.enable = enable
                 didChange(downtime)
             }
         }) {}

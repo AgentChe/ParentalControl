@@ -9,7 +9,6 @@ import SwiftUI
 
 // TODO:
 // 4. Обновление главного экрана после изменений
-// 6. Реализация мониторинга и блокирования в соответствии с установками
 struct DowntimesView: View {
     @EnvironmentObject private var downtimes: Downtimes
     

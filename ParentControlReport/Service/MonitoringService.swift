@@ -41,7 +41,66 @@ extension MonitoringService {
             timeLimitStore.clearAllSettings()
             return
         }
+        
+        monitoring(timeLimit: timeLimit)
+    }
+    
+    func startMonitoring(downtime: Downtime) {
+        stopMonitoring(downtimeId: downtime.id)
+        monitoring(downtime: downtime)
+    }
+    
+    func stopMonitoring(downtimeId: String) {
+        let activities = [
+            DeviceActivityName(downtimeId: downtimeId, weekday: "su"),
+            DeviceActivityName(downtimeId: downtimeId, weekday: "mo"),
+            DeviceActivityName(downtimeId: downtimeId, weekday: "tu"),
+            DeviceActivityName(downtimeId: downtimeId, weekday: "we"),
+            DeviceActivityName(downtimeId: downtimeId, weekday: "th"),
+            DeviceActivityName(downtimeId: downtimeId, weekday: "fr"),
+            DeviceActivityName(downtimeId: downtimeId, weekday: "sa")
+        ]
+        center.stopMonitoring(activities)
+        
+        activities.forEach { activity in
+            let store = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: activity.rawValue))
+            store.clearAllSettings()
+        }
+    }
+}
 
+// MARK: DeviceActivityMonitor Extension
+extension MonitoringService {
+    func intervalDidStart(for activity: DeviceActivityName) {
+        if timeLimitActivities.contains(activity) {
+            timeLimitStore.clearAllSettings()
+        } else if activity.isDowntime {
+            let store = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: activity.rawValue))
+            store.shield.applicationCategories = .all()
+            store.shield.webDomainCategories = .all()
+        }
+    }
+    
+    func intervalDidEnd(for activity: DeviceActivityName) {
+        if timeLimitActivities.contains(activity) {
+            timeLimitStore.clearAllSettings()
+        } else if activity.isDowntime {
+            let store = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: activity.rawValue))
+            store.clearAllSettings()
+        }
+    }
+    
+    func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
+        if timeLimitActivities.contains(activity) {
+            timeLimitStore.shield.applicationCategories = .all()
+            timeLimitStore.shield.webDomainCategories = .all()
+        }
+    }
+}
+
+// MARK: Private
+private extension MonitoringService {
+    func monitoring(timeLimit: TimeLimit) {
         for weekdayIndex in 1...7 {
             var args: (enable: Bool, activity: DeviceActivityName) {
                 switch weekdayIndex {
@@ -86,26 +145,81 @@ extension MonitoringService {
             )
         }
     }
-}
+    
+    func monitoring(downtime: Downtime) {
+        guard downtime.enable, let schedule = downtime.schedule, let from = downtime.from, let to = downtime.to else {
+            return
+        }
+        
+        let calendar = Calendar.current
+        
+        for weekdayIndex in 1...7 {
+            var args: (enable: Bool, activity: DeviceActivityName) {
+                switch weekdayIndex {
+                case 1:
+                    return (
+                        enable: schedule.su,
+                        activity: DeviceActivityName(downtimeId: downtime.id, weekday: "su")
+                    )
+                case 2:
+                    return (
+                        enable: schedule.mo,
+                        activity: DeviceActivityName(downtimeId: downtime.id, weekday: "mo")
+                    )
+                case 3:
+                    return (
+                        enable: schedule.tu,
+                        activity: DeviceActivityName(downtimeId: downtime.id, weekday: "tu")
+                    )
+                case 4:
+                    return (
+                        enable: schedule.we,
+                        activity: DeviceActivityName(downtimeId: downtime.id, weekday: "we")
+                    )
+                case 5:
+                    return (
+                        enable: schedule.th,
+                        activity: DeviceActivityName(downtimeId: downtime.id, weekday: "th")
+                    )
+                case 6:
+                    return (
+                        enable: schedule.fr,
+                        activity: DeviceActivityName(downtimeId: downtime.id, weekday: "fr")
+                    )
+                case 7:
+                    return (
+                        enable: schedule.sa,
+                        activity: DeviceActivityName(downtimeId: downtime.id, weekday: "sa")
+                    )
+                default:
+                    return (
+                        enable: false,
+                        activity: DeviceActivityName(downtimeId: downtime.id, weekday: "sa")
+                    )
+                }
+            }
 
-// MARK: DeviceActivityMonitor Extension
-extension MonitoringService {
-    func intervalDidStart(for activity: DeviceActivityName) {
-        if timeLimitActivities.contains(activity) {
-            timeLimitStore.clearAllSettings()
-        }
-    }
-    
-    func intervalDidEnd(for activity: DeviceActivityName) {
-        if timeLimitActivities.contains(activity) {
-            timeLimitStore.clearAllSettings()
-        }
-    }
-    
-    func eventDidReachThreshold(_ event: DeviceActivityEvent.Name, activity: DeviceActivityName) {
-        if timeLimitActivities.contains(activity) {
-            timeLimitStore.shield.applicationCategories = .all()
-            timeLimitStore.shield.webDomainCategories = .all()
+            let (enable, activity) = args
+
+            guard enable else {
+                continue
+            }
+            
+            var startComponents = calendar.dateComponents([.hour, .minute], from: from)
+            startComponents.second = 0
+            startComponents.weekday = weekdayIndex
+            
+            var endComponents = calendar.dateComponents([.hour, .minute], from: to)
+            endComponents.second = 0
+            endComponents.weekday = weekdayIndex
+
+            let schedule = DeviceActivitySchedule(
+                intervalStart: startComponents,
+                intervalEnd: endComponents,
+                repeats: true
+            )
+
+            try? center.startMonitoring(activity, during: schedule)
         }
     }
 }
@@ -119,4 +233,12 @@ private extension DeviceActivityName {
     static let timeLimitTh = Self("Time limit th")
     static let timeLimitFr = Self("Time limit fr")
     static let timeLimitSa = Self("Time limit sa")
+    
+    init(downtimeId: String, weekday: String) {
+        self = Self(String(format: "downtime_%@_%@", downtimeId, weekday))
+    }
+    
+    var isDowntime: Bool {
+        rawValue.contains("downtime")
+    }
 }

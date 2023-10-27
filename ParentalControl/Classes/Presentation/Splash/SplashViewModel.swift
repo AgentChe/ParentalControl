@@ -98,35 +98,37 @@ private extension SplashViewModel {
         }
     }
     
+    // TODO
     func library() -> Observable<Void> {
-        func source() -> Single<Void> {
-            let paygate = paygateManager
-                .obtainPaygate(forceUpdate: true)
-                .mapToVoid()
-            let profile = profileManager
-                .obtainProfile(forceUpdate: true)
-                .mapToVoid()
-            
-            return Single
-                .zip([
-                    paygate,
-                    profile
-                ])
-                .mapToVoid()
-        }
-        
-        func trigger(error: Error) -> Observable<Void> {
-            guard let tryAgain = self.tryAgain?(error) else {
-                return .empty()
-            }
-            
-            return tryAgain
-        }
-        
-        return self.observableRetrySingle
-            .retry(source: { source() },
-                   trigger: { trigger(error: $0) })
-            .trackActivity(libraryActivity)
+        .deferred { .just(()) }
+//        func source() -> Single<Void> {
+//            let paygate = paygateManager
+//                .obtainPaygate(forceUpdate: true)
+//                .mapToVoid()
+//            let profile = profileManager
+//                .obtainProfile(forceUpdate: true)
+//                .mapToVoid()
+//
+//            return Single
+//                .zip([
+//                    paygate,
+//                    profile
+//                ])
+//                .mapToVoid()
+//        }
+//
+//        func trigger(error: Error) -> Observable<Void> {
+//            guard let tryAgain = self.tryAgain?(error) else {
+//                return .empty()
+//            }
+//
+//            return tryAgain
+//        }
+//
+//        return self.observableRetrySingle
+//            .retry(source: { source() },
+//                   trigger: { trigger(error: $0) })
+//            .trackActivity(libraryActivity)
     }
     
     func makeStep() -> Single<Step> {

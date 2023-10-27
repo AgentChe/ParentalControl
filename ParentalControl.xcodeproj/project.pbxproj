@@ -115,6 +115,8 @@
 		DE78C8192AEBE10600E944F4 /* AddDowntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8182AEBE10600E944F4 /* AddDowntime.swift */; };
 		DE78C81C2AEBE4A500E944F4 /* DowntimeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C81B2AEBE4A500E944F4 /* DowntimeName.swift */; };
 		DE78C81F2AEBE67000E944F4 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C81E2AEBE67000E944F4 /* View+Extension.swift */; };
+		DE78C8202AEBEC5C00E944F4 /* Downtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B97D2AE67CD900A46B29 /* Downtime.swift */; };
+		DE78C8212AEBEC7400E944F4 /* Downtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B97D2AE67CD900A46B29 /* Downtime.swift */; };
 		DE8B512B2ACBFA7000F405B7 /* OPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B512A2ACBFA7000F405B7 /* OPreloaderView.swift */; };
 		DE8B512E2ACBFEEA00F405B7 /* SetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */; };
 		DE8B51312ACC00FD00F405B7 /* GetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51302ACC00FD00F405B7 /* GetProfileRequest.swift */; };
@@ -1531,6 +1533,7 @@
 				DE8B51352ACC012700F405B7 /* Profile.swift in Sources */,
 				DECBC4DA2ACBEA54003B9D70 /* EarlierButton.swift in Sources */,
 				DE8B51372ACC04BF00F405B7 /* ProfileMediator.swift in Sources */,
+				DE78C8212AEBEC7400E944F4 /* Downtime.swift in Sources */,
 				DECBC4D42AC71819003B9D70 /* OSignUpView.swift in Sources */,
 				DE6619542AC5E34F004CCD56 /* YearButton.swift in Sources */,
 				DEDF8C902AD590F200786C0F /* ProfileCache.swift in Sources */,
@@ -1699,6 +1702,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE78C8202AEBEC5C00E944F4 /* Downtime.swift in Sources */,
 				DEDF8CD12ADD96A000786C0F /* TimeLimit.swift in Sources */,
 				DEDF8CCE2ADD944300786C0F /* MonitoringService.swift in Sources */,
 				DEDF8CD22ADD96A900786C0F /* WeekSchedule.swift in Sources */,
