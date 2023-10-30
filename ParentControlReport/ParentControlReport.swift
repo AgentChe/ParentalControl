@@ -11,10 +11,6 @@ import SwiftUI
 @main
 struct ParentControlReport: DeviceActivityReportExtension {
     var body: some DeviceActivityReportScene {
-        WebHistoryReport { items in
-            WebHistoryView(items: items)
-        }
-        
         StatisticsReport { daysActivities in
             StatisticsView(daysActivities: daysActivities)
         }

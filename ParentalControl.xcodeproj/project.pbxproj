@@ -198,7 +198,6 @@
 		DEDF8CD22ADD96A900786C0F /* WeekSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */; };
 		DEE053862ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */; };
 		DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */; };
-		DEE0538C2ACEEA6E00101784 /* WebHistoryReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0538B2ACEEA6E00101784 /* WebHistoryReport.swift */; };
 		DEE0538E2ACEEA8C00101784 /* WebHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0538D2ACEEA8C00101784 /* WebHistoryView.swift */; };
 		DEE053912ACEEE0100101784 /* WebHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053902ACEEE0100101784 /* WebHistoryItem.swift */; };
 		DEE053952AD02CE000101784 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053942AD02CE000101784 /* MainViewController.swift */; };
@@ -206,7 +205,7 @@
 		DEE053992AD02CEB00101784 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053982AD02CEB00101784 /* MainView.swift */; };
 		DEE0539D2AD02D3700101784 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0539C2AD02D3700101784 /* TabItemView.swift */; };
 		DEE0539F2AD02D3F00101784 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0539E2AD02D3F00101784 /* TabView.swift */; };
-		DEE053A22AD034BE00101784 /* WebHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053A12AD034BE00101784 /* WebHistoryViewController.swift */; };
+		DEE053A22AD034BE00101784 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053A12AD034BE00101784 /* AppsViewController.swift */; };
 		DEE053AB2AD03ABA00101784 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66176D2AC5C4E5004CCD56 /* UIColor+Extension.swift */; };
 		DEE053AC2AD03AC000101784 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66179D2AC5C4E5004CCD56 /* Appearance.swift */; };
 		DEE053B12AD03B9B00101784 /* WebHistoryEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE053B02AD03B9B00101784 /* WebHistoryEmptyView.swift */; };
@@ -450,7 +449,6 @@
 		DEDF8CC12ADD848400786C0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEDF8CC22ADD848400786C0F /* ParentControlActivity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParentControlActivity.entitlements; sourceTree = "<group>"; };
 		DEE053852ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceActivityReport.Context+Extension.swift"; sourceTree = "<group>"; };
-		DEE0538B2ACEEA6E00101784 /* WebHistoryReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryReport.swift; sourceTree = "<group>"; };
 		DEE0538D2ACEEA8C00101784 /* WebHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryView.swift; sourceTree = "<group>"; };
 		DEE053902ACEEE0100101784 /* WebHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryItem.swift; sourceTree = "<group>"; };
 		DEE053942AD02CE000101784 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -458,7 +456,7 @@
 		DEE053982AD02CEB00101784 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEE0539C2AD02D3700101784 /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		DEE0539E2AD02D3F00101784 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
-		DEE053A12AD034BE00101784 /* WebHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryViewController.swift; sourceTree = "<group>"; };
+		DEE053A12AD034BE00101784 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
 		DEE053B02AD03B9B00101784 /* WebHistoryEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebHistoryEmptyView.swift; sourceTree = "<group>"; };
 		DEE053C02AD046A400101784 /* WebDomainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDomainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1162,7 +1160,6 @@
 		DEDF8C872AD45F1900786C0F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				DEE0538B2ACEEA6E00101784 /* WebHistoryReport.swift */,
 				DEDF8C882AD4605E00786C0F /* MainReport.swift */,
 				DED881E02AE022B500E56B4D /* StatisticsReport.swift */,
 			);
@@ -1173,7 +1170,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8B51522ACC74E300F405B7 /* HomeViewController.swift */,
-				DEE053A12AD034BE00101784 /* WebHistoryViewController.swift */,
+				DEE053A12AD034BE00101784 /* AppsViewController.swift */,
 				DED881DE2AE0224900E56B4D /* StatisticsViewController.swift */,
 			);
 			path = Controllers;
@@ -1539,7 +1536,7 @@
 				DE6618802AC5C4E5004CCD56 /* UIViewRxExtension.swift in Sources */,
 				DE6618892AC5C4E5004CCD56 /* ObservableRetrySingle.swift in Sources */,
 				DE6619292AC5C4E6004CCD56 /* TryAgainView.swift in Sources */,
-				DEE053A22AD034BE00101784 /* WebHistoryViewController.swift in Sources */,
+				DEE053A22AD034BE00101784 /* AppsViewController.swift in Sources */,
 				DE6619342AC5C4E6004CCD56 /* OnboardingView.swift in Sources */,
 				DE66192E2AC5C4E6004CCD56 /* OnboardingViewController.swift in Sources */,
 				DE6618FF2AC5C4E5004CCD56 /* IAPErrorHelper.swift in Sources */,
@@ -1690,7 +1687,6 @@
 				DEDF8C8D2AD58C8500786C0F /* TimeLimit.swift in Sources */,
 				DEE053AC2AD03AC000101784 /* Appearance.swift in Sources */,
 				DE78C8382AEFD05600E944F4 /* RecentActivityEmpty.swift in Sources */,
-				DEE0538C2ACEEA6E00101784 /* WebHistoryReport.swift in Sources */,
 				DEB7B9992AE7067700A46B29 /* DowntimeTimeButton.swift in Sources */,
 				DEB7B9912AE6ED7F00A46B29 /* Downtimes.swift in Sources */,
 				DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */,

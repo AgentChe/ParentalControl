@@ -57,8 +57,8 @@ private extension MainViewController {
                 mainView.tabView.statisticsItem
                     .rx.tap.map { TabView.Tab.statistics },
                 
-                mainView.tabView.webHistoryItem
-                    .rx.tap.map { TabView.Tab.webHistory }
+                mainView.tabView.appsItem
+                    .rx.tap.map { TabView.Tab.apps }
             ])
             .subscribe(onNext: { [weak self] tab in
                 self?.update(selectedTab: tab)

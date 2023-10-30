@@ -91,7 +91,7 @@
 // MARK: Main
 "Main.Home" = "Home";
 "Main.Statistics" = "Statistics";
-"Main.WebHistory" = "Web history";
+"Main.Apps" = "Apps";
 "Main.RecentActivity.Empty.Title" = "No recent activity";
 "Main.RecentActivity.Empty.SubTitle" = "Used apps will display here";
 

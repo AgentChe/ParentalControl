@@ -28,14 +28,6 @@ private extension WebHistoryView {
             List {
                 ForEach(items) { item in
                     WebDomainView(item: item)
-                        .listRowInsets(EdgeInsets(
-                            top: 8.scale,
-                            leading: 16.scale,
-                            bottom: 8.scale,
-                            trailing: 16.scale
-                        ))
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.clear)
                 }
             }
             .listStyle(PlainListStyle())

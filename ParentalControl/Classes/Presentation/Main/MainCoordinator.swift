@@ -12,7 +12,7 @@ final class MainCoordinator {
     
     lazy var homeVC = NavigationController(rootViewController: HomeViewController.make())
     lazy var statisticsVC = NavigationController(rootViewController: StatisticsViewController.make())
-    lazy var webHistory = NavigationController(rootViewController: WebHistoryViewController.make())
+    lazy var apps = NavigationController(rootViewController: AppsViewController.make())
     
     private var previousVC: UIViewController?
     
@@ -28,8 +28,8 @@ final class MainCoordinator {
             changeVC(on: homeVC)
         case .statistics:
             changeVC(on: statisticsVC)
-        case .webHistory:
-            changeVC(on: webHistory)
+        case .apps:
+            changeVC(on: apps)
         }
     }
 }
