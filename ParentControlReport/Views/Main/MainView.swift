@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ManagedSettings
 
 enum MainElement: Identifiable {
     case setTimeLimit(SetTimeLimitElement)
@@ -14,6 +15,11 @@ enum MainElement: Identifiable {
     case downtime(Downtime)
     case title(String)
     case instantBlock
+    case seeMore(SeeMore)
+    case emptyRecentActivity
+    case application(ApplicationElement)
+    case emptyWebHistory
+    case webHistory(WebHistoryItem)
     
     var id: String {
         switch self {
@@ -29,6 +35,16 @@ enum MainElement: Identifiable {
             return title
         case .instantBlock:
             return "instant_block"
+        case .seeMore(let element):
+            return element.title
+        case .emptyRecentActivity:
+            return "empty_recent_activity"
+        case .application(let element):
+            return element.id
+        case .emptyWebHistory:
+            return "empty_web_history"
+        case .webHistory(let item):
+            return item.id
         }
     }
 }
@@ -42,6 +58,20 @@ struct TimeLimitElement: Identifiable {
     let id: String = UUID().uuidString
     let totalActivityDuration: TimeInterval
     let timeLimit: Int
+}
+
+enum SeeMore {
+    case recentActivity
+    case webHistory
+    
+    var title: String {
+        switch self {
+        case .recentActivity:
+            return "Downtime.RecentActivity".localized
+        case .webHistory:
+            return "Downtime.WebHistory".localized
+        }
+    }
 }
 
 struct MainView: View {
@@ -128,6 +158,26 @@ struct MainView: View {
                         TitleCell(title: title)
                     case .instantBlock:
                         InstantBlockCell()
+                    case .seeMore(let element):
+                        SeeMoreCell(element: element) { element in
+                            // TODO
+                        }
+                    case .emptyRecentActivity:
+                        RecentActivityEmpty()
+                    case .application(let element):
+                        ApplicationCell(element: element)
+                    case .emptyWebHistory:
+                        WebHistoryEmptyView()
+                    case .webHistory(let item):
+                        WebDomainView(item: item)
+                            .listRowInsets(EdgeInsets(
+                                top: 8.scale,
+                                leading: 16.scale,
+                                bottom: 8.scale,
+                                trailing: 16.scale
+                            ))
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
                     }
                 }
             }
@@ -160,7 +210,98 @@ private extension MainView {
         
         result.append(.title("Downtime.Apps".localized))
         result.append(.instantBlock)
+        
+        result.append(contentsOf: applicationsElements())
+        
+        result.append(contentsOf: webHistoryElements())
 
         return result
+    }
+    
+    func applicationsElements() -> [MainElement] {
+        var result = [ApplicationElement]()
+        
+        var totalActivityDuration: TimeInterval = 0
+        
+        var appsActivities = [ApplicationToken: (ActivityCategory, ActivityApplication, TimeInterval)]()
+        bundle.daysActivities.forEach { day in
+            day.categories.forEach { category in
+                category.applications.forEach { application in
+                    let appsActivity = appsActivities[application.token]
+                    
+                    appsActivities[application.token] = (
+                        appsActivity?.0 ?? category,
+                        appsActivity?.1 ?? application,
+                        (appsActivity?.2 ?? 0) + application.totalActivityDuration
+                    )
+                    
+                    totalActivityDuration += application.totalActivityDuration
+                }
+            }
+        }
+        
+        appsActivities
+            .sorted(by: { lhs, rhs -> Bool in
+                lhs.value.1.name < rhs.value.1.name
+            })
+            .forEach { key, value in
+                var score: Float {
+                    guard totalActivityDuration != 0 else {
+                        return 0
+                    }
+                    
+                    return Float(value.2 / totalActivityDuration)
+                }
+                
+                let element = ApplicationElement(
+                    application: value.1,
+                    category: value.0.name,
+                    activityDuration: value.2,
+                    activityScore: score
+                )
+                result.append(element)
+            }
+        
+        var elements = [MainElement.seeMore(.recentActivity)]
+        
+        if result.isEmpty {
+            elements.append(.emptyRecentActivity)
+        } else {
+            for item in Array(result.prefix(3)) {
+                elements.append(.application(item))
+            }
+        }
+        
+        return elements
+    }
+    
+    func webHistoryElements() -> [MainElement] {
+        var result = [WebHistoryItem]()
+        
+        bundle.daysActivities.forEach { day in
+            day.categories.forEach { category in
+                category.webHistory.forEach { item in
+                    if let index = result.firstIndex(where: {
+                        $0.domain.token == item.domain.token
+                    }) {
+                        result[index].totalActivityDuration += item.totalActivityDuration
+                    } else {
+                        result.append(item)
+                    }
+                }
+            }
+        }
+        
+        var elements = [MainElement.seeMore(.webHistory)]
+        
+        if result.isEmpty {
+            elements.append(.emptyWebHistory)
+        } else {
+            for item in Array(result.prefix(3)) {
+                elements.append(.webHistory(item))
+            }
+        }
+        
+        return elements
     }
 }

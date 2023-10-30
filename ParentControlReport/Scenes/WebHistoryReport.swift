@@ -14,7 +14,7 @@ struct WebHistoryReport: DeviceActivityReportScene {
     
     let content: ([WebHistoryItem]) -> WebHistoryView
     
-    private let store = ManagedSettingsStore()
+    private let store = ManagedSettingsStore.webHistory
     
     func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> [WebHistoryItem] {
         var result = [WebHistoryItem]()

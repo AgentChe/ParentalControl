@@ -92,6 +92,8 @@
 "Main.Home" = "Home";
 "Main.Statistics" = "Statistics";
 "Main.WebHistory" = "Web history";
+"Main.RecentActivity.Empty.Title" = "No recent activity";
+"Main.RecentActivity.Empty.SubTitle" = "Used apps will display here";
 
 // MARK: Home
 "Home.TimeLimit.ScreenTime" = "Screen time";
@@ -151,3 +153,6 @@
 "Downtime.Apps" = "Apps";
 "Downtime.InstantBlock.Title" = "Instant block";
 "Downtime.InstantBlock.SubTitle" = "Toggle to block all apps";
+"Downtime.SeeMore" = "See more";
+"Downtime.RecentActivity" = "Recent activity";
+"Downtime.WebHistory" = "Web history";

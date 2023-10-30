@@ -10,4 +10,5 @@ import ManagedSettings
 
 struct MainBundle {
     let totalActivityDuration: TimeInterval
+    let daysActivities: [DayActivity]
 }

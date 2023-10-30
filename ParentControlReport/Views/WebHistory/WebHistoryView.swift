@@ -18,15 +18,13 @@ struct WebHistoryView: View {
 // MARK: Private
 private extension WebHistoryView {
     var empty: some View {
-        ZStack {
-            Color(Appearance.background)
-            WebHistoryEmptyView()
-        }
+        WebHistoryEmptyView()
     }
     
     var list: some View {
         ZStack {
             Color(Appearance.background)
+            
             List {
                 ForEach(items) { item in
                     WebDomainView(item: item)

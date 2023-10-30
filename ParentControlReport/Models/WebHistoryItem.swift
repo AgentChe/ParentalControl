@@ -8,9 +8,9 @@
 import Foundation
 import ManagedSettings
 
-struct WebHistoryItem: Identifiable {
+struct WebHistoryItem: Identifiable, Hashable {
     let id = UUID().uuidString
     let domain: WebDomain
-    let totalActivityDuration: TimeInterval
+    var totalActivityDuration: TimeInterval
     var blocked: Bool
 }

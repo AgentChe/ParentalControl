@@ -14,7 +14,7 @@ struct InstantBlockCell: View {
     private let store: ManagedSettingsStore
     
     init() {
-        let store = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: "instant_block_store"))
+        let store = ManagedSettingsStore.instantBlock
         
         self.store = store
         self.appsBlocked = store.shield.applicationCategories == .all()

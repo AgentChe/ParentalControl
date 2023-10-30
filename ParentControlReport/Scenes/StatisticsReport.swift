@@ -7,6 +7,7 @@
 
 import DeviceActivity
 import SwiftUI
+import ManagedSettings
 
 struct StatisticsReport: DeviceActivityReportScene {
     var context: DeviceActivityReport.Context = .statistics
@@ -50,7 +51,8 @@ struct StatisticsReport: DeviceActivityReportScene {
                         token: token,
                         totalActivityDuration: category.totalActivityDuration,
                         name: name,
-                        applications: activityApplications
+                        applications: activityApplications,
+                        webHistory: []
                     )
                     categories.append(activityCategory)
                 }

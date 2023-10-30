@@ -17,7 +17,7 @@ final class MonitoringService {
     static let shared = MonitoringService()
     
     private lazy var center = DeviceActivityCenter()
-    private lazy var timeLimitStore = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: Constants.store_timeLimit))
+    private lazy var timeLimitStore = ManagedSettingsStore.timeLimit
     
     private lazy var timeLimitActivities: [DeviceActivityName] = [
         .timeLimitSu,

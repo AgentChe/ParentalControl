@@ -14,4 +14,5 @@ struct ActivityCategory:Hashable {
     let totalActivityDuration: TimeInterval
     let name: String
     let applications: [ActivityApplication]
+    let webHistory: [WebHistoryItem]
 }
