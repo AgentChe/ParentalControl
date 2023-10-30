@@ -117,6 +117,9 @@
 		DE78C81F2AEBE67000E944F4 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C81E2AEBE67000E944F4 /* View+Extension.swift */; };
 		DE78C8202AEBEC5C00E944F4 /* Downtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B97D2AE67CD900A46B29 /* Downtime.swift */; };
 		DE78C8212AEBEC7400E944F4 /* Downtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B97D2AE67CD900A46B29 /* Downtime.swift */; };
+		DE78C8232AEFA6D000E944F4 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8222AEFA6D000E944F4 /* TitleCell.swift */; };
+		DE78C8252AEFA83400E944F4 /* InstantBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8242AEFA83400E944F4 /* InstantBlockCell.swift */; };
+		DE78C8272AEFABA400E944F4 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8262AEFABA400E944F4 /* Binding+Extension.swift */; };
 		DE8B512B2ACBFA7000F405B7 /* OPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B512A2ACBFA7000F405B7 /* OPreloaderView.swift */; };
 		DE8B512E2ACBFEEA00F405B7 /* SetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */; };
 		DE8B51312ACC00FD00F405B7 /* GetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51302ACC00FD00F405B7 /* GetProfileRequest.swift */; };
@@ -370,6 +373,9 @@
 		DE78C8182AEBE10600E944F4 /* AddDowntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDowntime.swift; sourceTree = "<group>"; };
 		DE78C81B2AEBE4A500E944F4 /* DowntimeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowntimeName.swift; sourceTree = "<group>"; };
 		DE78C81E2AEBE67000E944F4 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		DE78C8222AEFA6D000E944F4 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		DE78C8242AEFA83400E944F4 /* InstantBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantBlockCell.swift; sourceTree = "<group>"; };
+		DE78C8262AEFABA400E944F4 /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
 		DE8B512A2ACBFA7000F405B7 /* OPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPreloaderView.swift; sourceTree = "<group>"; };
 		DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRequest.swift; sourceTree = "<group>"; };
 		DE8B51302ACC00FD00F405B7 /* GetProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileRequest.swift; sourceTree = "<group>"; };
@@ -993,6 +999,7 @@
 			isa = PBXGroup;
 			children = (
 				DE78C81E2AEBE67000E944F4 /* View+Extension.swift */,
+				DE78C8262AEFABA400E944F4 /* Binding+Extension.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -1181,6 +1188,8 @@
 				DEDF8C992AD5D00900786C0F /* TimeLimitCell.swift */,
 				DEB7B97F2AE69E0300A46B29 /* DowntimesMainCell.swift */,
 				DEB7B9812AE6A24E00A46B29 /* DowntimeCell.swift */,
+				DE78C8222AEFA6D000E944F4 /* TitleCell.swift */,
+				DE78C8242AEFA83400E944F4 /* InstantBlockCell.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -1639,10 +1648,12 @@
 				DEE053C12AD046A400101784 /* WebDomainView.swift in Sources */,
 				DEB7B9502AE1853400A46B29 /* DayActivity.swift in Sources */,
 				DEDF8C982AD595D400786C0F /* MainBundle.swift in Sources */,
+				DE78C8232AEFA6D000E944F4 /* TitleCell.swift in Sources */,
 				DEE053B72AD042BB00101784 /* Fonts.swift in Sources */,
 				DEDF8C862AD45EB200786C0F /* MainView.swift in Sources */,
 				DEB7B9522AE18CF100A46B29 /* ActivityCategory.swift in Sources */,
 				DEE053B12AD03B9B00101784 /* WebHistoryEmptyView.swift in Sources */,
+				DE78C8272AEFABA400E944F4 /* Binding+Extension.swift in Sources */,
 				DEB7B9462AE1739C00A46B29 /* StatisticsViewModel.swift in Sources */,
 				DEB7B99B2AE9398E00A46B29 /* DowntimeScheduleView.swift in Sources */,
 				DEDF8CA32AD6D0F800786C0F /* TimeLimitView.swift in Sources */,
@@ -1677,6 +1688,7 @@
 				DEDF8C9A2AD5D00900786C0F /* TimeLimitCell.swift in Sources */,
 				DEDF8C962AD593C800786C0F /* SetTimeLimitCell.swift in Sources */,
 				DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */,
+				DE78C8252AEFA83400E944F4 /* InstantBlockCell.swift in Sources */,
 				DEB7B9822AE6A24E00A46B29 /* DowntimeCell.swift in Sources */,
 				DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */,
 				DEDF8C922AD592E000786C0F /* GlobalDefinitions.swift in Sources */,

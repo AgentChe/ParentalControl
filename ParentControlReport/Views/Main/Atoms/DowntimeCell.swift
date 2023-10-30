@@ -145,18 +145,6 @@ private extension DowntimeCell {
 }
 
 // MARK: Additional
-private extension Binding {
-    func onUpdate(_ action: @escaping () -> Void) -> Binding<Value> {
-        Binding(get: {
-            wrappedValue
-        }, set: { newValue in
-            wrappedValue = newValue
-            action()
-        })
-    }
-}
-
-// MARK: Additional
 private extension Date {
     var time: String {
         let formatter = DateFormatter()

@@ -148,3 +148,6 @@
 "Downtime.DateSheet.End.Title" = "End time";
 "Downtime.DateSheet.End.SubTitle" = "Select an end time for downtime";
 "Downtime.EnterName" = "Enter name";
+"Downtime.Apps" = "Apps";
+"Downtime.InstantBlock.Title" = "Instant block";
+"Downtime.InstantBlock.SubTitle" = "Toggle to block all apps";

@@ -12,6 +12,8 @@ enum MainElement: Identifiable {
     case timeLimit(TimeLimitElement)
     case downtimes
     case downtime(Downtime)
+    case title(String)
+    case instantBlock
     
     var id: String {
         switch self {
@@ -23,6 +25,10 @@ enum MainElement: Identifiable {
             return "downtimes"
         case .downtime(let downtime):
             return downtime.id
+        case .title(let title):
+            return title
+        case .instantBlock:
+            return "instant_block"
         }
     }
 }
@@ -118,6 +124,10 @@ struct MainView: View {
                             EditDowntimeView(downtime: downtime)
                         }
                         .environmentObject(downtimes)
+                    case .title(let title):
+                        TitleCell(title: title)
+                    case .instantBlock:
+                        InstantBlockCell()
                     }
                 }
             }
@@ -147,6 +157,9 @@ private extension MainView {
         downtimes.downtimes.forEach { downtime in
             result.append(.downtime(downtime))
         }
+        
+        result.append(.title("Downtime.Apps".localized))
+        result.append(.instantBlock)
 
         return result
     }
