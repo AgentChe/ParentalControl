@@ -19,8 +19,8 @@ struct ParentControlReport: DeviceActivityReportExtension {
             StatisticsView(daysActivities: daysActivities)
         }
         
-        MainReport { bundle in
-            MainView(bundle: bundle)
+        MainReport { daysActivities in
+            MainView(daysActivities: daysActivities)
         }
     }
 }

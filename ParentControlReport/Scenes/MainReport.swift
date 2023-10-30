@@ -12,18 +12,15 @@ import ManagedSettings
 struct MainReport: DeviceActivityReportScene {
     var context: DeviceActivityReport.Context = .main
     
-    let content: (MainBundle) -> MainView
+    let content: ([DayActivity]) -> MainView
     
-    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> MainBundle {
-        var totalActivityDuration: TimeInterval = 0
+    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> [DayActivity] {
         var days = [DayActivity]()
         
         let blockedDomains = ManagedSettingsStore.webHistory.shield.webDomains ?? []
         
         for await item in data {
             for await segment in item.activitySegments {
-                totalActivityDuration += segment.totalActivityDuration
-                
                 var categories = [ActivityCategory]()
                 
                 for await category in segment.categories {
@@ -88,9 +85,6 @@ struct MainReport: DeviceActivityReportScene {
             }
         }
         
-        return MainBundle(
-            totalActivityDuration: totalActivityDuration,
-            daysActivities: days
-        )
+        return days
     }
 }

@@ -85,10 +85,10 @@ struct MainView: View {
     
     @StateObject private var downtimes = Downtimes()
     
-    private let bundle: MainBundle
+    private let daysActivities: [DayActivity]
     
-    init(bundle: MainBundle) {
-        self.bundle = bundle
+    init(daysActivities: [DayActivity]) {
+        self.daysActivities = daysActivities
         
         let timeLimit = ContentService.shared.timeLimit()
         timeLimitEnable = TimeLimitEnableObject(enable: timeLimit?.enable ?? false)
@@ -193,12 +193,12 @@ private extension MainView {
 
         if timeLimitEnable.enable {
             let element = TimeLimitElement(
-                totalActivityDuration: bundle.totalActivityDuration,
+                totalActivityDuration: totalActivityDurationOnToday(),
                 timeLimit: timeLimitTime.totalMinutes
             )
             result.append(.timeLimit(element))
         } else {
-            let element = SetTimeLimitElement(totalActivityDuration: bundle.totalActivityDuration)
+            let element = SetTimeLimitElement(totalActivityDuration: totalActivityDurationOnToday())
             result.append(.setTimeLimit(element))
         }
         
@@ -218,13 +218,30 @@ private extension MainView {
         return result
     }
     
+    func totalActivityDurationOnToday() -> TimeInterval {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        
+        guard let todayActivity = daysActivities.first(where: { calendar.startOfDay(for: $0.day) == today }) else {
+            return 0
+        }
+        
+        var totalActivityDuration = TimeInterval(0)
+        
+        todayActivity.categories.forEach { category in
+            totalActivityDuration += category.totalActivityDuration
+        }
+        
+        return totalActivityDuration
+    }
+    
     func applicationsElements() -> [MainElement] {
         var result = [ApplicationElement]()
         
         var totalActivityDuration: TimeInterval = 0
         
         var appsActivities = [ApplicationToken: (ActivityCategory, ActivityApplication, TimeInterval)]()
-        bundle.daysActivities.forEach { day in
+        daysActivities.forEach { day in
             day.categories.forEach { category in
                 category.applications.forEach { application in
                     let appsActivity = appsActivities[application.token]
@@ -278,7 +295,7 @@ private extension MainView {
     func webHistoryElements() -> [MainElement] {
         var result = [WebHistoryItem]()
         
-        bundle.daysActivities.forEach { day in
+        daysActivities.forEach { day in
             day.categories.forEach { category in
                 category.webHistory.forEach { item in
                     if let index = result.firstIndex(where: {

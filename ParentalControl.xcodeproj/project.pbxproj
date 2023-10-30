@@ -178,7 +178,6 @@
 		DEDF8C912AD590F900786C0F /* ProfileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C8F2AD590F200786C0F /* ProfileCache.swift */; };
 		DEDF8C922AD592E000786C0F /* GlobalDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6617732AC5C4E5004CCD56 /* GlobalDefinitions.swift */; };
 		DEDF8C962AD593C800786C0F /* SetTimeLimitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C952AD593C800786C0F /* SetTimeLimitCell.swift */; };
-		DEDF8C982AD595D400786C0F /* MainBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C972AD595D400786C0F /* MainBundle.swift */; };
 		DEDF8C9A2AD5D00900786C0F /* TimeLimitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C992AD5D00900786C0F /* TimeLimitCell.swift */; };
 		DEDF8C9D2AD6A35000786C0F /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C9C2AD6A35000786C0F /* ContentService.swift */; };
 		DEDF8C9F2AD6AB0D00786C0F /* CacheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C9E2AD6AB0D00786C0F /* CacheData.swift */; };
@@ -435,7 +434,6 @@
 		DEDF8C882AD4605E00786C0F /* MainReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReport.swift; sourceTree = "<group>"; };
 		DEDF8C8F2AD590F200786C0F /* ProfileCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCache.swift; sourceTree = "<group>"; };
 		DEDF8C952AD593C800786C0F /* SetTimeLimitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeLimitCell.swift; sourceTree = "<group>"; };
-		DEDF8C972AD595D400786C0F /* MainBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBundle.swift; sourceTree = "<group>"; };
 		DEDF8C992AD5D00900786C0F /* TimeLimitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitCell.swift; sourceTree = "<group>"; };
 		DEDF8C9C2AD6A35000786C0F /* ContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
 		DEDF8C9E2AD6AB0D00786C0F /* CacheData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheData.swift; sourceTree = "<group>"; };
@@ -1279,7 +1277,6 @@
 			children = (
 				DEB7B9922AE6EFB200A46B29 /* Observable */,
 				DEE053902ACEEE0100101784 /* WebHistoryItem.swift */,
-				DEDF8C972AD595D400786C0F /* MainBundle.swift */,
 				DEB7B94F2AE1853400A46B29 /* DayActivity.swift */,
 				DEB7B9512AE18CF100A46B29 /* ActivityCategory.swift */,
 				DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */,
@@ -1659,7 +1656,6 @@
 				DE78C8142AEAAE8700E944F4 /* ConfirmAlert.swift in Sources */,
 				DEE053C12AD046A400101784 /* WebDomainView.swift in Sources */,
 				DEB7B9502AE1853400A46B29 /* DayActivity.swift in Sources */,
-				DEDF8C982AD595D400786C0F /* MainBundle.swift in Sources */,
 				DE78C8232AEFA6D000E944F4 /* TitleCell.swift in Sources */,
 				DEE053B72AD042BB00101784 /* Fonts.swift in Sources */,
 				DEDF8C862AD45EB200786C0F /* MainView.swift in Sources */,
