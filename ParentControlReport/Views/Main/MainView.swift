@@ -15,9 +15,10 @@ enum MainElement: Identifiable {
     case downtime(Downtime)
     case title(String)
     case instantBlock
-    case seeMore(SeeMore)
+    case recentActivitySeeMore
     case emptyRecentActivity
     case application(ApplicationElement)
+    case webHistorySeeMore
     case emptyWebHistory
     case webHistory(WebHistoryItem)
     
@@ -35,12 +36,14 @@ enum MainElement: Identifiable {
             return title
         case .instantBlock:
             return "instant_block"
-        case .seeMore(let element):
-            return element.title
+        case .recentActivitySeeMore:
+            return "recent_activity_see_more"
         case .emptyRecentActivity:
             return "empty_recent_activity"
         case .application(let element):
             return element.id
+        case .webHistorySeeMore:
+            return "web_history_see_more"
         case .emptyWebHistory:
             return "empty_web_history"
         case .webHistory(let item):
@@ -60,34 +63,20 @@ struct TimeLimitElement: Identifiable {
     let timeLimit: Int
 }
 
-enum SeeMore {
-    case recentActivity
-    case webHistory
-    
-    var title: String {
-        switch self {
-        case .recentActivity:
-            return "Downtime.RecentActivity".localized
-        case .webHistory:
-            return "Downtime.WebHistory".localized
-        }
-    }
-}
-
 struct MainView: View {
     @State private var timeLimitViewPresenting = false
     @State private var downtimesPresenting = false
     @State private var editDowntime: Downtime?
+    @State private var webHistoryPresented = false
     
     @State private var timeLimitEnable: TimeLimitEnableObject
     @State private var timeLimitTime: TimeObject
     @State private var timeLimitSchedule: WeekSchedule
     
     @StateObject private var downtimes = Downtimes()
+    @ObservedObject private var daysActivities: DaysActivities
     
-    private let daysActivities: [DayActivity]
-    
-    init(daysActivities: [DayActivity]) {
+    init(daysActivities: DaysActivities) {
         self.daysActivities = daysActivities
         
         let timeLimit = ContentService.shared.timeLimit()
@@ -158,14 +147,21 @@ struct MainView: View {
                         TitleCell(title: title)
                     case .instantBlock:
                         InstantBlockCell()
-                    case .seeMore(let element):
-                        SeeMoreCell(element: element) { element in
-                            // TODO
-                        }
+                    case .recentActivitySeeMore:
+                        SeeMoreCell(element: .recentActivity)
                     case .emptyRecentActivity:
                         RecentActivityEmpty()
                     case .application(let element):
                         ApplicationCell(element: element)
+                    case .webHistorySeeMore:
+                        SeeMoreCell(element: .webHistory)
+                            .sheet(isPresented: $webHistoryPresented) {
+                                WebHistoryView()
+                                    .environmentObject(daysActivities)
+                            }
+                            .onTapGesture {
+                                webHistoryPresented = true
+                            }
                     case .emptyWebHistory:
                         WebHistoryEmptyView()
                     case .webHistory(let item):
@@ -222,7 +218,7 @@ private extension MainView {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
         
-        guard let todayActivity = daysActivities.first(where: { calendar.startOfDay(for: $0.day) == today }) else {
+        guard let todayActivity = daysActivities.days.first(where: { calendar.startOfDay(for: $0.day) == today }) else {
             return 0
         }
         
@@ -241,7 +237,7 @@ private extension MainView {
         var totalActivityDuration: TimeInterval = 0
         
         var appsActivities = [ApplicationToken: (ActivityCategory, ActivityApplication, TimeInterval)]()
-        daysActivities.forEach { day in
+        daysActivities.days.forEach { day in
             day.categories.forEach { category in
                 category.applications.forEach { application in
                     let appsActivity = appsActivities[application.token]
@@ -279,7 +275,7 @@ private extension MainView {
                 result.append(element)
             }
         
-        var elements = [MainElement.seeMore(.recentActivity)]
+        var elements = [MainElement.recentActivitySeeMore]
         
         if result.isEmpty {
             elements.append(.emptyRecentActivity)
@@ -295,7 +291,7 @@ private extension MainView {
     func webHistoryElements() -> [MainElement] {
         var result = [WebHistoryItem]()
         
-        daysActivities.forEach { day in
+        daysActivities.days.forEach { day in
             day.categories.forEach { category in
                 category.webHistory.forEach { item in
                     if let index = result.firstIndex(where: {
@@ -309,7 +305,7 @@ private extension MainView {
             }
         }
         
-        var elements = [MainElement.seeMore(.webHistory)]
+        var elements = [MainElement.webHistorySeeMore]
         
         if result.isEmpty {
             elements.append(.emptyWebHistory)

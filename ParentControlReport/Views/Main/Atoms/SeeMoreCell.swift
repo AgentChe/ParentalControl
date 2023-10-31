@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct SeeMoreCell: View {
+    enum SeeMore {
+        case recentActivity
+        case webHistory
+        
+        var title: String {
+            switch self {
+            case .recentActivity:
+                return "Downtime.RecentActivity".localized
+            case .webHistory:
+                return "Downtime.WebHistory".localized
+            }
+        }
+    }
+    
     let element: SeeMore
-    let action: (SeeMore) -> Void
     
     var body: some View {
         HStack {
@@ -39,8 +52,5 @@ struct SeeMoreCell: View {
             bottom: 8.scale,
             trailing: 8.scale
         ))
-        .onTapGesture {
-            action(element)
-        }
     }
 }

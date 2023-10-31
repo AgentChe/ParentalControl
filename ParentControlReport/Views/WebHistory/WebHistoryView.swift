@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct WebHistoryView: View {
-    let items: [WebHistoryItem]
+    @EnvironmentObject var daysActivities: DaysActivities
     
     var body: some View {
-        items.isEmpty ? AnyView(empty) : AnyView(list)
+//        webHistory.items.isEmpty ? AnyView(empty) : AnyView(list)
+        list
     }
 }
 
@@ -21,16 +22,28 @@ private extension WebHistoryView {
         WebHistoryEmptyView()
     }
     
+//    var list: some View {
+//        ZStack {
+//            Color(Appearance.background)
+//
+//            List {
+//                ForEach(webHistory.items) { item in
+//                    WebDomainView(item: item)
+//                }
+//            }
+//            .listStyle(PlainListStyle())
+//        }
+//    }
+    
     var list: some View {
         ZStack {
             Color(Appearance.background)
             
             List {
-                ForEach(items) { item in
-                    WebDomainView(item: item)
+                ForEach(daysActivities.days) { day in
+                    Text(day.day.description)
                 }
             }
-            .listStyle(PlainListStyle())
         }
     }
 }

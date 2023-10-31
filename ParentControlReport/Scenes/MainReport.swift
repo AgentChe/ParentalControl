@@ -12,9 +12,9 @@ import ManagedSettings
 struct MainReport: DeviceActivityReportScene {
     var context: DeviceActivityReport.Context = .main
     
-    let content: ([DayActivity]) -> MainView
+    let content: (DaysActivities) -> MainView
     
-    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> [DayActivity] {
+    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> DaysActivities {
         var days = [DayActivity]()
         
         let blockedDomains = ManagedSettingsStore.webHistory.shield.webDomains ?? []
@@ -85,6 +85,6 @@ struct MainReport: DeviceActivityReportScene {
             }
         }
         
-        return days
+        return DaysActivities(days: days)
     }
 }
