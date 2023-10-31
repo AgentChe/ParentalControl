@@ -11,7 +11,7 @@ import ManagedSettings
 final class WebHistoryItem: ObservableObject, Identifiable, Hashable {
     let id: String
     let domain: WebDomain
-    @Published var totalActivityDuration: TimeInterval
+    let totalActivityDuration: TimeInterval
     @Published var blocked: Bool
     
     init(

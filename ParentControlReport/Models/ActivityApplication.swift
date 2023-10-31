@@ -12,4 +12,5 @@ struct ActivityApplication: Hashable {
     let token: ApplicationToken
     let name: String
     let totalActivityDuration: TimeInterval
+    weak var category: ActivityCategory?
 }

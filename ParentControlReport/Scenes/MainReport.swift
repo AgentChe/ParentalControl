@@ -22,6 +22,8 @@ struct MainReport: DeviceActivityReportScene {
         for await item in data {
             for await segment in item.activitySegments {
                 var categories = [ActivityCategory]()
+                var activityApplications = [ActivityApplication]()
+                var webHistory = [WebHistoryItem]()
                 
                 for await category in segment.categories {
                     guard
@@ -31,8 +33,12 @@ struct MainReport: DeviceActivityReportScene {
                         continue
                     }
                     
-                    var activityApplications = [ActivityApplication]()
-                    var webHistory = [WebHistoryItem]()
+                    let activityCategory = ActivityCategory(
+                        token: token,
+                        totalActivityDuration: category.totalActivityDuration,
+                        name: name
+                    )
+                    categories.append(activityCategory)
                     
                     for await application in category.applications {
                         guard
@@ -45,7 +51,8 @@ struct MainReport: DeviceActivityReportScene {
                         let activityApplication = ActivityApplication(
                             token: token,
                             name: name,
-                            totalActivityDuration: application.totalActivityDuration
+                            totalActivityDuration: application.totalActivityDuration,
+                            category: activityCategory
                         )
                         activityApplications.append(activityApplication)
                     }
@@ -66,20 +73,13 @@ struct MainReport: DeviceActivityReportScene {
                         )
                         webHistory.append(item)
                     }
-                    
-                    let activityCategory = ActivityCategory(
-                        token: token,
-                        totalActivityDuration: category.totalActivityDuration,
-                        name: name,
-                        applications: activityApplications,
-                        webHistory: webHistory
-                    )
-                    categories.append(activityCategory)
                 }
                 
                 let day = DayActivity(
                     day: segment.dateInterval.start,
-                    categories: categories
+                    categories: categories,
+                    applications: activityApplications,
+                    webHistory: webHistory
                 )
                 days.append(day)
             }

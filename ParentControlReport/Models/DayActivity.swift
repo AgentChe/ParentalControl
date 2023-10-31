@@ -12,16 +12,22 @@ import ManagedSettings
 final class DayActivity: ObservableObject, Identifiable, Hashable {
     let id: String
     let day: Date
-    @Published var categories: [ActivityCategory]
+    let categories: [ActivityCategory]
+    let applications: [ActivityApplication]
+    @Published var webHistory: [WebHistoryItem]
     
     init(
         id: String = UUID().uuidString,
         day: Date,
-        categories: [ActivityCategory]
+        categories: [ActivityCategory],
+        applications: [ActivityApplication],
+        webHistory: [WebHistoryItem]
     ) {
         self.id = id
         self.day = day
         self.categories = categories
+        self.applications = applications
+        self.webHistory = webHistory
     }
     
     func hash(into hasher: inout Hasher) {

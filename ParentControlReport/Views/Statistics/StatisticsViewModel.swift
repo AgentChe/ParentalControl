@@ -103,20 +103,18 @@ private extension StatisticsViewModel {
         
         var totalActivityDuration: TimeInterval = 0
         
-        var appsActivities = [ApplicationToken: (ActivityCategory, ActivityApplication, TimeInterval)]()
+        var appsActivities = [ApplicationToken: (ActivityCategory?, ActivityApplication, TimeInterval)]()
         daysActivites.forEach { day in
-            day.categories.forEach { category in
-                category.applications.forEach { application in
-                    let appsActivity = appsActivities[application.token]
-                    
-                    appsActivities[application.token] = (
-                        appsActivity?.0 ?? category,
-                        appsActivity?.1 ?? application,
-                        (appsActivity?.2 ?? 0) + application.totalActivityDuration
-                    )
-                    
-                    totalActivityDuration += application.totalActivityDuration
-                }
+            day.applications.forEach { application in
+                let appsActivity = appsActivities[application.token]
+                
+                appsActivities[application.token] = (
+                    appsActivity?.0 ?? application.category,
+                    appsActivity?.1 ?? application,
+                    (appsActivity?.2 ?? 0) + application.totalActivityDuration
+                )
+                
+                totalActivityDuration += application.totalActivityDuration
             }
         }
         
@@ -125,6 +123,10 @@ private extension StatisticsViewModel {
                 lhs.value.1.name < rhs.value.1.name
             })
             .forEach { key, value in
+                guard let category = value.0 else {
+                    return
+                }
+                
                 var score: Float {
                     guard totalActivityDuration != 0 else {
                         return 0
@@ -135,7 +137,7 @@ private extension StatisticsViewModel {
                 
                 let element = ApplicationElement(
                     application: value.1,
-                    category: value.0.name,
+                    category: category.name,
                     activityDuration: value.2,
                     activityScore: score
                 )

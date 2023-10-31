@@ -165,15 +165,17 @@ struct MainView: View {
                     case .emptyWebHistory:
                         WebHistoryEmptyView()
                     case .webHistory(let item):
-                        WebDomainView(item: item)
-                            .listRowInsets(EdgeInsets(
-                                top: 8.scale,
-                                leading: 16.scale,
-                                bottom: 8.scale,
-                                trailing: 16.scale
-                            ))
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(Color.clear)
+                        WebDomainView(item: item) { changed in
+                            daysActivities.update(item: changed)
+                        }
+                        .listRowInsets(EdgeInsets(
+                            top: 8.scale,
+                            leading: 16.scale,
+                            bottom: 8.scale,
+                            trailing: 16.scale
+                        ))
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
                     }
                 }
             }
@@ -207,9 +209,9 @@ private extension MainView {
         result.append(.title("Downtime.Apps".localized))
         result.append(.instantBlock)
         
-        result.append(contentsOf: applicationsElements())
+        result.append(contentsOf: applicationsElements)
         
-        result.append(contentsOf: webHistoryElements())
+        result.append(contentsOf: webHistoryElements)
 
         return result
     }
@@ -231,25 +233,23 @@ private extension MainView {
         return totalActivityDuration
     }
     
-    func applicationsElements() -> [MainElement] {
+    var applicationsElements: [MainElement] {
         var result = [ApplicationElement]()
         
         var totalActivityDuration: TimeInterval = 0
         
-        var appsActivities = [ApplicationToken: (ActivityCategory, ActivityApplication, TimeInterval)]()
+        var appsActivities = [ApplicationToken: (ActivityCategory?, ActivityApplication, TimeInterval)]()
         daysActivities.days.forEach { day in
-            day.categories.forEach { category in
-                category.applications.forEach { application in
-                    let appsActivity = appsActivities[application.token]
-                    
-                    appsActivities[application.token] = (
-                        appsActivity?.0 ?? category,
-                        appsActivity?.1 ?? application,
-                        (appsActivity?.2 ?? 0) + application.totalActivityDuration
-                    )
-                    
-                    totalActivityDuration += application.totalActivityDuration
-                }
+            day.applications.forEach { application in
+                let appsActivity = appsActivities[application.token]
+                
+                appsActivities[application.token] = (
+                    appsActivity?.0 ?? application.category,
+                    appsActivity?.1 ?? application,
+                    (appsActivity?.2 ?? 0) + application.totalActivityDuration
+                )
+                
+                totalActivityDuration += application.totalActivityDuration
             }
         }
         
@@ -258,6 +258,10 @@ private extension MainView {
                 lhs.value.1.name < rhs.value.1.name
             })
             .forEach { key, value in
+                guard let category = value.0 else {
+                    return
+                }
+                
                 var score: Float {
                     guard totalActivityDuration != 0 else {
                         return 0
@@ -268,7 +272,7 @@ private extension MainView {
                 
                 let element = ApplicationElement(
                     application: value.1,
-                    category: value.0.name,
+                    category: category.name,
                     activityDuration: value.2,
                     activityScore: score
                 )
@@ -288,20 +292,16 @@ private extension MainView {
         return elements
     }
     
-    func webHistoryElements() -> [MainElement] {
+    var webHistoryElements: [MainElement] {
         var result = [WebHistoryItem]()
         
         daysActivities.days.forEach { day in
-            day.categories.forEach { category in
-                category.webHistory.forEach { item in
-                    if let index = result.firstIndex(where: {
-                        $0.domain.token == item.domain.token
-                    }) {
-                        result[index].totalActivityDuration += item.totalActivityDuration
-                    } else {
-                        result.append(item)
-                    }
+            day.webHistory.forEach { item in
+                if result.contains(where: { $0.domain.token == item.domain.token }) {
+                    return
                 }
+                
+                result.append(item)
             }
         }
         

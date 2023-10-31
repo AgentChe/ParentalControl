@@ -1276,10 +1276,10 @@
 			isa = PBXGroup;
 			children = (
 				DEB7B9922AE6EFB200A46B29 /* Observable */,
-				DEE053902ACEEE0100101784 /* WebHistoryItem.swift */,
 				DEB7B94F2AE1853400A46B29 /* DayActivity.swift */,
 				DEB7B9512AE18CF100A46B29 /* ActivityCategory.swift */,
 				DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */,
+				DEE053902ACEEE0100101784 /* WebHistoryItem.swift */,
 				DEB7B97D2AE67CD900A46B29 /* Downtime.swift */,
 			);
 			path = Models;

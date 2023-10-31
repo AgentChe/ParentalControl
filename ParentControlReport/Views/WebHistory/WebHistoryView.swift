@@ -22,28 +22,37 @@ private extension WebHistoryView {
         WebHistoryEmptyView()
     }
     
-//    var list: some View {
-//        ZStack {
-//            Color(Appearance.background)
-//
-//            List {
-//                ForEach(webHistory.items) { item in
-//                    WebDomainView(item: item)
-//                }
-//            }
-//            .listStyle(PlainListStyle())
-//        }
-//    }
-    
     var list: some View {
         ZStack {
             Color(Appearance.background)
             
             List {
                 ForEach(daysActivities.days) { day in
-                    Text(day.day.description)
+                    if !day.webHistory.isEmpty {
+                        Section(content: {
+                            ForEach(day.webHistory) { item in
+                                WebDomainView(item: item) { changed in
+                                    daysActivities.update(item: changed)
+                                }
+                            }
+                        }, header: {
+                            Text(day.day.formatted)
+                                .foregroundColor(Color(Appearance.black.withAlphaComponent(0.6)))
+                                .font(Font(Fonts.Satoshi.medium(size: 16.scale)))
+                        })
+                    }
                 }
             }
+            .listStyle(PlainListStyle())
         }
+    }
+}
+
+// MARK: Additional
+private extension Date {
+    var formatted: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd"
+        return formatter.string(from: self)
     }
 }

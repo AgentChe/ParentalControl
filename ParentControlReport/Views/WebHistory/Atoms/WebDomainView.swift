@@ -6,14 +6,12 @@
 //
 
 import SwiftUI
-import ManagedSettings
 
 struct WebDomainView: View {
     @State var item: WebHistoryItem
+    let changeBlocked: (WebHistoryItem) -> Void
     
     @State private var sheetPresenting = false
-    
-    private let store = ManagedSettingsStore.webHistory
     
     var body: some View {
         ZStack {
@@ -77,22 +75,9 @@ struct WebDomainView: View {
                                 .multilineTextAlignment(.center)
                             
                             Button(action: {
-                                guard let token = item.domain.token else {
-                                    return
-                                }
-                                
-                                var domains = store.shield.webDomains ?? []
-                                
-                                if item.blocked {
-                                    domains.remove(token)
-                                } else {
-                                    domains.insert(token)
-                                }
-                                
-                                store.shield.webDomains = domains
-                                item.blocked.toggle()
-                                
                                 sheetPresenting.toggle()
+                                
+                                changeBlocked(item)
                             }, label: {
                                 ZStack {
                                     Color(Appearance.primary)
