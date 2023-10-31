@@ -165,8 +165,6 @@
 		DECBC4D62AC71B39003B9D70 /* OEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D52AC71B39003B9D70 /* OEmailView.swift */; };
 		DECBC4D82AC721B5003B9D70 /* OFaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D72AC721B5003B9D70 /* OFaceIdView.swift */; };
 		DECBC4DA2ACBEA54003B9D70 /* EarlierButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */; };
-		DED881DF2AE0224900E56B4D /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED881DE2AE0224900E56B4D /* StatisticsViewController.swift */; };
-		DED881E12AE022B500E56B4D /* StatisticsReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED881E02AE022B500E56B4D /* StatisticsReport.swift */; };
 		DED881E62AE0230700E56B4D /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED881E52AE0230700E56B4D /* StatisticsView.swift */; };
 		DED881F72AE1660B00E56B4D /* PeriodSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED881F62AE1660B00E56B4D /* PeriodSegmentView.swift */; };
 		DEDF8C812AD452AB00786C0F /* TimeLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8C802AD452AB00786C0F /* TimeLimit.swift */; };
@@ -426,8 +424,6 @@
 		DECBC4D52AC71B39003B9D70 /* OEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OEmailView.swift; sourceTree = "<group>"; };
 		DECBC4D72AC721B5003B9D70 /* OFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFaceIdView.swift; sourceTree = "<group>"; };
 		DECBC4D92ACBEA54003B9D70 /* EarlierButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlierButton.swift; sourceTree = "<group>"; };
-		DED881DE2AE0224900E56B4D /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
-		DED881E02AE022B500E56B4D /* StatisticsReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsReport.swift; sourceTree = "<group>"; };
 		DED881E52AE0230700E56B4D /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		DED881F62AE1660B00E56B4D /* PeriodSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodSegmentView.swift; sourceTree = "<group>"; };
 		DEDF8C802AD452AB00786C0F /* TimeLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimit.swift; sourceTree = "<group>"; };
@@ -1164,7 +1160,6 @@
 			isa = PBXGroup;
 			children = (
 				DEDF8C882AD4605E00786C0F /* MainReport.swift */,
-				DED881E02AE022B500E56B4D /* StatisticsReport.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1174,7 +1169,6 @@
 			children = (
 				DE8B51522ACC74E300F405B7 /* HomeViewController.swift */,
 				DEE053A12AD034BE00101784 /* AppsViewController.swift */,
-				DED881DE2AE0224900E56B4D /* StatisticsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1590,7 +1584,6 @@
 				DE6618A22AC5C4E5004CCD56 /* Appearance.swift in Sources */,
 				DE66188A2AC5C4E5004CCD56 /* XOREncryption.swift in Sources */,
 				DE66188E2AC5C4E5004CCD56 /* ContentError.swift in Sources */,
-				DED881DF2AE0224900E56B4D /* StatisticsViewController.swift in Sources */,
 				DE6619212AC5C4E6004CCD56 /* DefaultPaygate.swift in Sources */,
 				DEE053952AD02CE000101784 /* MainViewController.swift in Sources */,
 				DEE053992AD02CEB00101784 /* MainView.swift in Sources */,
@@ -1675,7 +1668,6 @@
 				DEDF8C8B2AD58C8000786C0F /* WeekSchedule.swift in Sources */,
 				DE78C81F2AEBE67000E944F4 /* View+Extension.swift in Sources */,
 				DEE053B62AD0428F00101784 /* String+Extension.swift in Sources */,
-				DED881E12AE022B500E56B4D /* StatisticsReport.swift in Sources */,
 				DEDF8CAE2AD6F36C00786C0F /* TimePickerView.swift in Sources */,
 				DE78C8322AEFC05700E944F4 /* SeeMoreCell.swift in Sources */,
 				DED881F72AE1660B00E56B4D /* PeriodSegmentView.swift in Sources */,

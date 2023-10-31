@@ -9,7 +9,7 @@ import UIKit
 
 final class TabView: UIView {
     enum Tab {
-        case home, statistics, apps
+        case home, apps
     }
     
     var selectedTab = Tab.home {
@@ -19,7 +19,6 @@ final class TabView: UIView {
     }
     
     lazy var homeItem = makeItem(key: "Main.Home")
-    lazy var statisticsItem = makeItem(key: "Main.Statistics")
     lazy var appsItem = makeItem(key: "Main.Apps")
     
     override init(frame: CGRect) {
@@ -37,7 +36,6 @@ final class TabView: UIView {
 private extension TabView {
     func update() {
         homeItem.marked = selectedTab == .home
-        statisticsItem.marked = selectedTab == .statistics
         appsItem.marked = selectedTab == .apps
     }
 }
@@ -49,18 +47,11 @@ private extension TabView {
             homeItem.leadingAnchor.constraint(equalTo: leadingAnchor),
             homeItem.bottomAnchor.constraint(equalTo: bottomAnchor),
             homeItem.topAnchor.constraint(equalTo: topAnchor),
-            homeItem.widthAnchor.constraint(equalTo: statisticsItem.widthAnchor)
+            homeItem.widthAnchor.constraint(equalTo: appsItem.widthAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            statisticsItem.leadingAnchor.constraint(equalTo: homeItem.trailingAnchor),
-            statisticsItem.bottomAnchor.constraint(equalTo: bottomAnchor),
-            statisticsItem.topAnchor.constraint(equalTo: topAnchor),
-            statisticsItem.widthAnchor.constraint(equalTo: appsItem.widthAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            appsItem.leadingAnchor.constraint(equalTo: statisticsItem.trailingAnchor),
+            appsItem.leadingAnchor.constraint(equalTo: homeItem.trailingAnchor),
             appsItem.bottomAnchor.constraint(equalTo: bottomAnchor),
             appsItem.topAnchor.constraint(equalTo: topAnchor),
             appsItem.trailingAnchor.constraint(equalTo: trailingAnchor)

@@ -11,7 +11,6 @@ final class MainCoordinator {
     weak var parentVC: MainViewController?
     
     lazy var homeVC = NavigationController(rootViewController: HomeViewController.make())
-    lazy var statisticsVC = NavigationController(rootViewController: StatisticsViewController.make())
     lazy var apps = NavigationController(rootViewController: AppsViewController.make())
     
     private var previousVC: UIViewController?
@@ -26,8 +25,6 @@ final class MainCoordinator {
         switch tab {
         case .home:
             changeVC(on: homeVC)
-        case .statistics:
-            changeVC(on: statisticsVC)
         case .apps:
             changeVC(on: apps)
         }

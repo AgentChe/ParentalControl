@@ -68,6 +68,7 @@ struct MainView: View {
     @State private var downtimesPresenting = false
     @State private var editDowntime: Downtime?
     @State private var webHistoryPresented = false
+    @State private var statisticsPresented = false
     
     @State private var timeLimitEnable: TimeLimitEnableObject
     @State private var timeLimitTime: TimeObject
@@ -149,6 +150,12 @@ struct MainView: View {
                         InstantBlockCell()
                     case .recentActivitySeeMore:
                         SeeMoreCell(element: .recentActivity)
+                            .sheet(isPresented: $statisticsPresented) {
+                                StatisticsView(daysActivities: daysActivities.days)
+                            }
+                            .onTapGesture {
+                                statisticsPresented = true
+                            }
                     case .emptyRecentActivity:
                         RecentActivityEmpty()
                     case .application(let element):
