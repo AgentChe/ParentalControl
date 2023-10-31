@@ -11,13 +11,18 @@ struct WebHistoryView: View {
     @EnvironmentObject var daysActivities: DaysActivities
     
     var body: some View {
-//        webHistory.items.isEmpty ? AnyView(empty) : AnyView(list)
-        list
+        hasWebHistory ? AnyView(list) : AnyView(empty)
     }
 }
 
 // MARK: Private
 private extension WebHistoryView {
+    var hasWebHistory: Bool {
+        daysActivities.days.contains(where: { day in
+            !day.webHistory.isEmpty
+        })
+    }
+    
     var empty: some View {
         WebHistoryEmptyView()
     }
