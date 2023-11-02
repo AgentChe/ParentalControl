@@ -14,5 +14,9 @@ struct ParentControlReport: DeviceActivityReportExtension {
         MainReport { daysActivities in
             MainView(daysActivities: daysActivities)
         }
+        
+        AppsBlockedReport { activity in
+            AppsBlockedList(activity: activity)
+        }
     }
 }

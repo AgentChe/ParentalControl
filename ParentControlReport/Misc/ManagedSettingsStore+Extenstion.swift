@@ -11,4 +11,6 @@ extension ManagedSettingsStore {
     static let timeLimit = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: "store_timeLimit"))
     static let webHistory = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: "web_history"))
     static let instantBlock = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: "instant_block_store"))
+    static let appsBlocked = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: "apps_blocked"))
+    static let timeLimitWithApps = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: "time_limit_with_apps"))
 }

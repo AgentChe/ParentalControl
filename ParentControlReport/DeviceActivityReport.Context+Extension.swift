@@ -10,4 +10,5 @@ import DeviceActivity
 
 extension DeviceActivityReport.Context {
     static let main = Self("Main")
+    static let appsBlocked = Self("Apps blocked")
 }

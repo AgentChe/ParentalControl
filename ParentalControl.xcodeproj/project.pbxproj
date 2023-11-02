@@ -110,6 +110,25 @@
 		DE66195B2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66195A2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift */; };
 		DE66195D2AC5FCD3004CCD56 /* OScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66195C2AC5FCD3004CCD56 /* OScheduleView.swift */; };
 		DE6619602AC5FD5F004CCD56 /* WeekSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */; };
+		DE716FB52AF2755300451055 /* AppsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FB42AF2755300451055 /* AppsRootView.swift */; };
+		DE716FB62AF2768900451055 /* InstantBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8242AEFA83400E944F4 /* InstantBlockCell.swift */; };
+		DE716FB72AF2768A00451055 /* InstantBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8242AEFA83400E944F4 /* InstantBlockCell.swift */; };
+		DE716FB82AF2769F00451055 /* InstantBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8242AEFA83400E944F4 /* InstantBlockCell.swift */; };
+		DE716FB92AF276B400451055 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8262AEFABA400E944F4 /* Binding+Extension.swift */; };
+		DE716FBA2AF276B500451055 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8262AEFABA400E944F4 /* Binding+Extension.swift */; };
+		DE716FBB2AF276C200451055 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66179D2AC5C4E5004CCD56 /* Appearance.swift */; };
+		DE716FBC2AF276C600451055 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6617802AC5C4E5004CCD56 /* Fonts.swift */; };
+		DE716FBD2AF276D200451055 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66176D2AC5C4E5004CCD56 /* UIColor+Extension.swift */; };
+		DE716FBF2AF276ED00451055 /* Scalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66177A2AC5C4E5004CCD56 /* Scalable.swift */; };
+		DE716FC02AF276F800451055 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6617712AC5C4E5004CCD56 /* String+Extension.swift */; };
+		DE716FC22AF278F200451055 /* AppsActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC12AF278F200451055 /* AppsActionSheet.swift */; };
+		DE716FC52AF27E7200451055 /* AppsBlockedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC42AF27E7200451055 /* AppsBlockedView.swift */; };
+		DE716FC72AF27F8A00451055 /* AppsBlockedEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC62AF27F8A00451055 /* AppsBlockedEmpty.swift */; };
+		DE716FC92AF2948E00451055 /* AppsBlockedReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC82AF2948E00451055 /* AppsBlockedReport.swift */; };
+		DE716FCB2AF295F900451055 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FCA2AF295F900451055 /* Activity.swift */; };
+		DE716FCE2AF2963400451055 /* AppsBlockedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FCD2AF2963400451055 /* AppsBlockedList.swift */; };
+		DE716FD32AF2A23000451055 /* CategoryNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FD22AF2A23000451055 /* CategoryNameCell.swift */; };
+		DE716FD52AF2A2FC00451055 /* AppNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FD42AF2A2FC00451055 /* AppNameCell.swift */; };
 		DE78C8142AEAAE8700E944F4 /* ConfirmAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */; };
 		DE78C8162AEAE8D100E944F4 /* DateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8152AEAE8D100E944F4 /* DateSheet.swift */; };
 		DE78C8192AEBE10600E944F4 /* AddDowntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8182AEBE10600E944F4 /* AddDowntime.swift */; };
@@ -118,7 +137,6 @@
 		DE78C8202AEBEC5C00E944F4 /* Downtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B97D2AE67CD900A46B29 /* Downtime.swift */; };
 		DE78C8212AEBEC7400E944F4 /* Downtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B97D2AE67CD900A46B29 /* Downtime.swift */; };
 		DE78C8232AEFA6D000E944F4 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8222AEFA6D000E944F4 /* TitleCell.swift */; };
-		DE78C8252AEFA83400E944F4 /* InstantBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8242AEFA83400E944F4 /* InstantBlockCell.swift */; };
 		DE78C8272AEFABA400E944F4 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8262AEFABA400E944F4 /* Binding+Extension.swift */; };
 		DE78C8322AEFC05700E944F4 /* SeeMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8312AEFC05700E944F4 /* SeeMoreCell.swift */; };
 		DE78C8342AEFCB7B00E944F4 /* ManagedSettingsStore+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8332AEFCB7B00E944F4 /* ManagedSettingsStore+Extenstion.swift */; };
@@ -126,6 +144,9 @@
 		DE78C8362AEFCD8400E944F4 /* ManagedSettingsStore+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8332AEFCB7B00E944F4 /* ManagedSettingsStore+Extenstion.swift */; };
 		DE78C8382AEFD05600E944F4 /* RecentActivityEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8372AEFD05600E944F4 /* RecentActivityEmpty.swift */; };
 		DE78C83C2AEFF39E00E944F4 /* DaysActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C83B2AEFF39E00E944F4 /* DaysActivities.swift */; };
+		DE78C85E2AF157FB00E944F4 /* Selections.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C85D2AF157FB00E944F4 /* Selections.swift */; };
+		DE78C85F2AF157FE00E944F4 /* Selections.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C85D2AF157FB00E944F4 /* Selections.swift */; };
+		DE78C8602AF157FF00E944F4 /* Selections.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C85D2AF157FB00E944F4 /* Selections.swift */; };
 		DE8B512B2ACBFA7000F405B7 /* OPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B512A2ACBFA7000F405B7 /* OPreloaderView.swift */; };
 		DE8B512E2ACBFEEA00F405B7 /* SetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */; };
 		DE8B51312ACC00FD00F405B7 /* GetProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51302ACC00FD00F405B7 /* GetProfileRequest.swift */; };
@@ -136,6 +157,7 @@
 		DE8B51492ACC253F00F405B7 /* ParentControlReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = DE8B513D2ACC253F00F405B7 /* ParentControlReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE8B51502ACC6E6200F405B7 /* FamilyControlsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B514F2ACC6E6200F405B7 /* FamilyControlsManager.swift */; };
 		DE8B51532ACC74E300F405B7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51522ACC74E300F405B7 /* HomeViewController.swift */; };
+		DEB1E38A2AF15A7A0014080B /* GlobalDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6617732AC5C4E5004CCD56 /* GlobalDefinitions.swift */; };
 		DEB7B9462AE1739C00A46B29 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9452AE1739C00A46B29 /* StatisticsViewModel.swift */; };
 		DEB7B9482AE1756C00A46B29 /* StatisticsListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9472AE1756C00A46B29 /* StatisticsListElement.swift */; };
 		DEB7B94A2AE178B800A46B29 /* StatisticsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9492AE178B800A46B29 /* StatisticsList.swift */; };
@@ -370,6 +392,15 @@
 		DE66195A2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeLimitPickerCell.swift; sourceTree = "<group>"; };
 		DE66195C2AC5FCD3004CCD56 /* OScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OScheduleView.swift; sourceTree = "<group>"; };
 		DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSchedule.swift; sourceTree = "<group>"; };
+		DE716FB42AF2755300451055 /* AppsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsRootView.swift; sourceTree = "<group>"; };
+		DE716FC12AF278F200451055 /* AppsActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsActionSheet.swift; sourceTree = "<group>"; };
+		DE716FC42AF27E7200451055 /* AppsBlockedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedView.swift; sourceTree = "<group>"; };
+		DE716FC62AF27F8A00451055 /* AppsBlockedEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedEmpty.swift; sourceTree = "<group>"; };
+		DE716FC82AF2948E00451055 /* AppsBlockedReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedReport.swift; sourceTree = "<group>"; };
+		DE716FCA2AF295F900451055 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		DE716FCD2AF2963400451055 /* AppsBlockedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedList.swift; sourceTree = "<group>"; };
+		DE716FD22AF2A23000451055 /* CategoryNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNameCell.swift; sourceTree = "<group>"; };
+		DE716FD42AF2A2FC00451055 /* AppNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNameCell.swift; sourceTree = "<group>"; };
 		DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAlert.swift; sourceTree = "<group>"; };
 		DE78C8152AEAE8D100E944F4 /* DateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSheet.swift; sourceTree = "<group>"; };
 		DE78C8182AEBE10600E944F4 /* AddDowntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDowntime.swift; sourceTree = "<group>"; };
@@ -382,6 +413,7 @@
 		DE78C8332AEFCB7B00E944F4 /* ManagedSettingsStore+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedSettingsStore+Extenstion.swift"; sourceTree = "<group>"; };
 		DE78C8372AEFD05600E944F4 /* RecentActivityEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentActivityEmpty.swift; sourceTree = "<group>"; };
 		DE78C83B2AEFF39E00E944F4 /* DaysActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysActivities.swift; sourceTree = "<group>"; };
+		DE78C85D2AF157FB00E944F4 /* Selections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selections.swift; sourceTree = "<group>"; };
 		DE8B512A2ACBFA7000F405B7 /* OPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPreloaderView.swift; sourceTree = "<group>"; };
 		DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRequest.swift; sourceTree = "<group>"; };
 		DE8B51302ACC00FD00F405B7 /* GetProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileRequest.swift; sourceTree = "<group>"; };
@@ -980,6 +1012,43 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DE716FB32AF2751500451055 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				DEE053A12AD034BE00101784 /* AppsViewController.swift */,
+				DE716FB42AF2755300451055 /* AppsRootView.swift */,
+				DE716FC12AF278F200451055 /* AppsActionSheet.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		DE716FC32AF27E5E00451055 /* AppsBlockedView */ = {
+			isa = PBXGroup;
+			children = (
+				DE716FC42AF27E7200451055 /* AppsBlockedView.swift */,
+				DE716FC62AF27F8A00451055 /* AppsBlockedEmpty.swift */,
+			);
+			path = AppsBlockedView;
+			sourceTree = "<group>";
+		};
+		DE716FCC2AF2962600451055 /* AppsBlockedList */ = {
+			isa = PBXGroup;
+			children = (
+				DE716FD12AF2A22100451055 /* Cell */,
+				DE716FCD2AF2963400451055 /* AppsBlockedList.swift */,
+			);
+			path = AppsBlockedList;
+			sourceTree = "<group>";
+		};
+		DE716FD12AF2A22100451055 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE716FD22AF2A23000451055 /* CategoryNameCell.swift */,
+				DE716FD42AF2A2FC00451055 /* AppNameCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		DE78C8172AEBE0FC00E944F4 /* Add */ = {
 			isa = PBXGroup;
 			children = (
@@ -1092,6 +1161,7 @@
 			children = (
 				DEB7B9902AE6ED7F00A46B29 /* Downtimes.swift */,
 				DE78C83B2AEFF39E00E944F4 /* DaysActivities.swift */,
+				DE78C85D2AF157FB00E944F4 /* Selections.swift */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
@@ -1160,6 +1230,7 @@
 			isa = PBXGroup;
 			children = (
 				DEDF8C882AD4605E00786C0F /* MainReport.swift */,
+				DE716FC82AF2948E00451055 /* AppsBlockedReport.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1167,8 +1238,9 @@
 		DEDF8C8E2AD58F0D00786C0F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DE716FC32AF27E5E00451055 /* AppsBlockedView */,
+				DE716FB32AF2751500451055 /* Apps */,
 				DE8B51522ACC74E300F405B7 /* HomeViewController.swift */,
-				DEE053A12AD034BE00101784 /* AppsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1257,6 +1329,7 @@
 		DEE0538A2ACEEA1F00101784 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE716FCC2AF2962600451055 /* AppsBlockedList */,
 				DEB7B9852AE6D2E400A46B29 /* Downtimes */,
 				DED881E42AE022F900E56B4D /* Statistics */,
 				DEDF8CA12AD6D0E900786C0F /* TimeLimit */,
@@ -1275,6 +1348,7 @@
 				DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */,
 				DEE053902ACEEE0100101784 /* WebHistoryItem.swift */,
 				DEB7B97D2AE67CD900A46B29 /* Downtime.swift */,
+				DE716FCA2AF295F900451055 /* Activity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1520,12 +1594,14 @@
 				DE6619562AC5E73B004CCD56 /* OScreenTimeLimitView.swift in Sources */,
 				DE66192A2AC5C4E6004CCD56 /* TryAgainViewController.swift in Sources */,
 				DE66189E2AC5C4E5004CCD56 /* PushNotificationsManager.swift in Sources */,
+				DE716FC72AF27F8A00451055 /* AppsBlockedEmpty.swift in Sources */,
 				DE6619272AC5C4E6004CCD56 /* PaygateProductButton.swift in Sources */,
 				DECBC4D82AC721B5003B9D70 /* OFaceIdView.swift in Sources */,
 				DECBC4D62AC71B39003B9D70 /* OEmailView.swift in Sources */,
 				DE6618C22AC5C4E5004CCD56 /* PaygateOptionConfig.swift in Sources */,
 				DE6619262AC5C4E6004CCD56 /* PaygateViewController.swift in Sources */,
 				DE66187F2AC5C4E5004CCD56 /* String+Extension.swift in Sources */,
+				DE716FB52AF2755300451055 /* AppsRootView.swift in Sources */,
 				DE6618922AC5C4E5004CCD56 /* RxActivityIndicator.swift in Sources */,
 				DE66191C2AC5C4E6004CCD56 /* SplashActivity.swift in Sources */,
 				DE6618C62AC5C4E5004CCD56 /* PaygateManager.swift in Sources */,
@@ -1556,6 +1632,7 @@
 				DE66195B2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift in Sources */,
 				DE66189D2AC5C4E5004CCD56 /* AppDelegate.swift in Sources */,
 				DEE053972AD02CE600101784 /* MainCoordinator.swift in Sources */,
+				DE78C85F2AF157FE00E944F4 /* Selections.swift in Sources */,
 				DE6618F92AC5C4E5004CCD56 /* IAPManager.swift in Sources */,
 				DECBC4D22AC70CA5003B9D70 /* DisableTextField.swift in Sources */,
 				DE8B512B2ACBFA7000F405B7 /* OPreloaderView.swift in Sources */,
@@ -1601,14 +1678,17 @@
 				DEDF8CB62ADD835900786C0F /* MonitoringService.swift in Sources */,
 				DE66191D2AC5C4E6004CCD56 /* SplashReceiptValidationObserver.swift in Sources */,
 				DEE0539F2AD02D3F00101784 /* TabView.swift in Sources */,
+				DE716FC22AF278F200451055 /* AppsActionSheet.swift in Sources */,
 				DE66189C2AC5C4E5004CCD56 /* CircleProgressView.swift in Sources */,
 				DE6618862AC5C4E5004CCD56 /* NumberLaunches.swift in Sources */,
+				DE716FB62AF2768900451055 /* InstantBlockCell.swift in Sources */,
 				DE6618972AC5C4E5004CCD56 /* Spinner.swift in Sources */,
 				DEDF8C812AD452AB00786C0F /* TimeLimit.swift in Sources */,
 				DE6618FC2AC5C4E5004CCD56 /* IAPActionResult.swift in Sources */,
 				DE78C8352AEFCBC900E944F4 /* ManagedSettingsStore+Extenstion.swift in Sources */,
 				DE6619232AC5C4E6004CCD56 /* PaygateViewControllerDelegate.swift in Sources */,
 				DE6618F52AC5C4E5004CCD56 /* LoginRequest.swift in Sources */,
+				DE716FB92AF276B400451055 /* Binding+Extension.swift in Sources */,
 				DE6618F62AC5C4E5004CCD56 /* SyncTokensRequest.swift in Sources */,
 				DE6618812AC5C4E5004CCD56 /* GlobalDefinitions.swift in Sources */,
 				DE8B51502ACC6E6200F405B7 /* FamilyControlsManager.swift in Sources */,
@@ -1616,6 +1696,7 @@
 				DE6618C32AC5C4E5004CCD56 /* Paygate.swift in Sources */,
 				DE6618C42AC5C4E5004CCD56 /* GetPaygateResponse.swift in Sources */,
 				DE6618A12AC5C4E5004CCD56 /* SceneDelegate.swift in Sources */,
+				DE716FC52AF27E7200451055 /* AppsBlockedView.swift in Sources */,
 				DE8B51332ACC010200F405B7 /* GetProfileResponse.swift in Sources */,
 				DE66191E2AC5C4E6004CCD56 /* SplashViewModel.swift in Sources */,
 				DE6619602AC5FD5F004CCD56 /* WeekSchedule.swift in Sources */,
@@ -1662,6 +1743,7 @@
 				DEDF8CB52ADD835600786C0F /* MonitoringService.swift in Sources */,
 				DEDF8C892AD4605E00786C0F /* MainReport.swift in Sources */,
 				DEB7B94E2AE1791100A46B29 /* ApplicationCell.swift in Sources */,
+				DE716FC92AF2948E00451055 /* AppsBlockedReport.swift in Sources */,
 				DEB7B9952AE6FD3500A46B29 /* DowntimeEnableView.swift in Sources */,
 				DE8B51402ACC253F00F405B7 /* ParentControlReport.swift in Sources */,
 				DEB7B98D2AE6D7A200A46B29 /* EditDowntimeView.swift in Sources */,
@@ -1673,6 +1755,7 @@
 				DED881F72AE1660B00E56B4D /* PeriodSegmentView.swift in Sources */,
 				DEDF8CA62AD6D7E800786C0F /* TimeLimitEnableCell.swift in Sources */,
 				DE78C8192AEBE10600E944F4 /* AddDowntime.swift in Sources */,
+				DE716FB82AF2769F00451055 /* InstantBlockCell.swift in Sources */,
 				DEDF8CA82AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift in Sources */,
 				DEB7B9562AE1BBC900A46B29 /* ChartActivityCell.swift in Sources */,
 				DEDF8C8C2AD58C8300786C0F /* Profile.swift in Sources */,
@@ -1682,25 +1765,29 @@
 				DEB7B9972AE705DE00A46B29 /* DowntimeTimeView.swift in Sources */,
 				DEDF8C8D2AD58C8500786C0F /* TimeLimit.swift in Sources */,
 				DEE053AC2AD03AC000101784 /* Appearance.swift in Sources */,
+				DE716FCB2AF295F900451055 /* Activity.swift in Sources */,
 				DE78C8382AEFD05600E944F4 /* RecentActivityEmpty.swift in Sources */,
 				DEB7B9992AE7067700A46B29 /* DowntimeTimeButton.swift in Sources */,
 				DEB7B9912AE6ED7F00A46B29 /* Downtimes.swift in Sources */,
 				DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */,
 				DEB7B94A2AE178B800A46B29 /* StatisticsList.swift in Sources */,
+				DE716FD52AF2A2FC00451055 /* AppNameCell.swift in Sources */,
 				DEDF8C9D2AD6A35000786C0F /* ContentService.swift in Sources */,
 				DEDF8C9A2AD5D00900786C0F /* TimeLimitCell.swift in Sources */,
+				DE78C85E2AF157FB00E944F4 /* Selections.swift in Sources */,
 				DEDF8C962AD593C800786C0F /* SetTimeLimitCell.swift in Sources */,
 				DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */,
-				DE78C8252AEFA83400E944F4 /* InstantBlockCell.swift in Sources */,
 				DEB7B9822AE6A24E00A46B29 /* DowntimeCell.swift in Sources */,
 				DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */,
 				DEDF8C922AD592E000786C0F /* GlobalDefinitions.swift in Sources */,
+				DE716FCE2AF2963400451055 /* AppsBlockedList.swift in Sources */,
 				DEB7B97E2AE67CD900A46B29 /* Downtime.swift in Sources */,
 				DE78C81C2AEBE4A500E944F4 /* DowntimeName.swift in Sources */,
 				DEB7B9842AE6CEE100A46B29 /* WeekdayReadOnlyView.swift in Sources */,
 				DE78C8162AEAE8D100E944F4 /* DateSheet.swift in Sources */,
 				DEB7B9482AE1756C00A46B29 /* StatisticsListElement.swift in Sources */,
 				DEB7B9802AE69E0300A46B29 /* DowntimesMainCell.swift in Sources */,
+				DE716FD32AF2A23000451055 /* CategoryNameCell.swift in Sources */,
 				DED881E62AE0230700E56B4D /* StatisticsView.swift in Sources */,
 				DEB7B9542AE1925600A46B29 /* ActivityApplication.swift in Sources */,
 				DEE053B32AD03C2A00101784 /* Scalable.swift in Sources */,
@@ -1713,12 +1800,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE716FBF2AF276ED00451055 /* Scalable.swift in Sources */,
 				DE78C8202AEBEC5C00E944F4 /* Downtime.swift in Sources */,
+				DE78C8602AF157FF00E944F4 /* Selections.swift in Sources */,
 				DEDF8CD12ADD96A000786C0F /* TimeLimit.swift in Sources */,
+				DE716FB72AF2768A00451055 /* InstantBlockCell.swift in Sources */,
+				DE716FBC2AF276C600451055 /* Fonts.swift in Sources */,
 				DEDF8CCE2ADD944300786C0F /* MonitoringService.swift in Sources */,
 				DE78C8362AEFCD8400E944F4 /* ManagedSettingsStore+Extenstion.swift in Sources */,
 				DEDF8CD22ADD96A900786C0F /* WeekSchedule.swift in Sources */,
+				DE716FBB2AF276C200451055 /* Appearance.swift in Sources */,
 				DEDF8CC02ADD848400786C0F /* DeviceActivityMonitorExtension.swift in Sources */,
+				DE716FBD2AF276D200451055 /* UIColor+Extension.swift in Sources */,
+				DEB1E38A2AF15A7A0014080B /* GlobalDefinitions.swift in Sources */,
+				DE716FC02AF276F800451055 /* String+Extension.swift in Sources */,
+				DE716FBA2AF276B500451055 /* Binding+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -155,3 +155,13 @@
 "Downtime.SeeMore" = "See more";
 "Downtime.RecentActivity" = "Recent activity";
 "Downtime.WebHistory" = "Web history";
+
+// MARK: Apps
+"Apps.AppsBlocked" = "Apps Blocked";
+"Apps.TimeLimit" = "Time limit";
+
+// MARK: AppsBlocked
+"AppsBlocked.Empty.Title" = "Looks empty here";
+"AppsBlocked.Empty.SubTitle" = "Here will be apps that you blocked";
+"AppsBlocked.Categories" = "Categories";
+"AppsBlocked.Apps" = "Apps";
