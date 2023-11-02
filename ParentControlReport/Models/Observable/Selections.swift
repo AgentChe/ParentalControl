@@ -53,8 +53,12 @@ final class Selections: ObservableObject {
 extension Selections {
     var isEmpty: Bool {
         activitySelection.applications.isEmpty
-        && activitySelection.categories.isEmpty
-        && activitySelection.webDomains.isEmpty
+    }
+    
+    var applicationsTokens: [ApplicationToken] {
+        var result = [ApplicationToken]()
+        activitySelection.applicationTokens.forEach { result.append($0) }
+        return result
     }
 }
 
@@ -79,7 +83,7 @@ private extension Selections {
             store.shield.applications = selection.applicationTokens
             store.shield.webDomains = selection.webDomainTokens
         case .timeLimit:
-            break
+            break // TODO
         }
     }
 }

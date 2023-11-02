@@ -124,11 +124,8 @@
 		DE716FC22AF278F200451055 /* AppsActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC12AF278F200451055 /* AppsActionSheet.swift */; };
 		DE716FC52AF27E7200451055 /* AppsBlockedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC42AF27E7200451055 /* AppsBlockedView.swift */; };
 		DE716FC72AF27F8A00451055 /* AppsBlockedEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC62AF27F8A00451055 /* AppsBlockedEmpty.swift */; };
-		DE716FC92AF2948E00451055 /* AppsBlockedReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC82AF2948E00451055 /* AppsBlockedReport.swift */; };
-		DE716FCB2AF295F900451055 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FCA2AF295F900451055 /* Activity.swift */; };
-		DE716FCE2AF2963400451055 /* AppsBlockedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FCD2AF2963400451055 /* AppsBlockedList.swift */; };
-		DE716FD32AF2A23000451055 /* CategoryNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FD22AF2A23000451055 /* CategoryNameCell.swift */; };
-		DE716FD52AF2A2FC00451055 /* AppNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FD42AF2A2FC00451055 /* AppNameCell.swift */; };
+		DE716FD72AF3CB9600451055 /* AppsBlockedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FD62AF3CB9600451055 /* AppsBlockedList.swift */; };
+		DE716FD92AF3CBFC00451055 /* AppBlockedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FD82AF3CBFC00451055 /* AppBlockedCell.swift */; };
 		DE78C8142AEAAE8700E944F4 /* ConfirmAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */; };
 		DE78C8162AEAE8D100E944F4 /* DateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8152AEAE8D100E944F4 /* DateSheet.swift */; };
 		DE78C8192AEBE10600E944F4 /* AddDowntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8182AEBE10600E944F4 /* AddDowntime.swift */; };
@@ -396,11 +393,8 @@
 		DE716FC12AF278F200451055 /* AppsActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsActionSheet.swift; sourceTree = "<group>"; };
 		DE716FC42AF27E7200451055 /* AppsBlockedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedView.swift; sourceTree = "<group>"; };
 		DE716FC62AF27F8A00451055 /* AppsBlockedEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedEmpty.swift; sourceTree = "<group>"; };
-		DE716FC82AF2948E00451055 /* AppsBlockedReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedReport.swift; sourceTree = "<group>"; };
-		DE716FCA2AF295F900451055 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		DE716FCD2AF2963400451055 /* AppsBlockedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedList.swift; sourceTree = "<group>"; };
-		DE716FD22AF2A23000451055 /* CategoryNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryNameCell.swift; sourceTree = "<group>"; };
-		DE716FD42AF2A2FC00451055 /* AppNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNameCell.swift; sourceTree = "<group>"; };
+		DE716FD62AF3CB9600451055 /* AppsBlockedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedList.swift; sourceTree = "<group>"; };
+		DE716FD82AF3CBFC00451055 /* AppBlockedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBlockedCell.swift; sourceTree = "<group>"; };
 		DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAlert.swift; sourceTree = "<group>"; };
 		DE78C8152AEAE8D100E944F4 /* DateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSheet.swift; sourceTree = "<group>"; };
 		DE78C8182AEBE10600E944F4 /* AddDowntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDowntime.swift; sourceTree = "<group>"; };
@@ -1027,26 +1021,10 @@
 			children = (
 				DE716FC42AF27E7200451055 /* AppsBlockedView.swift */,
 				DE716FC62AF27F8A00451055 /* AppsBlockedEmpty.swift */,
+				DE716FD62AF3CB9600451055 /* AppsBlockedList.swift */,
+				DE716FD82AF3CBFC00451055 /* AppBlockedCell.swift */,
 			);
 			path = AppsBlockedView;
-			sourceTree = "<group>";
-		};
-		DE716FCC2AF2962600451055 /* AppsBlockedList */ = {
-			isa = PBXGroup;
-			children = (
-				DE716FD12AF2A22100451055 /* Cell */,
-				DE716FCD2AF2963400451055 /* AppsBlockedList.swift */,
-			);
-			path = AppsBlockedList;
-			sourceTree = "<group>";
-		};
-		DE716FD12AF2A22100451055 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				DE716FD22AF2A23000451055 /* CategoryNameCell.swift */,
-				DE716FD42AF2A2FC00451055 /* AppNameCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		DE78C8172AEBE0FC00E944F4 /* Add */ = {
@@ -1230,7 +1208,6 @@
 			isa = PBXGroup;
 			children = (
 				DEDF8C882AD4605E00786C0F /* MainReport.swift */,
-				DE716FC82AF2948E00451055 /* AppsBlockedReport.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1329,7 +1306,6 @@
 		DEE0538A2ACEEA1F00101784 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DE716FCC2AF2962600451055 /* AppsBlockedList */,
 				DEB7B9852AE6D2E400A46B29 /* Downtimes */,
 				DED881E42AE022F900E56B4D /* Statistics */,
 				DEDF8CA12AD6D0E900786C0F /* TimeLimit */,
@@ -1348,7 +1324,6 @@
 				DEB7B9532AE1925600A46B29 /* ActivityApplication.swift */,
 				DEE053902ACEEE0100101784 /* WebHistoryItem.swift */,
 				DEB7B97D2AE67CD900A46B29 /* Downtime.swift */,
-				DE716FCA2AF295F900451055 /* Activity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1634,6 +1609,7 @@
 				DEE053972AD02CE600101784 /* MainCoordinator.swift in Sources */,
 				DE78C85F2AF157FE00E944F4 /* Selections.swift in Sources */,
 				DE6618F92AC5C4E5004CCD56 /* IAPManager.swift in Sources */,
+				DE716FD92AF3CBFC00451055 /* AppBlockedCell.swift in Sources */,
 				DECBC4D22AC70CA5003B9D70 /* DisableTextField.swift in Sources */,
 				DE8B512B2ACBFA7000F405B7 /* OPreloaderView.swift in Sources */,
 				DE6618882AC5C4E5004CCD56 /* ScreenSize.swift in Sources */,
@@ -1666,6 +1642,7 @@
 				DEE053992AD02CEB00101784 /* MainView.swift in Sources */,
 				DE6618852AC5C4E5004CCD56 /* Scalable.swift in Sources */,
 				DE66191F2AC5C4E6004CCD56 /* SplashView.swift in Sources */,
+				DE716FD72AF3CB9600451055 /* AppsBlockedList.swift in Sources */,
 				DE6618A32AC5C4E5004CCD56 /* AppsFlyerManager.swift in Sources */,
 				DEE0539D2AD02D3700101784 /* TabItemView.swift in Sources */,
 				DE6618952AC5C4E5004CCD56 /* NavigationController.swift in Sources */,
@@ -1743,7 +1720,6 @@
 				DEDF8CB52ADD835600786C0F /* MonitoringService.swift in Sources */,
 				DEDF8C892AD4605E00786C0F /* MainReport.swift in Sources */,
 				DEB7B94E2AE1791100A46B29 /* ApplicationCell.swift in Sources */,
-				DE716FC92AF2948E00451055 /* AppsBlockedReport.swift in Sources */,
 				DEB7B9952AE6FD3500A46B29 /* DowntimeEnableView.swift in Sources */,
 				DE8B51402ACC253F00F405B7 /* ParentControlReport.swift in Sources */,
 				DEB7B98D2AE6D7A200A46B29 /* EditDowntimeView.swift in Sources */,
@@ -1765,13 +1741,11 @@
 				DEB7B9972AE705DE00A46B29 /* DowntimeTimeView.swift in Sources */,
 				DEDF8C8D2AD58C8500786C0F /* TimeLimit.swift in Sources */,
 				DEE053AC2AD03AC000101784 /* Appearance.swift in Sources */,
-				DE716FCB2AF295F900451055 /* Activity.swift in Sources */,
 				DE78C8382AEFD05600E944F4 /* RecentActivityEmpty.swift in Sources */,
 				DEB7B9992AE7067700A46B29 /* DowntimeTimeButton.swift in Sources */,
 				DEB7B9912AE6ED7F00A46B29 /* Downtimes.swift in Sources */,
 				DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */,
 				DEB7B94A2AE178B800A46B29 /* StatisticsList.swift in Sources */,
-				DE716FD52AF2A2FC00451055 /* AppNameCell.swift in Sources */,
 				DEDF8C9D2AD6A35000786C0F /* ContentService.swift in Sources */,
 				DEDF8C9A2AD5D00900786C0F /* TimeLimitCell.swift in Sources */,
 				DE78C85E2AF157FB00E944F4 /* Selections.swift in Sources */,
@@ -1780,14 +1754,12 @@
 				DEB7B9822AE6A24E00A46B29 /* DowntimeCell.swift in Sources */,
 				DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */,
 				DEDF8C922AD592E000786C0F /* GlobalDefinitions.swift in Sources */,
-				DE716FCE2AF2963400451055 /* AppsBlockedList.swift in Sources */,
 				DEB7B97E2AE67CD900A46B29 /* Downtime.swift in Sources */,
 				DE78C81C2AEBE4A500E944F4 /* DowntimeName.swift in Sources */,
 				DEB7B9842AE6CEE100A46B29 /* WeekdayReadOnlyView.swift in Sources */,
 				DE78C8162AEAE8D100E944F4 /* DateSheet.swift in Sources */,
 				DEB7B9482AE1756C00A46B29 /* StatisticsListElement.swift in Sources */,
 				DEB7B9802AE69E0300A46B29 /* DowntimesMainCell.swift in Sources */,
-				DE716FD32AF2A23000451055 /* CategoryNameCell.swift in Sources */,
 				DED881E62AE0230700E56B4D /* StatisticsView.swift in Sources */,
 				DEB7B9542AE1925600A46B29 /* ActivityApplication.swift in Sources */,
 				DEE053B32AD03C2A00101784 /* Scalable.swift in Sources */,

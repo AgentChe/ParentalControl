@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DeviceActivity
+import ManagedSettings
 
 struct AppsBlockedView: View {
     @State private var selectionsPickerPresented = false
@@ -49,17 +50,7 @@ struct AppsBlockedView: View {
                     
                     Spacer()
                 } else {
-                    DeviceActivityReport(.appsBlocked, filter: DeviceActivityFilter(
-                        segment: .weekly(during: DateInterval(
-                            start: Calendar.current.date(byAdding: .month, value: -3, to: Date())!,
-                            end: Date()
-                        )),
-                        users: .all,
-                        devices: .init([.iPhone]),
-                        applications: selections.activitySelection.applicationTokens,
-                        categories: selections.activitySelection.categoryTokens,
-                        webDomains: selections.activitySelection.webDomainTokens
-                    ))
+                    AppsBlockedList(applicationsTokens: selections.applicationsTokens)
                 }
             }
             .background(Color(Appearance.background))

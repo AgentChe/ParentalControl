@@ -47,8 +47,6 @@ struct AppsRootView: View {
                     
                 })
             }
-            
-            
         }
     }
 }
