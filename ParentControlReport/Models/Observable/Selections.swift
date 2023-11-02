@@ -51,10 +51,6 @@ final class Selections: ObservableObject {
 
 // MARK: Public
 extension Selections {
-    var isEmpty: Bool {
-        activitySelection.applications.isEmpty
-    }
-    
     var applicationsTokens: [ApplicationToken] {
         var result = [ApplicationToken]()
         activitySelection.applicationTokens.forEach { result.append($0) }

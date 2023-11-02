@@ -121,11 +121,7 @@
 		DE716FBD2AF276D200451055 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66176D2AC5C4E5004CCD56 /* UIColor+Extension.swift */; };
 		DE716FBF2AF276ED00451055 /* Scalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66177A2AC5C4E5004CCD56 /* Scalable.swift */; };
 		DE716FC02AF276F800451055 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6617712AC5C4E5004CCD56 /* String+Extension.swift */; };
-		DE716FC22AF278F200451055 /* AppsActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC12AF278F200451055 /* AppsActionSheet.swift */; };
 		DE716FC52AF27E7200451055 /* AppsBlockedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC42AF27E7200451055 /* AppsBlockedView.swift */; };
-		DE716FC72AF27F8A00451055 /* AppsBlockedEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC62AF27F8A00451055 /* AppsBlockedEmpty.swift */; };
-		DE716FD72AF3CB9600451055 /* AppsBlockedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FD62AF3CB9600451055 /* AppsBlockedList.swift */; };
-		DE716FD92AF3CBFC00451055 /* AppBlockedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FD82AF3CBFC00451055 /* AppBlockedCell.swift */; };
 		DE78C8142AEAAE8700E944F4 /* ConfirmAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */; };
 		DE78C8162AEAE8D100E944F4 /* DateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8152AEAE8D100E944F4 /* DateSheet.swift */; };
 		DE78C8192AEBE10600E944F4 /* AddDowntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8182AEBE10600E944F4 /* AddDowntime.swift */; };
@@ -390,11 +386,7 @@
 		DE66195C2AC5FCD3004CCD56 /* OScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OScheduleView.swift; sourceTree = "<group>"; };
 		DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSchedule.swift; sourceTree = "<group>"; };
 		DE716FB42AF2755300451055 /* AppsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsRootView.swift; sourceTree = "<group>"; };
-		DE716FC12AF278F200451055 /* AppsActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsActionSheet.swift; sourceTree = "<group>"; };
 		DE716FC42AF27E7200451055 /* AppsBlockedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedView.swift; sourceTree = "<group>"; };
-		DE716FC62AF27F8A00451055 /* AppsBlockedEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedEmpty.swift; sourceTree = "<group>"; };
-		DE716FD62AF3CB9600451055 /* AppsBlockedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedList.swift; sourceTree = "<group>"; };
-		DE716FD82AF3CBFC00451055 /* AppBlockedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBlockedCell.swift; sourceTree = "<group>"; };
 		DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAlert.swift; sourceTree = "<group>"; };
 		DE78C8152AEAE8D100E944F4 /* DateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSheet.swift; sourceTree = "<group>"; };
 		DE78C8182AEBE10600E944F4 /* AddDowntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDowntime.swift; sourceTree = "<group>"; };
@@ -1011,20 +1003,9 @@
 			children = (
 				DEE053A12AD034BE00101784 /* AppsViewController.swift */,
 				DE716FB42AF2755300451055 /* AppsRootView.swift */,
-				DE716FC12AF278F200451055 /* AppsActionSheet.swift */,
+				DE716FC42AF27E7200451055 /* AppsBlockedView.swift */,
 			);
 			path = Apps;
-			sourceTree = "<group>";
-		};
-		DE716FC32AF27E5E00451055 /* AppsBlockedView */ = {
-			isa = PBXGroup;
-			children = (
-				DE716FC42AF27E7200451055 /* AppsBlockedView.swift */,
-				DE716FC62AF27F8A00451055 /* AppsBlockedEmpty.swift */,
-				DE716FD62AF3CB9600451055 /* AppsBlockedList.swift */,
-				DE716FD82AF3CBFC00451055 /* AppBlockedCell.swift */,
-			);
-			path = AppsBlockedView;
 			sourceTree = "<group>";
 		};
 		DE78C8172AEBE0FC00E944F4 /* Add */ = {
@@ -1215,7 +1196,6 @@
 		DEDF8C8E2AD58F0D00786C0F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DE716FC32AF27E5E00451055 /* AppsBlockedView */,
 				DE716FB32AF2751500451055 /* Apps */,
 				DE8B51522ACC74E300F405B7 /* HomeViewController.swift */,
 			);
@@ -1569,7 +1549,6 @@
 				DE6619562AC5E73B004CCD56 /* OScreenTimeLimitView.swift in Sources */,
 				DE66192A2AC5C4E6004CCD56 /* TryAgainViewController.swift in Sources */,
 				DE66189E2AC5C4E5004CCD56 /* PushNotificationsManager.swift in Sources */,
-				DE716FC72AF27F8A00451055 /* AppsBlockedEmpty.swift in Sources */,
 				DE6619272AC5C4E6004CCD56 /* PaygateProductButton.swift in Sources */,
 				DECBC4D82AC721B5003B9D70 /* OFaceIdView.swift in Sources */,
 				DECBC4D62AC71B39003B9D70 /* OEmailView.swift in Sources */,
@@ -1609,7 +1588,6 @@
 				DEE053972AD02CE600101784 /* MainCoordinator.swift in Sources */,
 				DE78C85F2AF157FE00E944F4 /* Selections.swift in Sources */,
 				DE6618F92AC5C4E5004CCD56 /* IAPManager.swift in Sources */,
-				DE716FD92AF3CBFC00451055 /* AppBlockedCell.swift in Sources */,
 				DECBC4D22AC70CA5003B9D70 /* DisableTextField.swift in Sources */,
 				DE8B512B2ACBFA7000F405B7 /* OPreloaderView.swift in Sources */,
 				DE6618882AC5C4E5004CCD56 /* ScreenSize.swift in Sources */,
@@ -1642,7 +1620,6 @@
 				DEE053992AD02CEB00101784 /* MainView.swift in Sources */,
 				DE6618852AC5C4E5004CCD56 /* Scalable.swift in Sources */,
 				DE66191F2AC5C4E6004CCD56 /* SplashView.swift in Sources */,
-				DE716FD72AF3CB9600451055 /* AppsBlockedList.swift in Sources */,
 				DE6618A32AC5C4E5004CCD56 /* AppsFlyerManager.swift in Sources */,
 				DEE0539D2AD02D3700101784 /* TabItemView.swift in Sources */,
 				DE6618952AC5C4E5004CCD56 /* NavigationController.swift in Sources */,
@@ -1655,7 +1632,6 @@
 				DEDF8CB62ADD835900786C0F /* MonitoringService.swift in Sources */,
 				DE66191D2AC5C4E6004CCD56 /* SplashReceiptValidationObserver.swift in Sources */,
 				DEE0539F2AD02D3F00101784 /* TabView.swift in Sources */,
-				DE716FC22AF278F200451055 /* AppsActionSheet.swift in Sources */,
 				DE66189C2AC5C4E5004CCD56 /* CircleProgressView.swift in Sources */,
 				DE6618862AC5C4E5004CCD56 /* NumberLaunches.swift in Sources */,
 				DE716FB62AF2768900451055 /* InstantBlockCell.swift in Sources */,
