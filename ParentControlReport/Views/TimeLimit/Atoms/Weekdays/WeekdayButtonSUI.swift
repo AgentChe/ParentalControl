@@ -1,5 +1,5 @@
 //
-//  WeekdayButton.swift
+//  WeekdayButtonSUI.swift
 //  ParentControlReport
 //
 //  Created by Андрей Чернышев on 11.10.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WeekdayButton: View {
+struct WeekdayButtonSUI: View {
     let title: String
     
     @Binding var marked: Bool

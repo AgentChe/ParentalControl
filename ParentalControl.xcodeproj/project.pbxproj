@@ -122,6 +122,27 @@
 		DE716FBF2AF276ED00451055 /* Scalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66177A2AC5C4E5004CCD56 /* Scalable.swift */; };
 		DE716FC02AF276F800451055 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6617712AC5C4E5004CCD56 /* String+Extension.swift */; };
 		DE716FC52AF27E7200451055 /* AppsBlockedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FC42AF27E7200451055 /* AppsBlockedView.swift */; };
+		DE716FDB2AF3FB3700451055 /* TimeLimitAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FDA2AF3FB3700451055 /* TimeLimitAppsView.swift */; };
+		DE716FDD2AF3FC6800451055 /* SetAppsTimeLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FDC2AF3FC6800451055 /* SetAppsTimeLimit.swift */; };
+		DE716FE02AF3FF3C00451055 /* TimeLimitApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FDF2AF3FF3C00451055 /* TimeLimitApps.swift */; };
+		DE716FE12AF401B000451055 /* TimeLimitApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FDF2AF3FF3C00451055 /* TimeLimitApps.swift */; };
+		DE716FE22AF401B000451055 /* TimeLimitApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FDF2AF3FF3C00451055 /* TimeLimitApps.swift */; };
+		DE716FE32AF410F400451055 /* TimeLimitWeekdaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA72AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift */; };
+		DE716FE42AF410F400451055 /* TimeLimitWeekdaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA72AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift */; };
+		DE716FE52AF4110900451055 /* WeekdayButtonSUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA92AD6DD3000786C0F /* WeekdayButtonSUI.swift */; };
+		DE716FE62AF4110900451055 /* WeekdayButtonSUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA92AD6DD3000786C0F /* WeekdayButtonSUI.swift */; };
+		DE716FE92AF4FBF900451055 /* DowntimeTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9962AE705DE00A46B29 /* DowntimeTimeView.swift */; };
+		DE716FEA2AF4FBFA00451055 /* DowntimeTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9962AE705DE00A46B29 /* DowntimeTimeView.swift */; };
+		DE716FEB2AF4FBFB00451055 /* DowntimeTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9962AE705DE00A46B29 /* DowntimeTimeView.swift */; };
+		DE716FEC2AF4FC0700451055 /* DowntimeTimeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9982AE7067700A46B29 /* DowntimeTimeButton.swift */; };
+		DE716FED2AF4FC0800451055 /* DowntimeTimeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9982AE7067700A46B29 /* DowntimeTimeButton.swift */; };
+		DE716FEE2AF4FC0F00451055 /* DateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8152AEAE8D100E944F4 /* DateSheet.swift */; };
+		DE716FEF2AF4FC1000451055 /* DateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8152AEAE8D100E944F4 /* DateSheet.swift */; };
+		DE716FF02AF4FC2900451055 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */; };
+		DE716FF12AF4FC2900451055 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */; };
+		DE716FF32AF4FD8300451055 /* EdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FF22AF4FD8300451055 /* EdgeInsets+Extension.swift */; };
+		DE716FF42AF4FD9F00451055 /* EdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FF22AF4FD8300451055 /* EdgeInsets+Extension.swift */; };
+		DE716FF52AF4FD9F00451055 /* EdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FF22AF4FD8300451055 /* EdgeInsets+Extension.swift */; };
 		DE78C8142AEAAE8700E944F4 /* ConfirmAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */; };
 		DE78C8162AEAE8D100E944F4 /* DateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8152AEAE8D100E944F4 /* DateSheet.swift */; };
 		DE78C8192AEBE10600E944F4 /* AddDowntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8182AEBE10600E944F4 /* AddDowntime.swift */; };
@@ -169,7 +190,6 @@
 		DEB7B98D2AE6D7A200A46B29 /* EditDowntimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B98C2AE6D7A200A46B29 /* EditDowntimeView.swift */; };
 		DEB7B9912AE6ED7F00A46B29 /* Downtimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9902AE6ED7F00A46B29 /* Downtimes.swift */; };
 		DEB7B9952AE6FD3500A46B29 /* DowntimeEnableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9942AE6FD3500A46B29 /* DowntimeEnableView.swift */; };
-		DEB7B9972AE705DE00A46B29 /* DowntimeTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9962AE705DE00A46B29 /* DowntimeTimeView.swift */; };
 		DEB7B9992AE7067700A46B29 /* DowntimeTimeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9982AE7067700A46B29 /* DowntimeTimeButton.swift */; };
 		DEB7B99B2AE9398E00A46B29 /* DowntimeScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B99A2AE9398E00A46B29 /* DowntimeScheduleView.swift */; };
 		DECBC4CB2AC70000003B9D70 /* WeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBC4CA2AC70000003B9D70 /* WeekdayButton.swift */; };
@@ -199,7 +219,7 @@
 		DEDF8CA32AD6D0F800786C0F /* TimeLimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA22AD6D0F800786C0F /* TimeLimitView.swift */; };
 		DEDF8CA62AD6D7E800786C0F /* TimeLimitEnableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA52AD6D7E800786C0F /* TimeLimitEnableCell.swift */; };
 		DEDF8CA82AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA72AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift */; };
-		DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA92AD6DD3000786C0F /* WeekdayButton.swift */; };
+		DEDF8CAA2AD6DD3000786C0F /* WeekdayButtonSUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CA92AD6DD3000786C0F /* WeekdayButtonSUI.swift */; };
 		DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CAB2AD6E5D700786C0F /* SelectTimeCell.swift */; };
 		DEDF8CAE2AD6F36C00786C0F /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */; };
 		DEDF8CB52ADD835600786C0F /* MonitoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDF8CB42ADD835600786C0F /* MonitoringService.swift */; };
@@ -387,6 +407,10 @@
 		DE66195F2AC5FD5F004CCD56 /* WeekSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSchedule.swift; sourceTree = "<group>"; };
 		DE716FB42AF2755300451055 /* AppsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsRootView.swift; sourceTree = "<group>"; };
 		DE716FC42AF27E7200451055 /* AppsBlockedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsBlockedView.swift; sourceTree = "<group>"; };
+		DE716FDA2AF3FB3700451055 /* TimeLimitAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitAppsView.swift; sourceTree = "<group>"; };
+		DE716FDC2AF3FC6800451055 /* SetAppsTimeLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppsTimeLimit.swift; sourceTree = "<group>"; };
+		DE716FDF2AF3FF3C00451055 /* TimeLimitApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitApps.swift; sourceTree = "<group>"; };
+		DE716FF22AF4FD8300451055 /* EdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extension.swift"; sourceTree = "<group>"; };
 		DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAlert.swift; sourceTree = "<group>"; };
 		DE78C8152AEAE8D100E944F4 /* DateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSheet.swift; sourceTree = "<group>"; };
 		DE78C8182AEBE10600E944F4 /* AddDowntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDowntime.swift; sourceTree = "<group>"; };
@@ -455,7 +479,7 @@
 		DEDF8CA22AD6D0F800786C0F /* TimeLimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitView.swift; sourceTree = "<group>"; };
 		DEDF8CA52AD6D7E800786C0F /* TimeLimitEnableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitEnableCell.swift; sourceTree = "<group>"; };
 		DEDF8CA72AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitWeekdaysCell.swift; sourceTree = "<group>"; };
-		DEDF8CA92AD6DD3000786C0F /* WeekdayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayButton.swift; sourceTree = "<group>"; };
+		DEDF8CA92AD6DD3000786C0F /* WeekdayButtonSUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayButtonSUI.swift; sourceTree = "<group>"; };
 		DEDF8CAB2AD6E5D700786C0F /* SelectTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeCell.swift; sourceTree = "<group>"; };
 		DEDF8CAD2AD6F36C00786C0F /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		DEDF8CB42ADD835600786C0F /* MonitoringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringService.swift; sourceTree = "<group>"; };
@@ -597,6 +621,7 @@
 				DE6617702AC5C4E5004CCD56 /* ObservableAndSingle+Extension.swift */,
 				DE6617712AC5C4E5004CCD56 /* String+Extension.swift */,
 				DE6617722AC5C4E5004CCD56 /* UIViewRxExtension.swift */,
+				DE716FF22AF4FD8300451055 /* EdgeInsets+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1004,6 +1029,8 @@
 				DEE053A12AD034BE00101784 /* AppsViewController.swift */,
 				DE716FB42AF2755300451055 /* AppsRootView.swift */,
 				DE716FC42AF27E7200451055 /* AppsBlockedView.swift */,
+				DE716FDA2AF3FB3700451055 /* TimeLimitAppsView.swift */,
+				DE716FDC2AF3FC6800451055 /* SetAppsTimeLimit.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -1121,6 +1148,7 @@
 				DEB7B9902AE6ED7F00A46B29 /* Downtimes.swift */,
 				DE78C83B2AEFF39E00E944F4 /* DaysActivities.swift */,
 				DE78C85D2AF157FB00E944F4 /* Selections.swift */,
+				DE716FDF2AF3FF3C00451055 /* TimeLimitApps.swift */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
@@ -1257,7 +1285,7 @@
 		DEDF8CAF2AD70F3F00786C0F /* Weekdays */ = {
 			isa = PBXGroup;
 			children = (
-				DEDF8CA92AD6DD3000786C0F /* WeekdayButton.swift */,
+				DEDF8CA92AD6DD3000786C0F /* WeekdayButtonSUI.swift */,
 				DEDF8CA72AD6DC1B00786C0F /* TimeLimitWeekdaysCell.swift */,
 				DEB7B9832AE6CEE100A46B29 /* WeekdayReadOnlyView.swift */,
 			);
@@ -1542,6 +1570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE6618A52AC5C4E5004CCD56 /* AmplitudeManager.swift in Sources */,
+				DE716FEE2AF4FC0F00451055 /* DateSheet.swift in Sources */,
 				DE6618962AC5C4E5004CCD56 /* TapAreaButton.swift in Sources */,
 				DE66187B2AC5C4E5004CCD56 /* UIColor+Extension.swift in Sources */,
 				DE6618902AC5C4E5004CCD56 /* RequestReview.swift in Sources */,
@@ -1569,11 +1598,13 @@
 				DE6618FF2AC5C4E5004CCD56 /* IAPErrorHelper.swift in Sources */,
 				DE8B512E2ACBFEEA00F405B7 /* SetRequest.swift in Sources */,
 				DE8B51352ACC012700F405B7 /* Profile.swift in Sources */,
+				DE716FE22AF401B000451055 /* TimeLimitApps.swift in Sources */,
 				DECBC4DA2ACBEA54003B9D70 /* EarlierButton.swift in Sources */,
 				DE8B51372ACC04BF00F405B7 /* ProfileMediator.swift in Sources */,
 				DE78C8212AEBEC7400E944F4 /* Downtime.swift in Sources */,
 				DECBC4D42AC71819003B9D70 /* OSignUpView.swift in Sources */,
 				DE6619542AC5E34F004CCD56 /* YearButton.swift in Sources */,
+				DE716FE62AF4110900451055 /* WeekdayButtonSUI.swift in Sources */,
 				DEDF8C902AD590F200786C0F /* ProfileCache.swift in Sources */,
 				DE6618822AC5C4E5004CCD56 /* DefaultRequestWrapper.swift in Sources */,
 				DE66188C2AC5C4E5004CCD56 /* SignError.swift in Sources */,
@@ -1593,6 +1624,7 @@
 				DE6618882AC5C4E5004CCD56 /* ScreenSize.swift in Sources */,
 				DE6618842AC5C4E5004CCD56 /* RestAPITransport.swift in Sources */,
 				DEDF8C9F2AD6AB0D00786C0F /* CacheData.swift in Sources */,
+				DE716FEC2AF4FC0700451055 /* DowntimeTimeButton.swift in Sources */,
 				DE6618942AC5C4E5004CCD56 /* NavigationControllerSettings.swift in Sources */,
 				DE6618C52AC5C4E5004CCD56 /* GetPaygateRequest.swift in Sources */,
 				DE6618A62AC5C4E5004CCD56 /* FirebaseManager.swift in Sources */,
@@ -1605,12 +1637,14 @@
 				DE6618932AC5C4E5004CCD56 /* Toast.swift in Sources */,
 				DE6619522AC5D7CD004CCD56 /* OChildAgeView.swift in Sources */,
 				DE66187A2AC5C4E5004CCD56 /* UIDevice+Extension.swift in Sources */,
+				DE716FF32AF4FD8300451055 /* EdgeInsets+Extension.swift in Sources */,
 				DE6619502AC5D0F6004CCD56 /* OWelcomeView.swift in Sources */,
 				DE6619312AC5C4E6004CCD56 /* OSlideView.swift in Sources */,
 				DE66191B2AC5C4E6004CCD56 /* SplashViewController.swift in Sources */,
 				DE8B51312ACC00FD00F405B7 /* GetProfileRequest.swift in Sources */,
 				DE6618C12AC5C4E5004CCD56 /* PaygateOptionLineComponent.swift in Sources */,
 				DE6618FB2AC5C4E5004CCD56 /* ProductPrice.swift in Sources */,
+				DE716FEA2AF4FBFA00451055 /* DowntimeTimeView.swift in Sources */,
 				DE6618992AC5C4E5004CCD56 /* PaddingLabel.swift in Sources */,
 				DE6618A22AC5C4E5004CCD56 /* Appearance.swift in Sources */,
 				DE66188A2AC5C4E5004CCD56 /* XOREncryption.swift in Sources */,
@@ -1634,9 +1668,11 @@
 				DEE0539F2AD02D3F00101784 /* TabView.swift in Sources */,
 				DE66189C2AC5C4E5004CCD56 /* CircleProgressView.swift in Sources */,
 				DE6618862AC5C4E5004CCD56 /* NumberLaunches.swift in Sources */,
+				DE716FDD2AF3FC6800451055 /* SetAppsTimeLimit.swift in Sources */,
 				DE716FB62AF2768900451055 /* InstantBlockCell.swift in Sources */,
 				DE6618972AC5C4E5004CCD56 /* Spinner.swift in Sources */,
 				DEDF8C812AD452AB00786C0F /* TimeLimit.swift in Sources */,
+				DE716FF02AF4FC2900451055 /* TimePickerView.swift in Sources */,
 				DE6618FC2AC5C4E5004CCD56 /* IAPActionResult.swift in Sources */,
 				DE78C8352AEFCBC900E944F4 /* ManagedSettingsStore+Extenstion.swift in Sources */,
 				DE6619232AC5C4E6004CCD56 /* PaygateViewControllerDelegate.swift in Sources */,
@@ -1652,6 +1688,7 @@
 				DE716FC52AF27E7200451055 /* AppsBlockedView.swift in Sources */,
 				DE8B51332ACC010200F405B7 /* GetProfileResponse.swift in Sources */,
 				DE66191E2AC5C4E6004CCD56 /* SplashViewModel.swift in Sources */,
+				DE716FDB2AF3FB3700451055 /* TimeLimitAppsView.swift in Sources */,
 				DE6619602AC5FD5F004CCD56 /* WeekSchedule.swift in Sources */,
 				DE8B51532ACC74E300F405B7 /* HomeViewController.swift in Sources */,
 				DE66192D2AC5C4E6004CCD56 /* OCombineData.swift in Sources */,
@@ -1663,6 +1700,7 @@
 				DE66191A2AC5C4E6004CCD56 /* SessionManager.swift in Sources */,
 				DE6619202AC5C4E6004CCD56 /* PaygateViewModel.swift in Sources */,
 				DECBC4CD2AC70966003B9D70 /* OPinView.swift in Sources */,
+				DE716FE32AF410F400451055 /* TimeLimitWeekdaysCell.swift in Sources */,
 				DE66189B2AC5C4E5004CCD56 /* GradientView.swift in Sources */,
 				DEE053862ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */,
 				DE66195D2AC5FCD3004CCD56 /* OScheduleView.swift in Sources */,
@@ -1688,6 +1726,7 @@
 				DEDF8C862AD45EB200786C0F /* MainView.swift in Sources */,
 				DEB7B9522AE18CF100A46B29 /* ActivityCategory.swift in Sources */,
 				DEE053B12AD03B9B00101784 /* WebHistoryEmptyView.swift in Sources */,
+				DE716FEB2AF4FBFB00451055 /* DowntimeTimeView.swift in Sources */,
 				DE78C8342AEFCB7B00E944F4 /* ManagedSettingsStore+Extenstion.swift in Sources */,
 				DE78C8272AEFABA400E944F4 /* Binding+Extension.swift in Sources */,
 				DEB7B9462AE1739C00A46B29 /* StatisticsViewModel.swift in Sources */,
@@ -1714,18 +1753,18 @@
 				DE78C83C2AEFF39E00E944F4 /* DaysActivities.swift in Sources */,
 				DEB7B95A2AE42F2200A46B29 /* ActivityCategoriesChart.swift in Sources */,
 				DEE053AB2AD03ABA00101784 /* UIColor+Extension.swift in Sources */,
-				DEB7B9972AE705DE00A46B29 /* DowntimeTimeView.swift in Sources */,
 				DEDF8C8D2AD58C8500786C0F /* TimeLimit.swift in Sources */,
 				DEE053AC2AD03AC000101784 /* Appearance.swift in Sources */,
 				DE78C8382AEFD05600E944F4 /* RecentActivityEmpty.swift in Sources */,
 				DEB7B9992AE7067700A46B29 /* DowntimeTimeButton.swift in Sources */,
 				DEB7B9912AE6ED7F00A46B29 /* Downtimes.swift in Sources */,
-				DEDF8CAA2AD6DD3000786C0F /* WeekdayButton.swift in Sources */,
+				DEDF8CAA2AD6DD3000786C0F /* WeekdayButtonSUI.swift in Sources */,
 				DEB7B94A2AE178B800A46B29 /* StatisticsList.swift in Sources */,
 				DEDF8C9D2AD6A35000786C0F /* ContentService.swift in Sources */,
 				DEDF8C9A2AD5D00900786C0F /* TimeLimitCell.swift in Sources */,
 				DE78C85E2AF157FB00E944F4 /* Selections.swift in Sources */,
 				DEDF8C962AD593C800786C0F /* SetTimeLimitCell.swift in Sources */,
+				DE716FE02AF3FF3C00451055 /* TimeLimitApps.swift in Sources */,
 				DEE053872ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */,
 				DEB7B9822AE6A24E00A46B29 /* DowntimeCell.swift in Sources */,
 				DEDF8CAC2AD6E5D700786C0F /* SelectTimeCell.swift in Sources */,
@@ -1733,6 +1772,7 @@
 				DEB7B97E2AE67CD900A46B29 /* Downtime.swift in Sources */,
 				DE78C81C2AEBE4A500E944F4 /* DowntimeName.swift in Sources */,
 				DEB7B9842AE6CEE100A46B29 /* WeekdayReadOnlyView.swift in Sources */,
+				DE716FF42AF4FD9F00451055 /* EdgeInsets+Extension.swift in Sources */,
 				DE78C8162AEAE8D100E944F4 /* DateSheet.swift in Sources */,
 				DEB7B9482AE1756C00A46B29 /* StatisticsListElement.swift in Sources */,
 				DEB7B9802AE69E0300A46B29 /* DowntimesMainCell.swift in Sources */,
@@ -1748,21 +1788,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE716FE12AF401B000451055 /* TimeLimitApps.swift in Sources */,
 				DE716FBF2AF276ED00451055 /* Scalable.swift in Sources */,
 				DE78C8202AEBEC5C00E944F4 /* Downtime.swift in Sources */,
 				DE78C8602AF157FF00E944F4 /* Selections.swift in Sources */,
+				DE716FE92AF4FBF900451055 /* DowntimeTimeView.swift in Sources */,
+				DE716FEF2AF4FC1000451055 /* DateSheet.swift in Sources */,
 				DEDF8CD12ADD96A000786C0F /* TimeLimit.swift in Sources */,
 				DE716FB72AF2768A00451055 /* InstantBlockCell.swift in Sources */,
 				DE716FBC2AF276C600451055 /* Fonts.swift in Sources */,
+				DE716FF12AF4FC2900451055 /* TimePickerView.swift in Sources */,
 				DEDF8CCE2ADD944300786C0F /* MonitoringService.swift in Sources */,
+				DE716FED2AF4FC0800451055 /* DowntimeTimeButton.swift in Sources */,
 				DE78C8362AEFCD8400E944F4 /* ManagedSettingsStore+Extenstion.swift in Sources */,
 				DEDF8CD22ADD96A900786C0F /* WeekSchedule.swift in Sources */,
+				DE716FE52AF4110900451055 /* WeekdayButtonSUI.swift in Sources */,
 				DE716FBB2AF276C200451055 /* Appearance.swift in Sources */,
 				DEDF8CC02ADD848400786C0F /* DeviceActivityMonitorExtension.swift in Sources */,
 				DE716FBD2AF276D200451055 /* UIColor+Extension.swift in Sources */,
+				DE716FE42AF410F400451055 /* TimeLimitWeekdaysCell.swift in Sources */,
 				DEB1E38A2AF15A7A0014080B /* GlobalDefinitions.swift in Sources */,
 				DE716FC02AF276F800451055 /* String+Extension.swift in Sources */,
 				DE716FBA2AF276B500451055 /* Binding+Extension.swift in Sources */,
+				DE716FF52AF4FD9F00451055 /* EdgeInsets+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

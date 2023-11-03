@@ -33,31 +33,31 @@ struct DowntimeScheduleView: View {
                 }
                 
                 HStack(spacing: 4.scale) {
-                    WeekdayButton(
+                    WeekdayButtonSUI(
                         title: "Onboarding.Weekday.Su".localized,
                         marked: $schedule.su
                     )
-                    WeekdayButton(
+                    WeekdayButtonSUI(
                         title: "Onboarding.Weekday.Mo".localized,
                         marked: $schedule.mo
                     )
-                    WeekdayButton(
+                    WeekdayButtonSUI(
                         title: "Onboarding.Weekday.Tu".localized,
                         marked: $schedule.tu
                     )
-                    WeekdayButton(
+                    WeekdayButtonSUI(
                         title: "Onboarding.Weekday.We".localized,
                         marked: $schedule.we
                     )
-                    WeekdayButton(
+                    WeekdayButtonSUI(
                         title: "Onboarding.Weekday.Th".localized,
                         marked: $schedule.th
                     )
-                    WeekdayButton(
+                    WeekdayButtonSUI(
                         title: "Onboarding.Weekday.Fr".localized,
                         marked: $schedule.fr
                     )
-                    WeekdayButton(
+                    WeekdayButtonSUI(
                         title: "Onboarding.Weekday.Sa".localized,
                         marked: $schedule.sa
                     )

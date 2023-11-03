@@ -34,16 +34,24 @@ struct AppsBlockedView: View {
 // MARK: Private
 private extension AppsBlockedView {
     var empty: some View {
-        VStack {
-            Text("Apps.AppsBlocked".localized)
-                .foregroundColor(Color(Appearance.black))
-                .font(Font(Fonts.Satoshi.medium(size: 16.scale)))
-                .frame(maxWidth: .infinity, alignment: .leading)
+        HStack {
+            VStack {
+                Text("Apps.AppsBlocked".localized)
+                    .foregroundColor(Color(Appearance.black))
+                    .font(Font(Fonts.Satoshi.medium(size: 16.scale)))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("Downtime.NotSet".localized)
+                    .foregroundColor(Color(Appearance.black.withAlphaComponent(0.6)))
+                    .font(Font(Fonts.Satoshi.regular(size: 16.scale)))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
             
-            Text("Downtime.NotSet".localized)
-                .foregroundColor(Color(Appearance.black.withAlphaComponent(0.6)))
-                .font(Font(Fonts.Satoshi.regular(size: 16.scale)))
-                .frame(maxWidth: .infinity, alignment: .leading)
+            Spacer()
+            
+            Image("Downtimes.Arrow.Right")
+                .resizable()
+                .frame(width: 24.scale, height: 24.scale)
         }
         .padding(16.scale)
     }

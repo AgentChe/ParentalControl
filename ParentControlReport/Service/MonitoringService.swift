@@ -18,6 +18,7 @@ final class MonitoringService {
     
     private lazy var center = DeviceActivityCenter()
     private lazy var timeLimitStore = ManagedSettingsStore.timeLimit
+    private lazy var timeLimitWithAppsStore = ManagedSettingsStore.timeLimitWithApps
     
     private lazy var timeLimitActivities: [DeviceActivityName] = [
         .timeLimitSu,
@@ -29,11 +30,32 @@ final class MonitoringService {
         .timeLimitSa
     ]
     
+    private lazy var timeLimitWithAppsActivities: [DeviceActivityName] = [
+        .timeLimitWithAppsSu,
+        .timeLimitWithAppsMo,
+        .timeLimitWithAppsTu,
+        .timeLimitWithAppsWe,
+        .timeLimitWithAppsTh,
+        .timeLimitWithAppsFr,
+        .timeLimitWithAppsSa
+    ]
+    
     private init() {}
 }
 
 // MARK: Public
 extension MonitoringService {
+    func monitoring(timeLimitApps: TimeLimitApps) {
+        center.stopMonitoring(timeLimitWithAppsActivities)
+        
+        guard timeLimitApps.isEnable else {
+            timeLimitWithAppsStore.clearAllSettings()
+            return
+        }
+        
+        startMonitoring(timeLimitApps: timeLimitApps)
+    }
+    
     func startMonitoring(timeLimit: TimeLimit) {
         center.stopMonitoring(timeLimitActivities)
 
@@ -78,6 +100,8 @@ extension MonitoringService {
             let store = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: activity.rawValue))
             store.shield.applicationCategories = .all()
             store.shield.webDomainCategories = .all()
+        } else if timeLimitWithAppsActivities.contains(activity) {
+            timeLimitWithAppsStore.shield.applications = TimeLimitApps().activitySelection.applicationTokens
         }
     }
     
@@ -87,6 +111,8 @@ extension MonitoringService {
         } else if activity.isDowntime {
             let store = ManagedSettingsStore(named: ManagedSettingsStore.Name(rawValue: activity.rawValue))
             store.clearAllSettings()
+        } else if timeLimitWithAppsActivities.contains(activity) {
+            timeLimitWithAppsStore.clearAllSettings()
         }
     }
     
@@ -100,6 +126,84 @@ extension MonitoringService {
 
 // MARK: Private
 private extension MonitoringService {
+    func startMonitoring(timeLimitApps: TimeLimitApps) {
+        guard timeLimitApps.isEnable, let from = timeLimitApps.from, let to = timeLimitApps.to else {
+            return
+        }
+        
+        let calendar = Calendar.current
+        let schedule = timeLimitApps.schedule
+        
+        for weekdayIndex in 1...7 {
+            var args: (enable: Bool, activity: DeviceActivityName) {
+                switch weekdayIndex {
+                case 1:
+                    return (
+                        enable: schedule.su,
+                        activity: .timeLimitWithAppsSu
+                    )
+                case 2:
+                    return (
+                        enable: schedule.mo,
+                        activity: .timeLimitWithAppsMo
+                    )
+                case 3:
+                    return (
+                        enable: schedule.tu,
+                        activity: .timeLimitWithAppsTu
+                    )
+                case 4:
+                    return (
+                        enable: schedule.we,
+                        activity: .timeLimitWithAppsWe
+                    )
+                case 5:
+                    return (
+                        enable: schedule.th,
+                        activity: .timeLimitWithAppsTh
+                    )
+                case 6:
+                    return (
+                        enable: schedule.fr,
+                        activity: .timeLimitWithAppsFr
+                    )
+                case 7:
+                    return (
+                        enable: schedule.sa,
+                        activity: .timeLimitWithAppsSa
+                    )
+                default:
+                    return (
+                        enable: false,
+                        activity: .timeLimitWithAppsSa
+                    )
+                }
+            }
+            
+            let (enable, activity) = args
+            
+            guard enable else {
+                continue
+            }
+            
+            var startComponents = calendar.dateComponents([.hour, .minute], from: from)
+            startComponents.second = 0
+            startComponents.weekday = weekdayIndex
+            
+            var endComponents = calendar.dateComponents([.hour, .minute], from: to)
+            endComponents.second = 0
+            endComponents.weekday = weekdayIndex
+            
+            let schedule = DeviceActivitySchedule(
+                intervalStart: startComponents,
+                intervalEnd: endComponents,
+                repeats: true
+            )
+            
+            try? center.startMonitoring(activity, during: schedule)
+        }
+    }
+    
     func monitoring(timeLimit: TimeLimit) {
         for weekdayIndex in 1...7 {
             var args: (enable: Bool, activity: DeviceActivityName) {
@@ -233,6 +337,14 @@ private extension DeviceActivityName {
     static let timeLimitTh = Self("Time limit th")
     static let timeLimitFr = Self("Time limit fr")
     static let timeLimitSa = Self("Time limit sa")
+    
+    static let timeLimitWithAppsSu = Self("Time limit with apps su")
+    static let timeLimitWithAppsMo = Self("Time limit with apps mo")
+    static let timeLimitWithAppsTu = Self("Time limit with apps tu")
+    static let timeLimitWithAppsWe = Self("Time limit with apps we")
+    static let timeLimitWithAppsTh = Self("Time limit with apps th")
+    static let timeLimitWithAppsFr = Self("Time limit with apps fr")
+    static let timeLimitWithAppsSa = Self("Time limit with apps sa")
     
     init(downtimeId: String, weekday: String) {
         self = Self(String(format: "downtime_%@_%@", downtimeId, weekday))

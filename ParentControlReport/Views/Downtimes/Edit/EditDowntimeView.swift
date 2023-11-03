@@ -47,6 +47,7 @@ struct EditDowntimeView: View {
                     
                     DowntimeTimeView()
                         .environmentObject(time)
+                        .padding(EdgeInsets(t: 24.scale, l: 8.scale, tr: 8.scale))
                     
                     DowntimeScheduleView()
                         .environmentObject(schedule)

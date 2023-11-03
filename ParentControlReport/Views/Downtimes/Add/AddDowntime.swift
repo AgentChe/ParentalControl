@@ -25,6 +25,7 @@ struct AddDowntime: View {
                     DowntimeName(name: $name)
                     
                     DowntimeTimeView()
+                        .padding(EdgeInsets(t: 24.scale, l: 8.scale, tr: 8.scale))
                         .environmentObject(time)
                     
                     DowntimeScheduleView()

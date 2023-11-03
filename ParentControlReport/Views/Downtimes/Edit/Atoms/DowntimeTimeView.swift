@@ -99,11 +99,6 @@ struct DowntimeTimeView: View {
                 }
             }
         }
-        .padding(EdgeInsets(
-            top: 24.scale,
-            leading: 8.scale,
-            bottom: 0,
-            trailing: 8.scale
-        ))
+        .background(Color(Appearance.background))
     }
 }

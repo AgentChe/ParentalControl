@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct AppsRootView: View {
-    @ObservedObject private var appsBlockedSelections = Selections(activity: .appsBlocked)
+    @ObservedObject private var appsBlockedSelections = Selections()
+    @ObservedObject private var timeLimitApps = TimeLimitApps()
     
     @State private var appsBlockedPickerPresented = false
+    @State private var setAppsTimeLimitPresented = false
     
     var body: some View {
         ZStack {
@@ -31,6 +33,18 @@ struct AppsRootView: View {
                     )
                     .onTapGesture {
                         appsBlockedPickerPresented = true
+                    }
+                
+                TimeLimitAppsView(rule: .enable)
+                    .frame(width: 359.scale, height: timeLimitApps.isEnable ? 102.scale : 84.scale)
+                    .padding(.top, 16.scale)
+                    .environmentObject(timeLimitApps)
+                    .sheet(isPresented: $setAppsTimeLimitPresented) {
+                        SetAppsTimeLimit()
+                            .environmentObject(timeLimitApps)
+                    }
+                    .onTapGesture {
+                        setAppsTimeLimitPresented = true
                     }
                 
                 Spacer()
