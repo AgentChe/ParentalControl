@@ -7,26 +7,25 @@
 
 // TODO: заменить
 final class GlobalDefinitions {
-    static let domain = "https://dermatology.awesum-apps.com"
-    static let apiKey = "7LexM8IGOSmIrpEimANw"
+    static let domain = "https://parental.thinkaboutapps.com"
+    static let apiKey = "qTSdGwQAYMWjlQdCWidZ"
     
     static let otterScaleHost = "https://api.korrekted.com"
-    static let otterScaleApiKey = "32xQjC9GIHM8NGbK"
+    static let otterScaleApiKey = "D2qV5kyXNaNmEPXE"
     
-    static let appleAppID = "6464321534"
+    static let appleAppID = "" // TODO
     
-    static let applicationTag = "DERMATOLOGY"
+    static let applicationTag = "PARENTAL_CONTROL"
     static let amplitudeApiKey = "11f36fb9021dbfca4a1349a3b2284224"
-    static let appsFlyerApiKey = "DCciCfYXjMQ8QnkdCg8qzk"
     
-    static let termsOfServiceUrl = "https://awesum-apps.com/terms"
-    static let privacyPolicyUrl = "https://awesum-apps.com/policy"
-    static let contactUsUrl = "https://awesum-apps.com/contact"
+    static let termsOfServiceUrl = "https://thinkaboutapps.com/terms"
+    static let privacyPolicyUrl = "https://thinkaboutapps.com/policy"
+    static let contactUsUrl = "https://thinkaboutapps.com/contact"
     
     enum Paygate {
-        static let defaultLifetime = "mobile.dermatology.lifetime"
-        static let defaultMonthly = "mobile.dermatology.monthly"
+        static let defaultLifetime = "" // TODO
+        static let defaultMonthly = "" // TODO
     }
     
-    static let groupId = "group.com.demo.familycontrols.thinkabout"
+    static let groupId = "group.com.demo.familycontrols.thinkabout" // TODO: заменить на актуальный после определения аккаунта
 }

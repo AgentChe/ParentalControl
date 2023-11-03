@@ -22,7 +22,6 @@ target 'ParentalControl' do
   pod 'Branch'
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
-  pod 'AppsFlyerFramework'
 end
 
 post_install do |installer|

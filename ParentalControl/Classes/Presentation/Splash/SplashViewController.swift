@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import FamilyControls
 
 final class SplashViewController: UIViewController {
     lazy var mainView = SplashView()
@@ -25,6 +26,11 @@ final class SplashViewController: UIViewController {
         super.viewDidLoad()
         
         activity(state: .sdkInitialize)
+        
+        Task {
+            try? await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+            viewModel.authorizationComplete.accept(Void())
+        }
 
         viewModel.tryAgain = { [weak self] error -> Observable<Void> in
             guard let self = self else {

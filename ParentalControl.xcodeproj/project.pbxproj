@@ -52,7 +52,6 @@
 		DE6618A02AC5C4E5004CCD56 /* PushNotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66179B2AC5C4E5004CCD56 /* PushNotificationsModel.swift */; };
 		DE6618A12AC5C4E5004CCD56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66179C2AC5C4E5004CCD56 /* SceneDelegate.swift */; };
 		DE6618A22AC5C4E5004CCD56 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66179D2AC5C4E5004CCD56 /* Appearance.swift */; };
-		DE6618A32AC5C4E5004CCD56 /* AppsFlyerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66179F2AC5C4E5004CCD56 /* AppsFlyerManager.swift */; };
 		DE6618A42AC5C4E5004CCD56 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6617A02AC5C4E5004CCD56 /* BranchManager.swift */; };
 		DE6618A52AC5C4E5004CCD56 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6617A12AC5C4E5004CCD56 /* AmplitudeManager.swift */; };
 		DE6618A62AC5C4E5004CCD56 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6617A22AC5C4E5004CCD56 /* FirebaseManager.swift */; };
@@ -169,7 +168,6 @@
 		DE8B51372ACC04BF00F405B7 /* ProfileMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51362ACC04BF00F405B7 /* ProfileMediator.swift */; };
 		DE8B51402ACC253F00F405B7 /* ParentControlReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B513F2ACC253F00F405B7 /* ParentControlReport.swift */; };
 		DE8B51492ACC253F00F405B7 /* ParentControlReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = DE8B513D2ACC253F00F405B7 /* ParentControlReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		DE8B51502ACC6E6200F405B7 /* FamilyControlsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B514F2ACC6E6200F405B7 /* FamilyControlsManager.swift */; };
 		DE8B51532ACC74E300F405B7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B51522ACC74E300F405B7 /* HomeViewController.swift */; };
 		DEB1E38A2AF15A7A0014080B /* GlobalDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6617732AC5C4E5004CCD56 /* GlobalDefinitions.swift */; };
 		DEB7B9462AE1739C00A46B29 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7B9452AE1739C00A46B29 /* StatisticsViewModel.swift */; };
@@ -347,7 +345,6 @@
 		DE66179B2AC5C4E5004CCD56 /* PushNotificationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsModel.swift; sourceTree = "<group>"; };
 		DE66179C2AC5C4E5004CCD56 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE66179D2AC5C4E5004CCD56 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
-		DE66179F2AC5C4E5004CCD56 /* AppsFlyerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsFlyerManager.swift; sourceTree = "<group>"; };
 		DE6617A02AC5C4E5004CCD56 /* BranchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		DE6617A12AC5C4E5004CCD56 /* AmplitudeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
 		DE6617A22AC5C4E5004CCD56 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
@@ -435,7 +432,6 @@
 		DE8B513F2ACC253F00F405B7 /* ParentControlReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentControlReport.swift; sourceTree = "<group>"; };
 		DE8B51452ACC253F00F405B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8B51462ACC253F00F405B7 /* ParentControlReport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParentControlReport.entitlements; sourceTree = "<group>"; };
-		DE8B514F2ACC6E6200F405B7 /* FamilyControlsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyControlsManager.swift; sourceTree = "<group>"; };
 		DE8B51522ACC74E300F405B7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DEB7B9452AE1739C00A46B29 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		DEB7B9472AE1756C00A46B29 /* StatisticsListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsListElement.swift; sourceTree = "<group>"; };
@@ -726,7 +722,6 @@
 		DE66179E2AC5C4E5004CCD56 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				DE66179F2AC5C4E5004CCD56 /* AppsFlyerManager.swift */,
 				DE6617A02AC5C4E5004CCD56 /* BranchManager.swift */,
 				DE6617A12AC5C4E5004CCD56 /* AmplitudeManager.swift */,
 				DE6617A22AC5C4E5004CCD56 /* FirebaseManager.swift */,
@@ -738,7 +733,6 @@
 		DE6617A42AC5C4E5004CCD56 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				DE8B514E2ACC6E4D00F405B7 /* FamilyControls */,
 				DE6617C92AC5C4E5004CCD56 /* Paygate */,
 				DE6618122AC5C4E5004CCD56 /* Profile */,
 				DE66181E2AC5C4E5004CCD56 /* Purchase */,
@@ -1085,14 +1079,6 @@
 				DE8B51462ACC253F00F405B7 /* ParentControlReport.entitlements */,
 			);
 			path = ParentControlReport;
-			sourceTree = "<group>";
-		};
-		DE8B514E2ACC6E4D00F405B7 /* FamilyControls */ = {
-			isa = PBXGroup;
-			children = (
-				DE8B514F2ACC6E6200F405B7 /* FamilyControlsManager.swift */,
-			);
-			path = FamilyControls;
 			sourceTree = "<group>";
 		};
 		DEB7B94B2AE178F400A46B29 /* StatisticsList */ = {
@@ -1654,7 +1640,6 @@
 				DEE053992AD02CEB00101784 /* MainView.swift in Sources */,
 				DE6618852AC5C4E5004CCD56 /* Scalable.swift in Sources */,
 				DE66191F2AC5C4E6004CCD56 /* SplashView.swift in Sources */,
-				DE6618A32AC5C4E5004CCD56 /* AppsFlyerManager.swift in Sources */,
 				DEE0539D2AD02D3700101784 /* TabItemView.swift in Sources */,
 				DE6618952AC5C4E5004CCD56 /* NavigationController.swift in Sources */,
 				DE66188D2AC5C4E5004CCD56 /* NetworkError.swift in Sources */,
@@ -1680,7 +1665,6 @@
 				DE716FB92AF276B400451055 /* Binding+Extension.swift in Sources */,
 				DE6618F62AC5C4E5004CCD56 /* SyncTokensRequest.swift in Sources */,
 				DE6618812AC5C4E5004CCD56 /* GlobalDefinitions.swift in Sources */,
-				DE8B51502ACC6E6200F405B7 /* FamilyControlsManager.swift in Sources */,
 				DE6619282AC5C4E6004CCD56 /* PaygateInfoCell.swift in Sources */,
 				DE6618C32AC5C4E5004CCD56 /* Paygate.swift in Sources */,
 				DE6618C42AC5C4E5004CCD56 /* GetPaygateResponse.swift in Sources */,
@@ -2116,7 +2100,7 @@
 				INFOPLIST_FILE = ParentControlActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ParentControlActivity;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2147,7 +2131,7 @@
 				INFOPLIST_FILE = ParentControlActivity/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ParentControlActivity;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

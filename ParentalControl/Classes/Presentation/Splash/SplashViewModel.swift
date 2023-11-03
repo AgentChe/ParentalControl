@@ -17,6 +17,7 @@ final class SplashViewModel {
     var tryAgain: ((Error) -> (Observable<Void>))?
     
     lazy var validationComplete = PublishRelay<Void>()
+    lazy var authorizationComplete = PublishRelay<Void>()
     
     lazy var validationActivity = RxActivityIndicator()
     lazy var libraryActivity = RxActivityIndicator()
@@ -53,82 +54,82 @@ extension SplashViewModel {
 // MARK: Private
 private extension SplashViewModel {
     func handleValidationComplete() -> Observable<Void> {
-        validationComplete.flatMapLatest { [weak self] _ -> Observable<Void> in
-            guard let self = self else {
-                return .never()
-            }
-            
-            let otterScaleID = OtterScale.shared.getInternalID()
-            
-            func source() -> Single<Void> {
-                let complete: Single<Void>
-                
-                if let cachedToken = self.sessionManager.getSession()?.userToken {
-                    if cachedToken != otterScaleID {
-                        complete = self.profileManager.syncTokens(oldToken: cachedToken,
-                                                                  newToken: otterScaleID)
-                    } else {
-                        complete = .deferred { .just(Void()) }
-                    }
-                } else {
-                    complete = self.profileManager.login(userToken: otterScaleID)
+        Observable
+            .zip(validationComplete, authorizationComplete)
+            .flatMapLatest { [weak self] _ -> Observable<Void> in
+                guard let self = self else {
+                    return .never()
                 }
                 
-                return complete
-            }
+                let otterScaleID = OtterScale.shared.getInternalID()
             
-            func trigger(error: Error) -> Observable<Void> {
-                guard let tryAgain = self.tryAgain?(error) else {
-                    return .empty()
-                }
-                
-                return tryAgain
-            }
-            
-            return self.observableRetrySingle
-                .retry(source: { source() },
-                       trigger: { trigger(error: $0) })
-                .trackActivity(self.validationActivity)
-                .flatMap { _ -> Single<Void> in
-                    let session = Session(userToken: otterScaleID)
-                    self.sessionManager.store(session: session)
+                func source() -> Single<Void> {
+                    let complete: Single<Void>
                     
-                    return .deferred { .just(Void()) }
+                    if let cachedToken = self.sessionManager.getSession()?.userToken {
+                        if cachedToken != otterScaleID {
+                            complete = self.profileManager.syncTokens(oldToken: cachedToken,
+                                                                      newToken: otterScaleID)
+                        } else {
+                            complete = .deferred { .just(Void()) }
+                        }
+                    } else {
+                        complete = self.profileManager.login(userToken: otterScaleID)
+                    }
+                    
+                    return complete
                 }
-        }
+                
+                func trigger(error: Error) -> Observable<Void> {
+                    guard let tryAgain = self.tryAgain?(error) else {
+                        return .empty()
+                    }
+                    
+                    return tryAgain
+                }
+                
+                return self.observableRetrySingle
+                    .retry(source: { source() },
+                           trigger: { trigger(error: $0) })
+                    .trackActivity(self.validationActivity)
+                    .flatMap { _ -> Single<Void> in
+                        let session = Session(userToken: otterScaleID)
+                        self.sessionManager.store(session: session)
+                        
+                        return .deferred { .just(Void()) }
+                    }
+            }
     }
     
-    // TODO
     func library() -> Observable<Void> {
-        .deferred { .just(()) }
-//        func source() -> Single<Void> {
-//            let paygate = paygateManager
-//                .obtainPaygate(forceUpdate: true)
-//                .mapToVoid()
-//            let profile = profileManager
-//                .obtainProfile(forceUpdate: true)
-//                .mapToVoid()
-//
-//            return Single
-//                .zip([
-//                    paygate,
-//                    profile
-//                ])
-//                .mapToVoid()
-//        }
-//
-//        func trigger(error: Error) -> Observable<Void> {
-//            guard let tryAgain = self.tryAgain?(error) else {
-//                return .empty()
-//            }
-//
-//            return tryAgain
-//        }
-//
-//        return self.observableRetrySingle
-//            .retry(source: { source() },
-//                   trigger: { trigger(error: $0) })
-//            .trackActivity(libraryActivity)
+        func source() -> Single<Void> {
+            let paygate = paygateManager
+                .obtainPaygate(forceUpdate: true)
+                .mapToVoid()
+            let profile = profileManager
+                .obtainProfile(forceUpdate: true)
+                .mapToVoid()
+
+            return Single
+                .zip([
+//                    paygate, // TODO
+                    profile
+                ])
+                .mapToVoid()
+        }
+
+        func trigger(error: Error) -> Observable<Void> {
+            guard let tryAgain = self.tryAgain?(error) else {
+                return .empty()
+            }
+
+            return tryAgain
+        }
+
+        return self.observableRetrySingle
+            .retry(source: { source() },
+                   trigger: { trigger(error: $0) })
+            .trackActivity(libraryActivity)
     }
     
     func makeStep() -> Single<Step> {
