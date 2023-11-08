@@ -96,7 +96,6 @@
 		DE6619342AC5C4E6004CCD56 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6618772AC5C4E5004CCD56 /* OnboardingView.swift */; };
 		DE6619352AC5C4E6004CCD56 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6618782AC5C4E5004CCD56 /* OnboardingViewModel.swift */; };
 		DE6619442AC5C4EF004CCD56 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE66193D2AC5C4EF004CCD56 /* Localizable.strings */; };
-		DE6619452AC5C4EF004CCD56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE66193F2AC5C4EF004CCD56 /* GoogleService-Info.plist */; };
 		DE66194B2AC5CAE1004CCD56 /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE6619472AC5C57C004CCD56 /* Satoshi-Black.otf */; };
 		DE66194C2AC5CAE1004CCD56 /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE66194A2AC5C588004CCD56 /* Satoshi-Regular.otf */; };
 		DE66194D2AC5CAE1004CCD56 /* Satoshi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE6619482AC5C581004CCD56 /* Satoshi-Bold.otf */; };
@@ -142,6 +141,7 @@
 		DE716FF32AF4FD8300451055 /* EdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FF22AF4FD8300451055 /* EdgeInsets+Extension.swift */; };
 		DE716FF42AF4FD9F00451055 /* EdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FF22AF4FD8300451055 /* EdgeInsets+Extension.swift */; };
 		DE716FF52AF4FD9F00451055 /* EdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE716FF22AF4FD8300451055 /* EdgeInsets+Extension.swift */; };
+		DE716FF72AF6663C00451055 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE716FF62AF6663C00451055 /* GoogleService-Info.plist */; };
 		DE78C8142AEAAE8700E944F4 /* ConfirmAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */; };
 		DE78C8162AEAE8D100E944F4 /* DateSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8152AEAE8D100E944F4 /* DateSheet.swift */; };
 		DE78C8192AEBE10600E944F4 /* AddDowntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE78C8182AEBE10600E944F4 /* AddDowntime.swift */; };
@@ -389,7 +389,6 @@
 		DE6618772AC5C4E5004CCD56 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DE6618782AC5C4E5004CCD56 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DE66193E2AC5C4EF004CCD56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DE66193F2AC5C4EF004CCD56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE6619472AC5C57C004CCD56 /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
 		DE6619482AC5C581004CCD56 /* Satoshi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Bold.otf"; sourceTree = "<group>"; };
 		DE6619492AC5C585004CCD56 /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.otf"; sourceTree = "<group>"; };
@@ -408,6 +407,7 @@
 		DE716FDC2AF3FC6800451055 /* SetAppsTimeLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppsTimeLimit.swift; sourceTree = "<group>"; };
 		DE716FDF2AF3FF3C00451055 /* TimeLimitApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLimitApps.swift; sourceTree = "<group>"; };
 		DE716FF22AF4FD8300451055 /* EdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extension.swift"; sourceTree = "<group>"; };
+		DE716FF62AF6663C00451055 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE78C8132AEAAE8700E944F4 /* ConfirmAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmAlert.swift; sourceTree = "<group>"; };
 		DE78C8152AEAE8D100E944F4 /* DateSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSheet.swift; sourceTree = "<group>"; };
 		DE78C8182AEBE10600E944F4 /* AddDowntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDowntime.swift; sourceTree = "<group>"; };
@@ -571,7 +571,7 @@
 				DE6619362AC5C4EF004CCD56 /* Fonts */,
 				DE66193C2AC5C4EF004CCD56 /* Strings */,
 				DE6617612AC5C2C2004CCD56 /* Info.plist */,
-				DE66193F2AC5C4EF004CCD56 /* GoogleService-Info.plist */,
+				DE716FF62AF6663C00451055 /* GoogleService-Info.plist */,
 				DE66175E2AC5C2C2004CCD56 /* LaunchScreen.storyboard */,
 				DE66175C2AC5C2C2004CCD56 /* Assets.xcassets */,
 			);
@@ -1476,11 +1476,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE66194B2AC5CAE1004CCD56 /* Satoshi-Black.otf in Resources */,
+				DE716FF72AF6663C00451055 /* GoogleService-Info.plist in Resources */,
 				DE66194C2AC5CAE1004CCD56 /* Satoshi-Regular.otf in Resources */,
 				DE66194D2AC5CAE1004CCD56 /* Satoshi-Bold.otf in Resources */,
 				DE66194E2AC5CAE1004CCD56 /* Satoshi-Medium.otf in Resources */,
 				DE6617602AC5C2C2004CCD56 /* LaunchScreen.storyboard in Resources */,
-				DE6619452AC5C4EF004CCD56 /* GoogleService-Info.plist in Resources */,
 				DE66175D2AC5C2C2004CCD56 /* Assets.xcassets in Resources */,
 				DE6619442AC5C4EF004CCD56 /* Localizable.strings in Resources */,
 			);

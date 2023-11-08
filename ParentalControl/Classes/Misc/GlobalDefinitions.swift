@@ -5,7 +5,6 @@
 //  Created by Andrey Chernyshev on 16.01.2021.
 //
 
-// TODO: заменить
 final class GlobalDefinitions {
     static let domain = "https://parental.thinkaboutapps.com"
     static let apiKey = "qTSdGwQAYMWjlQdCWidZ"

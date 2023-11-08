@@ -12,13 +12,21 @@
 				<string>parentalcontrollapp</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb355083540415679</string>
+			</array>
+		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string></string>
+	<string>355083540415679</string>
 	<key>FacebookClientToken</key>
-	<string></string>
+	<string>3bed7fe52c5c349add7cd49d5c34a88a</string>
 	<key>FacebookDisplayName</key>
-	<string></string>
+	<string>Parental Control</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
