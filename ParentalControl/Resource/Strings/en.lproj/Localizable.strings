@@ -159,3 +159,16 @@
 // MARK: Apps
 "Apps.AppsBlocked" = "Apps Blocked";
 "Apps.TimeLimit" = "Time limit";
+
+// MARK: Settings
+"Settings.Title" = "Settings";
+"Settings.Email" = "Email";
+"Settings.PIN" = "PIN";
+"Settings.ContactUs" = "Contact us";
+"Settings.TermsOfUse" = "Terms of Use";
+"Settings.PrivacyPolicy" = "Privacy Policy";
+"Settings.NotSet" = "Not set";
+
+// MARK: Email
+"Email.Title" = "Email";
+"Email.Button" = "Save changes";

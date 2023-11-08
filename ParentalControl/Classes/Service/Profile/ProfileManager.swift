@@ -27,9 +27,9 @@ final class ProfileManager {
 // MARK: ProfileManagerProtocol
 extension ProfileManager: ProfileManagerProtocol {
     func set(
-        timeLimit: TimeLimit?,
-        pin: String?,
-        email: String?
+        timeLimit: TimeLimit? = nil,
+        pin: String? = nil,
+        email: String? = nil
     ) -> Single<Void> {
         guard let userToken = sessionManager.getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
