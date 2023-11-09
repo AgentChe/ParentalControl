@@ -172,3 +172,20 @@
 // MARK: Email
 "Email.Title" = "Email";
 "Email.Button" = "Save changes";
+
+// MARK: PIN
+"PIN.Title" = "PIN";
+"PIN.Menu.ResetPIN" = "Reset PIN";
+"PIN.Menu.FaceID" = "Face ID";
+
+// MARK: ResetPIN
+"ResetPIN.Title" = "Reset PIN";
+"ResetPIN.ForgotPIN" = "Forgot PIN?";
+"ResetPIN.EmailNotSet" = "To be able to reset PIN please set up your email in settings";
+"ResetPIN.IncorrectPIN" = "Incorrect pin entered";
+"ResetPIN.CheckEmail.Title" = "Check your email";
+"ResetPIN.CheckEmail.Message" = "We’ve sent an email with your current PIN to %@.";
+"ResetPIN.PINSet" = "PIN set successfully";
+"ResetPIN.EnterPIN" = "Enter PIN";
+"ResetPIN.Set" = "Please set a PIN";
+"ResetPIN.Confirm" = "Enter the PIN again to confirm it";

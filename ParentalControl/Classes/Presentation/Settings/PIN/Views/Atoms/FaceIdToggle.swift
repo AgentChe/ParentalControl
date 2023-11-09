@@ -8,6 +8,8 @@
 import UIKit
 
 final class FaceIdToggle: UIButton {
+    var didChangeToggle: ((Bool) -> Void)?
+    
     lazy var placeholderLabel = makeTitleLabel()
     lazy var switchView = makeSwitchView()
     
@@ -27,6 +29,11 @@ final class FaceIdToggle: UIButton {
 private extension FaceIdToggle {
     func initialize() {
         backgroundColor = Appearance.white
+    }
+    
+    @objc
+    func toggleChanged() {
+        didChangeToggle?(switchView.isOn)
     }
 }
 
@@ -68,6 +75,7 @@ private extension FaceIdToggle {
         view.onTintColor = Appearance.secondary
         view.thumbTintColor = Appearance.white
         view.tintColor = Appearance.background2
+        view.addTarget(self, action: #selector(toggleChanged), for: .valueChanged)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

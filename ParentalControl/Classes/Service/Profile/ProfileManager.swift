@@ -14,6 +14,7 @@ protocol ProfileManagerProtocol {
         email: String?
     ) -> Single<Void>
     func obtainProfile(forceUpdate: Bool) -> Single<Profile?>
+    func forgotPIN() -> Single<Void>
     func syncTokens(oldToken: String, newToken: String) -> Single<Void>
     func login(userToken: String) -> Single<Void>
 }
@@ -63,6 +64,18 @@ extension ProfileManager: ProfileManagerProtocol {
                     email: email
                 )
             }
+    }
+    
+    func forgotPIN() -> Single<Void> {
+        guard let userToken = sessionManager.getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = SendEmailRequest(userToken: userToken)
+        
+        return defaultRequestWrapper
+            .callServerApi(requestBody: request)
+            .mapToVoid()
     }
     
     func syncTokens(oldToken: String, newToken: String) -> Single<Void> {

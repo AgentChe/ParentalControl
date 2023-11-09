@@ -19,6 +19,19 @@
 		DE36357E2AFBCD9300B42FA2 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36357D2AFBCD9300B42FA2 /* EmailViewController.swift */; };
 		DE3635802AFBCD9900B42FA2 /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36357F2AFBCD9900B42FA2 /* EmailViewModel.swift */; };
 		DE3635822AFBCD9E00B42FA2 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635812AFBCD9E00B42FA2 /* EmailView.swift */; };
+		DE3635852AFBD79400B42FA2 /* PINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635842AFBD79400B42FA2 /* PINViewController.swift */; };
+		DE3635872AFBD79A00B42FA2 /* PINViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635862AFBD79A00B42FA2 /* PINViewModel.swift */; };
+		DE3635892AFBD7A000B42FA2 /* PINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635882AFBD7A000B42FA2 /* PINView.swift */; };
+		DE36358C2AFBDB2F00B42FA2 /* PinMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36358B2AFBDB2F00B42FA2 /* PinMenuView.swift */; };
+		DE36358E2AFBE28000B42FA2 /* FaceIdToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36358D2AFBE28000B42FA2 /* FaceIdToggle.swift */; };
+		DE3635982AFBFCB600B42FA2 /* PINCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635972AFBFCB600B42FA2 /* PINCodeView.swift */; };
+		DE36359A2AFBFDAC00B42FA2 /* PINSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635992AFBFDAC00B42FA2 /* PINSignUpView.swift */; };
+		DE36359C2AFBFE4800B42FA2 /* PINFaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36359B2AFBFE4800B42FA2 /* PINFaceIdView.swift */; };
+		DE36359E2AFBFEE500B42FA2 /* FaceIdAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36359D2AFBFEE500B42FA2 /* FaceIdAuth.swift */; };
+		DE3635A02AFCF55A00B42FA2 /* SendEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36359F2AFCF55A00B42FA2 /* SendEmailRequest.swift */; };
+		DE3635A32AFCF5CF00B42FA2 /* ResetPINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635A22AFCF5CF00B42FA2 /* ResetPINViewController.swift */; };
+		DE3635A52AFCF5E400B42FA2 /* ResetPINViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635A42AFCF5E400B42FA2 /* ResetPINViewModel.swift */; };
+		DE3635A72AFCF5EA00B42FA2 /* ResetPINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635A62AFCF5EA00B42FA2 /* ResetPINView.swift */; };
 		DE66175D2AC5C2C2004CCD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE66175C2AC5C2C2004CCD56 /* Assets.xcassets */; };
 		DE6617602AC5C2C2004CCD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE66175E2AC5C2C2004CCD56 /* LaunchScreen.storyboard */; };
 		DE6618792AC5C4E5004CCD56 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66176B2AC5C4E5004CCD56 /* UIApplication+Extension.swift */; };
@@ -321,6 +334,19 @@
 		DE36357D2AFBCD9300B42FA2 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		DE36357F2AFBCD9900B42FA2 /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		DE3635812AFBCD9E00B42FA2 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		DE3635842AFBD79400B42FA2 /* PINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINViewController.swift; sourceTree = "<group>"; };
+		DE3635862AFBD79A00B42FA2 /* PINViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINViewModel.swift; sourceTree = "<group>"; };
+		DE3635882AFBD7A000B42FA2 /* PINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINView.swift; sourceTree = "<group>"; };
+		DE36358B2AFBDB2F00B42FA2 /* PinMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMenuView.swift; sourceTree = "<group>"; };
+		DE36358D2AFBE28000B42FA2 /* FaceIdToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdToggle.swift; sourceTree = "<group>"; };
+		DE3635972AFBFCB600B42FA2 /* PINCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINCodeView.swift; sourceTree = "<group>"; };
+		DE3635992AFBFDAC00B42FA2 /* PINSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINSignUpView.swift; sourceTree = "<group>"; };
+		DE36359B2AFBFE4800B42FA2 /* PINFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINFaceIdView.swift; sourceTree = "<group>"; };
+		DE36359D2AFBFEE500B42FA2 /* FaceIdAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdAuth.swift; sourceTree = "<group>"; };
+		DE36359F2AFCF55A00B42FA2 /* SendEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailRequest.swift; sourceTree = "<group>"; };
+		DE3635A22AFCF5CF00B42FA2 /* ResetPINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINViewController.swift; sourceTree = "<group>"; };
+		DE3635A42AFCF5E400B42FA2 /* ResetPINViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINViewModel.swift; sourceTree = "<group>"; };
+		DE3635A62AFCF5EA00B42FA2 /* ResetPINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINView.swift; sourceTree = "<group>"; };
 		DE6617502AC5C2C0004CCD56 /* ParentalControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParentalControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE66175C2AC5C2C2004CCD56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE66175F2AC5C2C2004CCD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -558,6 +584,8 @@
 		DE3635672AFB8E7800B42FA2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				DE3635A12AFCF5C200B42FA2 /* ResetPIN */,
+				DE3635832AFBD78600B42FA2 /* PIN */,
 				DE36357C2AFBCD8100B42FA2 /* Email */,
 				DE36357B2AFBCD7200B42FA2 /* Settings */,
 			);
@@ -611,6 +639,47 @@
 				DE3635812AFBCD9E00B42FA2 /* EmailView.swift */,
 			);
 			path = Email;
+			sourceTree = "<group>";
+		};
+		DE3635832AFBD78600B42FA2 /* PIN */ = {
+			isa = PBXGroup;
+			children = (
+				DE36358A2AFBDB2600B42FA2 /* Views */,
+				DE3635842AFBD79400B42FA2 /* PINViewController.swift */,
+				DE3635862AFBD79A00B42FA2 /* PINViewModel.swift */,
+				DE3635882AFBD7A000B42FA2 /* PINView.swift */,
+			);
+			path = PIN;
+			sourceTree = "<group>";
+		};
+		DE36358A2AFBDB2600B42FA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE36358F2AFBE7A900B42FA2 /* Atoms */,
+				DE36358B2AFBDB2F00B42FA2 /* PinMenuView.swift */,
+				DE3635972AFBFCB600B42FA2 /* PINCodeView.swift */,
+				DE3635992AFBFDAC00B42FA2 /* PINSignUpView.swift */,
+				DE36359B2AFBFE4800B42FA2 /* PINFaceIdView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE36358F2AFBE7A900B42FA2 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DE36358D2AFBE28000B42FA2 /* FaceIdToggle.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DE3635A12AFCF5C200B42FA2 /* ResetPIN */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635A22AFCF5CF00B42FA2 /* ResetPINViewController.swift */,
+				DE3635A42AFCF5E400B42FA2 /* ResetPINViewModel.swift */,
+				DE3635A62AFCF5EA00B42FA2 /* ResetPINView.swift */,
+			);
+			path = ResetPIN;
 			sourceTree = "<group>";
 		};
 		DE6617472AC5C2C0004CCD56 = {
@@ -877,6 +946,7 @@
 				DE66181A2AC5C4E5004CCD56 /* LoginRequest.swift */,
 				DE66181B2AC5C4E5004CCD56 /* SyncTokensRequest.swift */,
 				DE8B512D2ACBFEEA00F405B7 /* SetRequest.swift */,
+				DE36359F2AFCF55A00B42FA2 /* SendEmailRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1018,6 +1088,7 @@
 			isa = PBXGroup;
 			children = (
 				DE66186E2AC5C4E5004CCD56 /* OCombineData.swift */,
+				DE36359D2AFBFEE500B42FA2 /* FaceIdAuth.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1640,6 +1711,7 @@
 				DE716FEE2AF4FC0F00451055 /* DateSheet.swift in Sources */,
 				DE6618962AC5C4E5004CCD56 /* TapAreaButton.swift in Sources */,
 				DE66187B2AC5C4E5004CCD56 /* UIColor+Extension.swift in Sources */,
+				DE36359C2AFBFE4800B42FA2 /* PINFaceIdView.swift in Sources */,
 				DE6618902AC5C4E5004CCD56 /* RequestReview.swift in Sources */,
 				DE6618912AC5C4E5004CCD56 /* ImagePicker.swift in Sources */,
 				DE6619562AC5E73B004CCD56 /* OScreenTimeLimitView.swift in Sources */,
@@ -1654,6 +1726,7 @@
 				DE716FB52AF2755300451055 /* AppsRootView.swift in Sources */,
 				DE6618922AC5C4E5004CCD56 /* RxActivityIndicator.swift in Sources */,
 				DE3635822AFBCD9E00B42FA2 /* EmailView.swift in Sources */,
+				DE36359A2AFBFDAC00B42FA2 /* PINSignUpView.swift in Sources */,
 				DE66191C2AC5C4E6004CCD56 /* SplashActivity.swift in Sources */,
 				DE6618C62AC5C4E5004CCD56 /* PaygateManager.swift in Sources */,
 				DECBC4CB2AC70000003B9D70 /* WeekdayButton.swift in Sources */,
@@ -1675,6 +1748,7 @@
 				DECBC4D42AC71819003B9D70 /* OSignUpView.swift in Sources */,
 				DE6619542AC5E34F004CCD56 /* YearButton.swift in Sources */,
 				DE716FE62AF4110900451055 /* WeekdayButtonSUI.swift in Sources */,
+				DE36358E2AFBE28000B42FA2 /* FaceIdToggle.swift in Sources */,
 				DEDF8C902AD590F200786C0F /* ProfileCache.swift in Sources */,
 				DE6618822AC5C4E5004CCD56 /* DefaultRequestWrapper.swift in Sources */,
 				DE66188C2AC5C4E5004CCD56 /* SignError.swift in Sources */,
@@ -1690,12 +1764,14 @@
 				DE66189D2AC5C4E5004CCD56 /* AppDelegate.swift in Sources */,
 				DEE053972AD02CE600101784 /* MainCoordinator.swift in Sources */,
 				DE78C85F2AF157FE00E944F4 /* Selections.swift in Sources */,
+				DE3635982AFBFCB600B42FA2 /* PINCodeView.swift in Sources */,
 				DE6618F92AC5C4E5004CCD56 /* IAPManager.swift in Sources */,
 				DECBC4D22AC70CA5003B9D70 /* DisableTextField.swift in Sources */,
 				DE8B512B2ACBFA7000F405B7 /* OPreloaderView.swift in Sources */,
 				DE6618882AC5C4E5004CCD56 /* ScreenSize.swift in Sources */,
 				DE6618842AC5C4E5004CCD56 /* RestAPITransport.swift in Sources */,
 				DEDF8C9F2AD6AB0D00786C0F /* CacheData.swift in Sources */,
+				DE3635852AFBD79400B42FA2 /* PINViewController.swift in Sources */,
 				DE716FEC2AF4FC0700451055 /* DowntimeTimeButton.swift in Sources */,
 				DE36357A2AFB969D00B42FA2 /* TitleValueButton.swift in Sources */,
 				DE6618942AC5C4E5004CCD56 /* NavigationControllerSettings.swift in Sources */,
@@ -1704,6 +1780,7 @@
 				DE6618A02AC5C4E5004CCD56 /* PushNotificationsModel.swift in Sources */,
 				DE6619582AC5ED5A004CCD56 /* OScreenTimeLimitPicker.swift in Sources */,
 				DE6618FD2AC5C4E5004CCD56 /* IAPProduct.swift in Sources */,
+				DE36358C2AFBDB2F00B42FA2 /* PinMenuView.swift in Sources */,
 				DE66187E2AC5C4E5004CCD56 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE6618982AC5C4E5004CCD56 /* PaddingTextField.swift in Sources */,
 				DE6618792AC5C4E5004CCD56 /* UIApplication+Extension.swift in Sources */,
@@ -1714,6 +1791,7 @@
 				DE716FF32AF4FD8300451055 /* EdgeInsets+Extension.swift in Sources */,
 				DE6619502AC5D0F6004CCD56 /* OWelcomeView.swift in Sources */,
 				DE6619312AC5C4E6004CCD56 /* OSlideView.swift in Sources */,
+				DE3635872AFBD79A00B42FA2 /* PINViewModel.swift in Sources */,
 				DE66191B2AC5C4E6004CCD56 /* SplashViewController.swift in Sources */,
 				DE8B51312ACC00FD00F405B7 /* GetProfileRequest.swift in Sources */,
 				DE6618C12AC5C4E5004CCD56 /* PaygateOptionLineComponent.swift in Sources */,
@@ -1743,10 +1821,12 @@
 				DE3635712AFB908500B42FA2 /* SettingsTableView.swift in Sources */,
 				DEE0539F2AD02D3F00101784 /* TabView.swift in Sources */,
 				DE36357E2AFBCD9300B42FA2 /* EmailViewController.swift in Sources */,
+				DE3635A72AFCF5EA00B42FA2 /* ResetPINView.swift in Sources */,
 				DE66189C2AC5C4E5004CCD56 /* CircleProgressView.swift in Sources */,
 				DE6618862AC5C4E5004CCD56 /* NumberLaunches.swift in Sources */,
 				DE716FDD2AF3FC6800451055 /* SetAppsTimeLimit.swift in Sources */,
 				DE716FB62AF2768900451055 /* InstantBlockCell.swift in Sources */,
+				DE3635A52AFCF5E400B42FA2 /* ResetPINViewModel.swift in Sources */,
 				DE6618972AC5C4E5004CCD56 /* Spinner.swift in Sources */,
 				DEDF8C812AD452AB00786C0F /* TimeLimit.swift in Sources */,
 				DE716FF02AF4FC2900451055 /* TimePickerView.swift in Sources */,
@@ -1758,6 +1838,7 @@
 				DE6618F62AC5C4E5004CCD56 /* SyncTokensRequest.swift in Sources */,
 				DE6618812AC5C4E5004CCD56 /* GlobalDefinitions.swift in Sources */,
 				DE6619282AC5C4E6004CCD56 /* PaygateInfoCell.swift in Sources */,
+				DE36359E2AFBFEE500B42FA2 /* FaceIdAuth.swift in Sources */,
 				DE6618C32AC5C4E5004CCD56 /* Paygate.swift in Sources */,
 				DE6618C42AC5C4E5004CCD56 /* GetPaygateResponse.swift in Sources */,
 				DE6618A12AC5C4E5004CCD56 /* SceneDelegate.swift in Sources */,
@@ -1766,7 +1847,9 @@
 				DE66191E2AC5C4E6004CCD56 /* SplashViewModel.swift in Sources */,
 				DE716FDB2AF3FB3700451055 /* TimeLimitAppsView.swift in Sources */,
 				DE6619602AC5FD5F004CCD56 /* WeekSchedule.swift in Sources */,
+				DE3635892AFBD7A000B42FA2 /* PINView.swift in Sources */,
 				DE8B51532ACC74E300F405B7 /* HomeViewController.swift in Sources */,
+				DE3635A32AFCF5CF00B42FA2 /* ResetPINViewController.swift in Sources */,
 				DE66192D2AC5C4E6004CCD56 /* OCombineData.swift in Sources */,
 				DE66189F2AC5C4E5004CCD56 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE6619242AC5C4E6004CCD56 /* PaygateInteractor.swift in Sources */,
@@ -1780,6 +1863,7 @@
 				DE66189B2AC5C4E5004CCD56 /* GradientView.swift in Sources */,
 				DEE053862ACED67A00101784 /* DeviceActivityReport.Context+Extension.swift in Sources */,
 				DE66195D2AC5FCD3004CCD56 /* OScheduleView.swift in Sources */,
+				DE3635A02AFCF55A00B42FA2 /* SendEmailRequest.swift in Sources */,
 				DE6618F12AC5C4E5004CCD56 /* ProfileManager.swift in Sources */,
 				DE66188B2AC5C4E5004CCD56 /* Fonts.swift in Sources */,
 				DE66187D2AC5C4E5004CCD56 /* Collection+Extension.swift in Sources */,

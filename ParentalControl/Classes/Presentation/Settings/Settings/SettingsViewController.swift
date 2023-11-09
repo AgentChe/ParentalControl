@@ -36,6 +36,13 @@ final class SettingsViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        mainView.tableView.didTapPIN
+            .emit(to: Binder(self) { base, void in
+                let vc = PINViewController.make()
+                base.navigationController?.pushViewController(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
         let output = viewModel.configure(input: SettingsViewModel.Input())
         
         output.elements

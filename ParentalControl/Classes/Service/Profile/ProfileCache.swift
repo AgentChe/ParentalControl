@@ -20,7 +20,7 @@ extension ProfileCache {
     enum Constants {
         static let timeLimit = "profile_manager_time_limit"
         static let pin = "profile_manager_screen_pin"
-        static let email = "profile_manager_screen_email"
+        static let email = "profile_manager_screen_email" 
     }
     
     func store(timeLimit: TimeLimit?) {

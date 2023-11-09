@@ -15,10 +15,10 @@ final class OFaceIdView: OSlideView {
     lazy var subTitleLabel = makeSubTitleLabel()
     lazy var continueButton = makeContinueButton()
     
-    private weak var vc: UIViewController?
+    private let faceIdAuth: FaceIdAuth
     
     init(step: OnboardingView.Step, vc: UIViewController?) {
-        self.vc = vc
+        self.faceIdAuth = FaceIdAuth(vc: vc)
         
         super.init(step: step)
         
@@ -39,43 +39,8 @@ private extension OFaceIdView {
     
     @objc
     func didTapContinue() {
-        let context = LAContext()
-        var error: NSError?
-        
-        guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
-            let alert = UIAlertController(
-                title: "Onboarding.FaceId.Unavailable.Title".localized,
-                message: "Onboarding.FaceId.Unavailable.Text".localized,
-                preferredStyle: .alert
-            )
-            
-            let okAction = UIAlertAction(title: "OK".localized, style: .cancel)
-            alert.addAction(okAction)
-            
-            vc?.present(alert, animated: true)
-            
-            return
-        }
-        
-        let reason = "Onboarding.FaceId.SubTitle".localized
-        
-        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
-            DispatchQueue.main.async { [weak self] in
-                if success {
-                    self?.onNext()
-                } else {
-                    let alert = UIAlertController(
-                        title: "Onboarding.FaceId.Failed.Title".localized,
-                        message: "Onboarding.FaceId.Failed.Text".localized,
-                        preferredStyle: .alert
-                    )
-                    
-                    let okAction = UIAlertAction(title: "OK".localized, style: .cancel)
-                    alert.addAction(okAction)
-                    
-                    self?.vc?.present(alert, animated: true)
-                }
-            }
+        faceIdAuth.auth { [weak self] in
+            self?.onNext()
         }
     }
 }
