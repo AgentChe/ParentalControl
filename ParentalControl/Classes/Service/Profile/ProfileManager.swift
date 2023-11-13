@@ -17,6 +17,7 @@ protocol ProfileManagerProtocol {
     func forgotPIN() -> Single<Void>
     func syncTokens(oldToken: String, newToken: String) -> Single<Void>
     func login(userToken: String) -> Single<Void>
+    var isRequestPIN: Bool { get }
 }
 
 final class ProfileManager {
@@ -93,6 +94,10 @@ extension ProfileManager: ProfileManagerProtocol {
         return defaultRequestWrapper
             .callServerApi(requestBody: request)
             .mapToVoid()
+    }
+    
+    var isRequestPIN: Bool {
+        ProfileCache.shared.pin()?.object != nil
     }
 }
 

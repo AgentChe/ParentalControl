@@ -22,6 +22,8 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        RequestPINObserver.shared.launched()
+        
         rx.methodInvoked(#selector(UIViewController.viewDidLayoutSubviews))
             .take(1)
             .bind(to: Binder(self) { base, void in

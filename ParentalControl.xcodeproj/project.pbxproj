@@ -32,6 +32,10 @@
 		DE3635A32AFCF5CF00B42FA2 /* ResetPINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635A22AFCF5CF00B42FA2 /* ResetPINViewController.swift */; };
 		DE3635A52AFCF5E400B42FA2 /* ResetPINViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635A42AFCF5E400B42FA2 /* ResetPINViewModel.swift */; };
 		DE3635A72AFCF5EA00B42FA2 /* ResetPINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635A62AFCF5EA00B42FA2 /* ResetPINView.swift */; };
+		DE3635AA2AFD377800B42FA2 /* RequestPINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635A92AFD377800B42FA2 /* RequestPINViewController.swift */; };
+		DE3635AC2AFD377D00B42FA2 /* RequestPINView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635AB2AFD377D00B42FA2 /* RequestPINView.swift */; };
+		DE3635AE2AFD378200B42FA2 /* RequestPINViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635AD2AFD378200B42FA2 /* RequestPINViewModel.swift */; };
+		DE3635DD2B020C1100B42FA2 /* RequestPINObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635DC2B020C1100B42FA2 /* RequestPINObserver.swift */; };
 		DE66175D2AC5C2C2004CCD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE66175C2AC5C2C2004CCD56 /* Assets.xcassets */; };
 		DE6617602AC5C2C2004CCD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE66175E2AC5C2C2004CCD56 /* LaunchScreen.storyboard */; };
 		DE6618792AC5C4E5004CCD56 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE66176B2AC5C4E5004CCD56 /* UIApplication+Extension.swift */; };
@@ -347,6 +351,10 @@
 		DE3635A22AFCF5CF00B42FA2 /* ResetPINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINViewController.swift; sourceTree = "<group>"; };
 		DE3635A42AFCF5E400B42FA2 /* ResetPINViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINViewModel.swift; sourceTree = "<group>"; };
 		DE3635A62AFCF5EA00B42FA2 /* ResetPINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPINView.swift; sourceTree = "<group>"; };
+		DE3635A92AFD377800B42FA2 /* RequestPINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPINViewController.swift; sourceTree = "<group>"; };
+		DE3635AB2AFD377D00B42FA2 /* RequestPINView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPINView.swift; sourceTree = "<group>"; };
+		DE3635AD2AFD378200B42FA2 /* RequestPINViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPINViewModel.swift; sourceTree = "<group>"; };
+		DE3635DC2B020C1100B42FA2 /* RequestPINObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPINObserver.swift; sourceTree = "<group>"; };
 		DE6617502AC5C2C0004CCD56 /* ParentalControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParentalControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE66175C2AC5C2C2004CCD56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE66175F2AC5C2C2004CCD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -584,6 +592,7 @@
 		DE3635672AFB8E7800B42FA2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				DE3635A82AFD376600B42FA2 /* RequestPIN */,
 				DE3635A12AFCF5C200B42FA2 /* ResetPIN */,
 				DE3635832AFBD78600B42FA2 /* PIN */,
 				DE36357C2AFBCD8100B42FA2 /* Email */,
@@ -680,6 +689,16 @@
 				DE3635A62AFCF5EA00B42FA2 /* ResetPINView.swift */,
 			);
 			path = ResetPIN;
+			sourceTree = "<group>";
+		};
+		DE3635A82AFD376600B42FA2 /* RequestPIN */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635A92AFD377800B42FA2 /* RequestPINViewController.swift */,
+				DE3635AD2AFD378200B42FA2 /* RequestPINViewModel.swift */,
+				DE3635AB2AFD377D00B42FA2 /* RequestPINView.swift */,
+			);
+			path = RequestPIN;
 			sourceTree = "<group>";
 		};
 		DE6617472AC5C2C0004CCD56 = {
@@ -801,6 +820,7 @@
 				DE66177F2AC5C4E5004CCD56 /* XOREncryption.swift */,
 				DE6617802AC5C4E5004CCD56 /* Fonts.swift */,
 				DE6617852AC5C4E5004CCD56 /* Weak.swift */,
+				DE3635DC2B020C1100B42FA2 /* RequestPINObserver.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1737,6 +1757,7 @@
 				DE6619342AC5C4E6004CCD56 /* OnboardingView.swift in Sources */,
 				DE66192E2AC5C4E6004CCD56 /* OnboardingViewController.swift in Sources */,
 				DE6618FF2AC5C4E5004CCD56 /* IAPErrorHelper.swift in Sources */,
+				DE3635AC2AFD377D00B42FA2 /* RequestPINView.swift in Sources */,
 				DE8B512E2ACBFEEA00F405B7 /* SetRequest.swift in Sources */,
 				DE8B51352ACC012700F405B7 /* Profile.swift in Sources */,
 				DE716FE22AF401B000451055 /* TimeLimitApps.swift in Sources */,
@@ -1758,6 +1779,7 @@
 				DE6619222AC5C4E6004CCD56 /* PaygateOptionInfo.swift in Sources */,
 				DE6619192AC5C4E6004CCD56 /* Session.swift in Sources */,
 				DE66187C2AC5C4E5004CCD56 /* Date+Extension.swift in Sources */,
+				DE3635AE2AFD378200B42FA2 /* RequestPINViewModel.swift in Sources */,
 				DE66188F2AC5C4E5004CCD56 /* Weak.swift in Sources */,
 				DE66195B2AC5F2C3004CCD56 /* ScreenTimeLimitPickerCell.swift in Sources */,
 				DE36356B2AFB8EF900B42FA2 /* SettingsViewModel.swift in Sources */,
@@ -1779,6 +1801,7 @@
 				DE6618A62AC5C4E5004CCD56 /* FirebaseManager.swift in Sources */,
 				DE6618A02AC5C4E5004CCD56 /* PushNotificationsModel.swift in Sources */,
 				DE6619582AC5ED5A004CCD56 /* OScreenTimeLimitPicker.swift in Sources */,
+				DE3635AA2AFD377800B42FA2 /* RequestPINViewController.swift in Sources */,
 				DE6618FD2AC5C4E5004CCD56 /* IAPProduct.swift in Sources */,
 				DE36358C2AFBDB2F00B42FA2 /* PinMenuView.swift in Sources */,
 				DE66187E2AC5C4E5004CCD56 /* ObservableAndSingle+Extension.swift in Sources */,
@@ -1800,6 +1823,7 @@
 				DE6618992AC5C4E5004CCD56 /* PaddingLabel.swift in Sources */,
 				DE6618A22AC5C4E5004CCD56 /* Appearance.swift in Sources */,
 				DE66188A2AC5C4E5004CCD56 /* XOREncryption.swift in Sources */,
+				DE3635DD2B020C1100B42FA2 /* RequestPINObserver.swift in Sources */,
 				DE66188E2AC5C4E5004CCD56 /* ContentError.swift in Sources */,
 				DE6619212AC5C4E6004CCD56 /* DefaultPaygate.swift in Sources */,
 				DE3635762AFB924B00B42FA2 /* SettingsAccountCell.swift in Sources */,

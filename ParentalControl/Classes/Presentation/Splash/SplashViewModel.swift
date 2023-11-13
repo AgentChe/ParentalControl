@@ -11,13 +11,14 @@ import OtterScaleiOS
 
 final class SplashViewModel {
     enum Step {
-        case onboarding, main, paygate
+        case onboarding, main, paygate, requestPIN
     }
     
     var tryAgain: ((Error) -> (Observable<Void>))?
     
     lazy var validationComplete = PublishRelay<Void>()
     lazy var authorizationComplete = PublishRelay<Void>()
+    lazy var paygateClosed = PublishRelay<Void>()
     
     lazy var validationActivity = RxActivityIndicator()
     lazy var libraryActivity = RxActivityIndicator()
@@ -40,7 +41,7 @@ extension SplashViewModel {
                 
                 return self.library()
             }
-            .flatMap { [weak self] _ -> Single<Step> in
+            .flatMap { [weak self] _ -> Driver<Step> in
                 guard let self = self else {
                     return .never()
                 }
@@ -132,8 +133,8 @@ private extension SplashViewModel {
             .trackActivity(libraryActivity)
     }
     
-    func makeStep() -> Single<Step> {
-        Single<Step>
+    func makeStep() -> Driver<Step> {
+        let initial = Single<Step>
             .create { event in
                 let step: Step
 
@@ -141,6 +142,8 @@ private extension SplashViewModel {
                     step = .onboarding
                 } else if self.needPayment() {
                     step = .paygate
+                } else if self.profileManager.isRequestPIN {
+                    step = .requestPIN
                 } else {
                     step = .main
                 }
@@ -149,6 +152,16 @@ private extension SplashViewModel {
                 
                 return Disposables.create()
             }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let afterPaygate = paygateClosed
+            .map { [weak self] void -> Step in
+                (self?.profileManager.isRequestPIN == true) ? .requestPIN : .main
+            }
+            .asDriver(onErrorDriveWith: .never())
+        
+        return Driver
+            .merge(initial, afterPaygate)
     }
     
     func needPayment() -> Bool {

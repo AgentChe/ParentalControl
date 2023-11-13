@@ -72,7 +72,7 @@ extension SplashViewController {
 // MARK: PaygateViewControllerDelegate
 extension SplashViewController: PaygateViewControllerDelegate {
     func paygateDidClosed(with result: PaygateViewControllerResult) {
-        goNext(at: .main)
+        viewModel.paygateClosed.accept(Void())
     }
 }
 
@@ -94,6 +94,9 @@ private extension SplashViewController {
             let vc = PaygateViewController.make()
             vc.delegate = self
             present(vc, animated: true)
+        case .requestPIN:
+            let vc = RequestPINViewController.make(mode: .root)
+            UIApplication.shared.keyWindow?.rootViewController = vc
         }
     }
     
